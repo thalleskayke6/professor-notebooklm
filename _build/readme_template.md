@@ -1,9 +1,23 @@
-# 🎓 Professor: um tutor de concurso que aprende com o seu material
+# 🎓 Skill Professor de Concurso Público
+
+**Um tutor de concurso para o Claude Code que aprende com o seu próprio material.** Estudo por questões, engenharia reversa de banca, incidência por assunto e pegadinhas mapeadas. Feito na prova da FGV para carreira policial, adaptável a qualquer edital.
 
 > [!IMPORTANT]
 > **TL;DR.** Um professor particular para o Claude Code que lê tudo o que você juntou para um concurso, sabe o **peso de cada matéria** na prova, sabe o que a banca **mais cobra** e responde com **questões reais** como referência.
 >
 > Ele não decora a matéria. Ele decora **como a banca pergunta**.
+
+### 📥 Baixar e usar
+
+```bash
+git clone https://github.com/thalleskayke6/skill-professor-concurso-publico.git professor
+```
+
+Sem git: botão verde **Code** no topo da página, depois **Download ZIP**.
+
+**[COMO-USAR.md](COMO-USAR.md) tem o passo a passo** de instalação no Claude Code, Claude, ChatGPT, Gemini e NotebookLM, e de como estudar só lendo os arquivos.
+
+Com pressa? Abra [`materias/README.md`](materias/README.md), escolha a matéria e comece a ler. Não precisa instalar nada.
 
 > [!CAUTION]
 > **Uso exclusivo para estudo. Venda proibida.** Todo o conteúdo aqui é para estudo pessoal e particular. É **expressamente proibida qualquer utilização comercial**, por qualquer pessoa, a qualquer tempo: venda, revenda, curso pago, mentoria, assinatura, grupo pago ou qualquer forma de monetização. A proibição vale para o autor e para quem receber o material. Detalhes em [AVISO-DE-USO.md](AVISO-DE-USO.md).
@@ -311,7 +325,9 @@ mkdir -p ~/.claude/skills/professor && cp ferramenta/SKILL.md ~/.claude/skills/p
 cp ferramenta/agent-professor.md ~/.claude/agents/professor.md
 ```
 
-Os caminhos dentro da skill apontam para `C:\Users\USER\Professor`. Quem clonar em outro lugar precisa ajustar.
+Para só estudar o material pronto, nada disso é necessário: clone o repositório e abra `materias/README.md`. Para usar como professor no Claude Code, Claude, ChatGPT, Gemini ou NotebookLM, siga o **[COMO-USAR.md](COMO-USAR.md)**.
+
+A skill distribuída usa o marcador `<PASTA-DO-REPOSITORIO>`: troque as 6 ocorrências pelo caminho onde você clonou.
 
 ```
 MAPA-GERAL.md          ponto de entrada: matérias, pesos, notebooks, contagens
@@ -409,8 +425,9 @@ mindmap
 
 ## 🔎 Palavras-chave
 
-Para quem chegou aqui procurando: professor de concurso com inteligência artificial, tutor de concurso público, estudo por questões, engenharia reversa de banca, estudo reverso FGV, como a FGV cobra, pegadinhas da FGV, incidência de assuntos por banca, NotebookLM para concursos, NotebookLM CLI, Claude Code skill, Obsidian para concurso, Anki para concurso, flashcards certo ou errado, carreiras policiais, Polícia Civil do Paraná, PC-PR 2026, agente de polícia judiciária, banco de questões em markdown, plano de estudo por incidência.
+**Procurando por isto?** skill para estudo de concurso · skill de concurso público para Claude Code · professor de concurso com inteligência artificial · tutor de concurso público · como estudar por questões · engenharia reversa de banca · estudo reverso · estudo reverso FGV · como a banca FGV cobra · pegadinhas da FGV · banca FGV concurso · incidência de assuntos por banca · quais assuntos mais caem · plano de estudo por incidência · NotebookLM para concursos · NotebookLM CLI · Claude Code skill em português · skill Claude Code estudo · Obsidian para concurso · Anki para concurso · flashcards certo ou errado · questões comentadas FGV · banco de questões em markdown · carreiras policiais · concurso Polícia Civil · Polícia Civil do Paraná · PC-PR 2026 · agente de polícia judiciária · investigador escrivão papiloscopista · concurso público 2026.
 
-`#concurso` `#concursopublico` `#professordeconcurso` `#estudoporquestoes` `#engenhariareversa` `#estudoreverso` `#FGV` `#pegadinhasFGV` `#NotebookLM` `#ClaudeCode` `#Obsidian` `#Anki` `#carreiraspoliciais` `#PCPR2026` `#policiacivil` `#bancodequestoes` `#incidencia` `#tutorIA`
+`#skill` `#claudecode` `#concurso` `#concursopublico` `#professordeconcurso` `#estudoparaconcurso` `#estudoporquestoes` `#engenhariareversa` `#estudoreverso` `#FGV` `#bancaFGV` `#pegadinhasFGV` `#incidencia` `#NotebookLM` `#Obsidian` `#Anki` `#flashcards` `#carreiraspoliciais` `#policiacivil` `#PCPR2026` `#bancodequestoes` `#tutorIA` `#inteligenciaartificial`
+
 
 Extração e montagem feitas em 05/09/2026.
