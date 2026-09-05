@@ -1,21 +1,86 @@
-MIT License
+Licença de Uso Não Comercial
+Non-Commercial Use License
 
 Copyright (c) 2026 thalleskayke6
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Aplica-se a TODO o conteúdo deste repositório, sem exceção: textos, sínteses,
+guias, materiais de estudo, índices, prompts, scripts e a skill.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. USO PERMITIDO
+
+É concedida permissão, gratuita e a qualquer pessoa, para:
+
+  a) usar este material para estudo pessoal e particular;
+  b) copiar, adaptar e modificar o material para uso próprio;
+  c) redistribuir e compartilhar o material, inclusive modificado,
+     desde que sem qualquer cobrança e mantendo esta licença junto.
+
+
+2. USO PROIBIDO
+
+É EXPRESSAMENTE PROIBIDA qualquer utilização comercial deste material, por
+qualquer pessoa, física ou jurídica, a qualquer tempo, incluindo, sem se
+limitar a:
+
+  a) vender, revender, alugar, licenciar ou permutar o material, no todo
+     ou em parte;
+  b) incluir o material em curso, mentoria, consultoria, assinatura,
+     pacote, aplicativo ou qualquer produto ou serviço pago;
+  c) distribuir o material em grupo, canal, comunidade ou plataforma que
+     cobre pela entrada ou pelo acesso;
+  d) utilizar o material como insumo de atividade remunerada, incluindo
+     produção de conteúdo monetizado;
+  e) obter qualquer vantagem econômica, direta ou indireta, a partir do
+     material, inclusive por publicidade veiculada sobre ele;
+  f) remover, alterar ou ocultar esta licença ou os avisos de autoria.
+
+A proibição de uso comercial é permanente e vale igualmente para o titular
+dos direitos autorais e para qualquer pessoa que venha a obter o material.
+Não há permissão de uso comercial sob nenhuma condição, e nenhuma cláusula
+desta licença deve ser interpretada como autorização de venda.
+
+
+3. OBRAS DERIVADAS
+
+Qualquer obra derivada deste material fica sujeita integralmente a esta
+mesma licença, inclusive à proibição de uso comercial da cláusula 2.
+
+
+4. CONTEÚDO DE TERCEIROS
+
+As sínteses deste repositório foram geradas a partir de material de estudo
+do titular. Referências a leis, súmulas, jurisprudência e editais são de
+domínio público. Esta licença abrange apenas a contribuição original do
+titular e não confere direito algum sobre obra de terceiros eventualmente
+mencionada. Ver AVISO-DE-USO.md.
+
+
+5. AUSÊNCIA DE GARANTIA
+
+O MATERIAL É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER NATUREZA,
+EXPRESSA OU IMPLÍCITA, INCLUINDO GARANTIAS DE CORREÇÃO, ATUALIZAÇÃO,
+ADEQUAÇÃO A UMA FINALIDADE ESPECÍFICA OU NÃO VIOLAÇÃO. SÍNTESES GERADAS POR
+MODELO DE LINGUAGEM PODEM CONTER ERRO. EM NENHUMA HIPÓTESE OS TITULARES
+SERÃO RESPONSÁVEIS POR QUALQUER REIVINDICAÇÃO, DANO OU OUTRA
+RESPONSABILIDADE DECORRENTE DO USO DO MATERIAL.
+
+
+6. ENCERRAMENTO
+
+O descumprimento de qualquer cláusula encerra automaticamente os direitos
+concedidos por esta licença.
+
+
+--------------------------------------------------------------------------
+ENGLISH SUMMARY
+
+All content in this repository — texts, study guides, indexes, prompts,
+scripts and the skill — is licensed for NON-COMMERCIAL USE ONLY.
+
+You may use, copy, adapt and share it free of charge for personal study,
+keeping this license attached. Any commercial use is expressly forbidden for
+everyone, including the copyright holder: no selling, reselling, licensing,
+paid courses, paid communities, subscriptions, or any direct or indirect
+monetization. Derivative works inherit these same terms. Provided "as is",
+without warranty of any kind.

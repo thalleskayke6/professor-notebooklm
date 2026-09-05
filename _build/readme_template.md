@@ -401,7 +401,7 @@ mindmap
 > [!NOTE]
 > **Pode:** ler, copiar para uso próprio, adaptar ao seu concurso e compartilhar com outros estudantes, sempre sem cobrança.
 >
-> **Scripts e skill** (`_build/`, `ferramenta/`) estão sob licença MIT: use à vontade para montar a sua própria base a partir do seu próprio material.
+> **Scripts e skill** (`_build/`, `ferramenta/`) seguem a mesma licença: use de graça para montar a sua própria base a partir do seu próprio material, mas **sem uso comercial**, inclusive sem embutir em produto ou serviço pago.
 >
 > **Origem:** os arquivos em `notebooks/`, `guias/`, `materias/` e `materiais/` são sínteses geradas por modelo de linguagem a partir do material de estudo do autor. Não reproduzem apostilas, aulas nem questões na íntegra. Apostilas de curso, enunciados completos e anotações pessoais não estão no repositório.
 >

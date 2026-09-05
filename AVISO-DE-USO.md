@@ -30,7 +30,7 @@ Se você identificar neste repositório algum trecho que entenda ser de sua auto
 
 ## Sobre os scripts
 
-Os scripts, prompts e a skill em `_build/` e `ferramenta/` estão sob licença MIT (ver `LICENSE`) e podem ser usados livremente, inclusive para montar a sua própria base de estudo a partir do seu próprio material.
+Os scripts, prompts e a skill em `_build/` e `ferramenta/` seguem a mesma licença do restante do repositório (ver `LICENSE`): uso livre e gratuito para montar a sua própria base de estudo a partir do seu próprio material, **vedado qualquer uso comercial**, inclusive embutir os scripts em produto ou serviço pago.
 
 ## Sem garantia
 
