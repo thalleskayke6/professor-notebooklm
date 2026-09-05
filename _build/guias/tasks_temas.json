@@ -336,5 +336,117 @@
     "err": null
    }
   ]
+ },
+ "42b917ff-915d-4b69-9b5e-e4bda9a4a232": {
+  "slug": "pcpr-2026-realidade-do-parana",
+  "temas": [
+   {
+    "n": 1,
+    "tema": "Período Pré-Colonial e Povos Originários do Paraná",
+    "task_id": "f502b920-213d-4e72-a16a-d76e3aabc3e0",
+    "err": null
+   },
+   {
+    "n": 2,
+    "tema": "O Peabiru e a Colonização Espanhola do Guairá",
+    "task_id": "527cbddc-211c-48f3-b30d-3001f8258bb7",
+    "err": null
+   },
+   {
+    "n": 3,
+    "tema": "Colonização Portuguesa e Mineração Litorânea",
+    "task_id": "5b9da3ac-c505-4cf8-ac6f-8e4b2420cd27",
+    "err": null
+   },
+   {
+    "n": 4,
+    "tema": "O Tropeirismo e a Ocupação dos Campos Gerais",
+    "task_id": "f94714d1-3cf3-40da-8970-c8b0626cbd57",
+    "err": null
+   },
+   {
+    "n": 5,
+    "tema": "A Emancipação Política do Paraná (1853)",
+    "task_id": "13258929-2c8b-4b1a-bb67-1c8585d79ac0",
+    "err": null
+   },
+   {
+    "n": 6,
+    "tema": "O Ciclo da Erva-Mate e a Modernização dos Transportes",
+    "task_id": "639c107b-a17d-4388-93e6-b3ef03e0eb83",
+    "err": null
+   },
+   {
+    "n": 7,
+    "tema": "Ciclos da Madeira, do Café e a Colonização do Século XX",
+    "task_id": "de8437e0-5f28-452b-9bd0-996a088de9c5",
+    "err": null
+   },
+   {
+    "n": 8,
+    "tema": "Imigração Europeia e Formação Étnica",
+    "task_id": "186fc4aa-db35-4233-8b5a-ca2b3809f7e1",
+    "err": null
+   },
+   {
+    "n": 9,
+    "tema": "Geografia Física e Aspectos Naturais do Paraná",
+    "task_id": "3b8c330d-7201-483f-a025-8ee5ff8f5cdd",
+    "err": null
+   },
+   {
+    "n": 10,
+    "tema": "Geografia Humana, Economia e Patrimônio do Paraná",
+    "task_id": "e70eafa8-be0b-4ea8-bfd4-34fdd1792b08",
+    "err": null
+   }
+  ]
+ },
+ "ff239db3-703f-43fd-8240-2fbb1843f9fb": {
+  "slug": "pc-pr-processo-penal",
+  "temas": [
+   {
+    "n": 1,
+    "tema": "Introdução e Princípios do Processo Penal",
+    "task_id": "7f0bda43-332a-4ef6-89c6-f878dd3a9ffe",
+    "err": null
+   },
+   {
+    "n": 2,
+    "tema": "Juiz das Garantias",
+    "task_id": "10c2a58c-1510-40ad-a4a2-a0d1e9540d63",
+    "err": null
+   },
+   {
+    "n": 3,
+    "tema": "Inquérito Policial",
+    "task_id": "c430c913-b1e9-4587-a454-9eb6c8691248",
+    "err": null
+   },
+   {
+    "n": 4,
+    "tema": "Ação Penal e Acordo de Não Persecução Penal (ANPP)",
+    "task_id": "43445289-c3b2-4cd4-83f4-aea973393a40",
+    "err": null
+   },
+   {
+    "n": 5,
+    "tema": "Jurisdição e Competência",
+    "task_id": "2d370ef0-4759-46fa-aa17-9d137198182f",
+    "err": null
+   },
+   {
+    "n": 6,
+    "tema": "Sujeitos Processuais e Auxiliares da Justiça",
+    "task_id": "8e3761b2-1540-47c7-9310-8fb777623810",
+    "err": null
+   },
+   {
+    "n": 7,
+    "tema": "Teoria Geral da Prova e Cadeia de Custódia",
+    "task_id": "d80cfd98-8e5d-49bb-883c-ad56a57af98c",
+    "err": null
+   }
+  ]
  }
 }

@@ -19,7 +19,7 @@ questão, não lendo teoria; ele odeia enrolação e lei seca crua.
 |---|---|---|
 | Mapa | `MAPA-GERAL.md` | Sempre primeiro: matéria, peso na prova, qual notebook e qual arquivo |
 | Notebooks | `notebooks/<slug>.md` | Índice hierárquico, conceitos-chave e pegadinhas de cada notebook do NotebookLM |
-| Guias completos | `guias/<slug>.md` | Relatório exaustivo por notebook gerado no Studio (teoria mais completa que o arquivo do notebook); Grep pelo tema |
+| Guias completos | `guias/<slug>.md` e `guias/<slug>/NN-tema.md` | Relatórios gerados no Studio: um geral por notebook e um por tema nos notebooks de matéria (a teoria mais completa da base); Grep pelo tema |
 | Questões reais | `questoes/INDICE.md` e `questoes/<materia>.md` | Antes de explicar ou criar questão: veja como a FGV cobra de verdade |
 | Vault | `vault/INDICE-VAULT.md` e `vault/notas/` | Apostilas por aula, hubs, método, plano, catálogo de pegadinhas, autópsia de erros |
 
