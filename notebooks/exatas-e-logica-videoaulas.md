@@ -1,4 +1,4 @@
-# Felippe Loureiro
+# o autor das videoaulas de exatas
 
 - **Notebook ID:** `5714ea7c-de27-44b2-aab4-aeb30121b411`
 - **Fontes:** 292
@@ -7,7 +7,7 @@
 
 ## Resumo do NotebookLM
 
-Os vídeos de Felippe Loureiro oferecem orientações estratégicas para candidatos a **concursos públicos**, abordando desde a **preparação mental** até técnicas específicas de **raciocínio lógico**. O autor compartilha sua transição da carreira pública para o empreendedorismo, destacando que valores como **liberdade e autonomia** podem superar a estabilidade financeira. Ele alerta sobre comportamentos que impedem a aprovação, como a **procrastinação**, o excesso de reclamações e a falta de prioridade nos estudos. Além disso, os conteúdos ensinam a transformar o **estudo passivo** em ativo, enfatizando a importância de revisões e exercícios práticos em vez de apenas assistir videoaulas. Loureiro também discute tendências do setor, como a exigência de **nível superior** para cargos técnicos, e a necessidade de **apoio familiar** durante a jornada. Por fim, as fontes reforçam que a **disciplina constante** e o foco são os pilares fundamentais para conquistar a aprovação em um mercado altamente competitivo.
+Os vídeos de o autor das videoaulas de exatas oferecem orientações estratégicas para candidatos a **concursos públicos**, abordando desde a **preparação mental** até técnicas específicas de **raciocínio lógico**. O autor compartilha sua transição da carreira pública para o empreendedorismo, destacando que valores como **liberdade e autonomia** podem superar a estabilidade financeira. Ele alerta sobre comportamentos que impedem a aprovação, como a **procrastinação**, o excesso de reclamações e a falta de prioridade nos estudos. Além disso, os conteúdos ensinam a transformar o **estudo passivo** em ativo, enfatizando a importância de revisões e exercícios práticos em vez de apenas assistir videoaulas. o autor das videoaulas também discute tendências do setor, como a exigência de **nível superior** para cargos técnicos, e a necessidade de **apoio familiar** durante a jornada. Por fim, as fontes reforçam que a **disciplina constante** e o foco são os pilares fundamentais para conquistar a aprovação em um mercado altamente competitivo.
 
 
 ## Índice hierárquico

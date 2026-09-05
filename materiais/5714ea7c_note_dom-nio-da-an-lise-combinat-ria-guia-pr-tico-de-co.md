@@ -1,6 +1,6 @@
 Excelente escolha! **Análise Combinatória** (ou simplesmente "Contagem" nos editais mais modernos) [1, 2] é um dos temas que mais assusta, mas com a malícia certa, você vai resolver as questões em segundos. 
 
-Como você já tem uma base, vamos pular a "alfabetização" e ir direto ao ponto crítico: **como diferenciar Arranjo de Combinação em 5 segundos** e **os métodos de eficiência do professor Felippe** para detonar as contas sem sofrer com fórmulas gigantescas.
+Como você já tem uma base, vamos pular a "alfabetização" e ir direto ao ponto crítico: **como diferenciar Arranjo de Combinação em 5 segundos** e **os métodos de eficiência do professor o autor das videoaulas** para detonar as contas sem sofrer com fórmulas gigantescas.
 
 ---
 
@@ -27,10 +27,10 @@ Para definir isso, você vai fazer a **Pergunta de Ouro** para o problema:
 
 ### II. O Método de Eficiência: Esqueça as Fórmulas Tradicionais!
 
-Muitas apostilas trazem fórmulas de fatoriais gigantescas que só servem para fazer você errar bobeira de sinal ou divisão [18]. Vamos usar os **macetes de resolução rápida** do Felippe Loureiro:
+Muitas apostilas trazem fórmulas de fatoriais gigantescas que só servem para fazer você errar bobeira de sinal ou divisão [18]. Vamos usar os **macetes de resolução rápida** do o autor das videoaulas de exatas:
 
 #### 1. Macete para ARRANJO: Use apenas o PFC (Princípio Fundamental da Contagem)!
-**Regra do Felippe:** *Não decore a fórmula de arranjo!* [10]. Resolva qualquer arranjo usando apenas os "tracinhos" do PFC [19].
+**Regra do o autor das videoaulas:** *Não decore a fórmula de arranjo!* [10]. Resolva qualquer arranjo usando apenas os "tracinhos" do PFC [19].
 *   Se você tem **7 elementos** e quer escolher **3 com funções específicas** [9]:
     1.  Coloque 3 tracinhos (etapas): \\(\_ \times \_ \times \_\\) [20, 21].
     2.  No primeiro tracinho (Coordenador), você tem **7 opções** [10].
@@ -60,7 +60,7 @@ Veja como fica ridiculamente simples:
 
 ### III. Aplicação Prática: Questão Clássica de Concurso
 
-Vamos ver como isso cai em prova e como aplicar a modelagem do Felippe.
+Vamos ver como isso cai em prova e como aplicar a modelagem do o autor das videoaulas.
 
 **(Cesgranrio)** *Em um hospital trabalham 8 cirurgiões e 5 anestesistas. Se em um plantão são necessários 4 cirurgiões e 2 anestesistas, a quantidade de maneiras distintas de se formar essa equipe é:* [27]
 
@@ -90,4 +90,4 @@ Faremos: **\\(C_{8,4} \times C_{5,2}\\)** [30]
 
 Viu como estruturar o pensamento e usar o macete das parcelas destrava a questão sem você precisar sofrer com fórmulas gigantescas?
 
-📊 **Para continuarmos nossa preparação cirúrgica:** o que você prefere agora? Treinar a parte de **Permutações** (anagramas, filas e posições circulares) [33-35] ou ir direto para **Probabilidade** (que, como o Felippe diz, depende 100% de você saber essa base de Análise Combinatória)? [36, 37] Manda a ordem!
+📊 **Para continuarmos nossa preparação cirúrgica:** o que você prefere agora? Treinar a parte de **Permutações** (anagramas, filas e posições circulares) [33-35] ou ir direto para **Probabilidade** (que, como o o autor das videoaulas diz, depende 100% de você saber essa base de Análise Combinatória)? [36, 37] Manda a ordem!

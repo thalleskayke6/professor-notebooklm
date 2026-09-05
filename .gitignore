@@ -1,3 +1,7 @@
 _build/cache/
 __pycache__/
 *.err
+questoes/*.md
+!questoes/INDICE.md
+questoes/banco.json
+vault/notas/

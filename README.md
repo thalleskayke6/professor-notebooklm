@@ -1,184 +1,214 @@
-# Professor NotebookLM: como transformei 23 notebooks em um professor particular
+# Professor: um tutor de concurso construído sobre NotebookLM, Obsidian e um banco de questões reais
 
-Eu estudo para o concurso de Agente de Polícia Judiciária da PC-PR 2026, banca FGV. Ao longo dos meses fui jogando tudo no Google NotebookLM: apostilas, aulas em vídeo, artigos, leis, prompts que escrevi para gerar questões. Deu 23 notebooks e 819 fontes. O problema é que o NotebookLM responde bem a uma pergunta de cada vez, mas não sabe olhar para o conjunto. Eu queria alguém que tivesse lido tudo aquilo e soubesse me explicar qualquer tema do edital do jeito que a FGV cobra.
+## Resumo
 
-Este repositório é o resultado. Tem duas partes: a base de conhecimento, que é o conteúdo dos notebooks convertido em markdown, e a ferramenta, que é o script que monta essa base mais a skill do Claude Code que a usa para responder.
+Este repositório documenta a construção de um tutor automatizado para a prova de Agente de Polícia Judiciária da Polícia Civil do Paraná (Edital 01/2026, banca FGV). O tutor combina três bases: 23 notebooks do Google NotebookLM com 819 fontes, um cofre do Obsidian com 205 aulas em formato markdown distribuídas por 13 matérias, e um banco de 4482 questões reais de concurso, deduplicadas e com gabarito, classificadas em 445 assuntos. Um conjunto de scripts em Python extrai, normaliza e indexa esse material; uma skill do Claude Code o consulta na hora de responder. O texto descreve as fontes, o pipeline, a cobertura por matéria e assunto, o modo de uso e o que é preciso mudar para reaproveitar a estrutura em outro edital.
 
-## A ideia em uma imagem
+## 1. O problema
 
-```
-NotebookLM (23 notebooks, 819 fontes)
-        |  notebooklm-py CLI  (summary, source list, ask, download)
-        v
-_build/rebuild.py  -->  notebooks/<slug>.md   (indice + conceitos + pegadinhas + fontes)
-                   -->  materiais/            (guias, quizzes, flashcards, notas, mapas mentais)
-                   -->  MAPA-GERAL.md         (indice por materia, peso na prova, ID do notebook)
-        |
-        v
-Skill /professor (Claude Code)  -->  le o MAPA-GERAL, abre o notebook certo, responde no estilo FGV
-                                -->  se faltar detalhe: `notebooklm ask "..." -n <ID>` ao vivo
-```
+Quem estuda para concurso acumula material em três lugares que não conversam entre si. As apostilas e videoaulas ficam em um serviço de anotações. Os cadernos de questões ficam na plataforma onde foram resolvidos. As anotações de método, o plano de estudo e o registro de erros ficam em um terceiro lugar. Cada ferramenta responde bem a uma pergunta de cada vez sobre o próprio acervo, mas nenhuma sabe cruzar as três coisas: o que a apostila ensina, como a banca cobra isso na prática e onde o aluno está errando.
 
-## Como a base é extraída
+O objetivo aqui foi montar um único "professor" que tivesse lido tudo, soubesse o peso de cada matéria na prova e respondesse no recorte da banca, com questões reais como referência.
 
-Não dá para baixar o texto de 819 fontes e esperar que um modelo leia tudo a cada pergunta. O caminho que funcionou foi pedir ao próprio NotebookLM que resumisse cada notebook de três ângulos diferentes. Cada ângulo é um prompt fixo, guardado em `_build/`, enviado com `notebooklm ask`.
+## 2. Materiais
 
-| Prompt | O que pede | Seção que gera |
+A base foi montada a partir de três origens. Nomes de autores, cursos e plataformas foram omitidos de propósito; o que importa para reprodução é o tipo de material e o formato.
+
+**Notebooks do NotebookLM.** 23 notebooks com 819 fontes no total: apostilas em PDF, videoaulas, artigos, textos de lei, planilhas e prompts. Treze deles cobrem matérias do edital; seis tratam de método de estudo, memória e mentalidade; um trata de engenharia de prompts; um contém o edital.
+
+**Cofre do Obsidian.** Cerca de 440 notas em markdown. As principais são as apostilas convertidas de PDF, uma por aula, em até três versões (resumo, simplificada e completa), organizadas em 13 matérias com uma nota-hub por matéria. Além delas, notas curadas de método (um catálogo de pegadinhas da banca com códigos fixos, instruções para geração de flashcards), plano de estudo (pesos, ciclo de blocos, reta final) e registro (análise de erros, assuntos a treinar após simulado).
+
+**Cadernos de questões.** Exportações em markdown de uma plataforma de questões, filtradas por banca. Havia 44 arquivos com forte sobreposição (o mesmo caderno exportado mais de uma vez). Após deduplicação pelo identificador da questão na fonte, restaram 4482 questões únicas, 4323 delas com gabarito.
+
+## 3. Método
+
+### 3.1 Extração dos notebooks
+
+O NotebookLM não expõe o texto consolidado de um notebook. A solução foi perguntar ao próprio NotebookLM, por linha de comando, três coisas sobre cada notebook, com prompts fixos:
+
+| Prompt | Pergunta | Seção gerada |
 |---|---|---|
-| `p_indice.txt` | Um índice hierárquico de todos os temas e subtemas, cobrindo todas as fontes e não só as primeiras | Índice hierárquico |
-| `p_conceitos.txt` | Definições, regras, classificações, prazos, números, fórmulas e exceções, tema a tema | Conceitos-chave por tema |
-| `p_pegadinhas.txt` | O que se confunde com o quê, o que a FGV costuma cobrar, quais temas dependem de quais, o que o notebook não cobre | Pegadinhas, relações e lacunas |
+| `p_indice.txt` | Índice hierárquico de todos os temas e subtemas, cobrindo todas as fontes | Índice hierárquico |
+| `p_conceitos.txt` | Definições, regras, classificações, prazos, números, fórmulas e exceções por tema | Conceitos-chave por tema |
+| `p_pegadinhas.txt` | O que se confunde com o quê, o que a banca cobra, dependências entre temas, lacunas | Pegadinhas, relações e lacunas |
 
-Além das três perguntas, o script baixa o resumo automático que o NotebookLM já faz para cada notebook, a lista de fontes, as notas que eu tinha salvo lá dentro e os artefatos que já existiam: relatórios, quizzes, flashcards, mapas mentais e tabelas.
+O script também baixa o resumo automático de cada notebook, a lista de fontes, as notas salvas e os artefatos já gerados (relatórios, quizzes, flashcards, mapas mentais, tabelas). O notebook de videoaulas de método, com 63 vídeos, precisou ser extraído em cinco partes temáticas porque um pedido único estourava o limite de resposta da ferramenta.
 
-O notebook do Valter Rodrigues foi a exceção. São 63 vídeos e um pedido único estourava o limite de resposta do CLI. Ele foi extraído em cinco partes temáticas: índice, metodologia de estudo, mentalidade, Anki com IA, e o plano de aprovação.
+### 3.2 Extração das questões
 
-Tudo isso é idempotente. Se eu rodar `rebuild.py` de novo, ele só refaz o que estiver faltando. Quando quero forçar um notebook inteiro, passo `--force` com o ID.
+Os cadernos vieram em quatro formatos diferentes de markdown, conforme a época e a ferramenta de exportação. O parser reconhece os quatro: cabeçalho com link para a fonte e gabarito em tabela no fim do bloco; cabeçalho com link em rodapé; exportação bruta com linha de banca, linha de matéria e assunto e gabarito inline; e exportação achatada em uma linha por questão. Cada questão é registrada com identificador, banca e órgão, matéria, assunto, enunciado, alternativas, gabarito e arquivo de origem. As 91 rotulagens de matéria encontradas nas fontes foram normalizadas para as 13 matérias do edital mais Legislação Penal Extravagante.
 
-## Como os arquivos são montados
+### 3.3 Índice do cofre
 
-O `build.py` junta, para cada notebook, o resumo automático, as três respostas, a lista de materiais baixados e a lista de fontes, e grava um arquivo em `notebooks/`. O `build_mapa.py` gera o `MAPA-GERAL.md`, que agrupa os notebooks por matéria da prova.
+Um terceiro script percorre o cofre, lista cada aula com versão e tamanho, associa os cadernos de questões e as notas soltas à matéria correspondente e copia as notas curadas pequenas (hubs, método, plano, registro) para consulta direta. Apostilas e despejos de curso ficam apenas referenciados por caminho, por tamanho e por direitos autorais.
 
-O agrupamento carrega o peso de cada matéria, porque isso muda como se estuda. Pelo Edital 01/2026, a prova do Agente tem 100 questões de peso 1. Português e Tecnologia valem 25 cada, ou seja, metade da prova. Ciências Forenses vale 10. Lógica, Realidade do Paraná, Contabilidade, Estatística e Legislação Estadual valem 5 cada. Direito Penal, Processo Penal, Constitucional, Administrativo e Direitos Humanos valem 3 cada. Um professor que não sabe disso gasta o mesmo tempo em tudo.
+### 3.4 Montagem
 
-## Como o professor responde
+Um arquivo por notebook junta resumo, as três respostas, materiais e fontes. Um mapa geral agrupa tudo por matéria da prova, com o peso de cada uma e a contagem de questões reais disponíveis. Todos os passos são idempotentes: rodar de novo só refaz o que falta.
 
-A skill fica em `ferramenta/SKILL.md`. Copiada para `~/.claude/skills/professor/`, ela vira o comando `/professor` no Claude Code. Quando recebe uma pergunta, segue esta ordem:
+### 3.5 O tutor
 
-1. Lê o `MAPA-GERAL.md` e escolhe o notebook pela matéria.
-2. Lê o arquivo do notebook em `notebooks/`. Se a pergunta for pontual, faz Grep em vez de ler o arquivo inteiro, porque alguns passam de 100 KB.
-3. Se o arquivo não tiver o detalhe pedido, pergunta ao notebook ao vivo com `notebooklm ask "..." -n <ID>`.
-4. Responde no estilo da FGV: a letra da lei aplicada a um caso concreto, o parágrafo que ninguém lê, a alternativa quase certa. Sempre fecha com as pegadinhas do tema e diz de qual notebook a informação veio.
-5. Calibra a profundidade pelo peso da matéria na prova.
+A skill (`ferramenta/SKILL.md`) descreve como o assistente deve responder. A ordem é fixa: ler o mapa e escolher a matéria; buscar o tema no arquivo do notebook; buscar o assunto no arquivo de questões e usar duas ou três questões reais como molde; se faltar teoria, abrir a aula certa do cofre; se ainda faltar, perguntar ao notebook ao vivo. A profundidade é proporcional ao peso da matéria. Toda explicação termina com as pegadinhas do tema, codificadas pelo catálogo do usuário (P1 a P10 para pegadinhas jurídicas, T1 a T4 para técnicas). O registro de erros do aluno entra na priorização.
 
-Ela sabe explicar, revisar, gerar questões, listar pegadinhas, montar plano de estudo e escrever cards para o Anki no padrão do prompt v5.3 que está em `materiais/`. O arquivo `ferramenta/agent-professor.md` é a mesma coisa em formato de subagente.
+## 4. Cobertura
 
-## O que tem em cada pasta
+A prova tem 100 questões de peso igual. A tabela abaixo cruza cada matéria com o que existe na base.
 
-```
-MAPA-GERAL.md          indice geral por materia (comece aqui)
-notebooks/             23 arquivos, um por notebook (todos os conceitos)
-materiais/             49 guias de estudo, quizzes, flashcards, notas e mapas mentais
-ferramenta/            SKILL.md (skill Claude Code) e agent-professor.md
-_build/                rebuild.py, build.py, build_mapa.py, dl.py, prompts, nb_index.json
-```
+| Matéria | Questões na prova | Notebooks | Aulas no cofre | Questões reais no banco |
+|---|---:|---|---:|---:|
+| Língua Portuguesa | 25 | [PCPR 2026 — Língua Portuguesa (Apostilas)](notebooks/pcpr-2026-lingua-portuguesa-apostilas.md); [PCPR 2026 — Português](notebooks/pcpr-2026-portugues.md); [PC-PR PORTUGUÊS](notebooks/pc-pr-portugues.md) | 17 | 722 |
+| Tecnologia, Segurança Cibernética e Crimes Digitais | 25 | [PC-PR TECNOLOGIA DA INFORMAÇÃO](notebooks/pc-pr-tecnologia-da-informacao.md) | 30 | 446 |
+| Ciências Forenses | 10 | [PCPR 2026 — Ciências Forenses](notebooks/pcpr-2026-ciencias-forenses.md); [exame de corpo de delito](notebooks/exame-de-corpo-de-delito.md) | 11 | 72 |
+| Raciocínio Lógico-Matemático | 5 | [Exatas e lógica (videoaulas)](notebooks/exatas-e-logica-videoaulas.md) | 25 | 250 |
+| Realidade do Paraná | 5 | [PCPR 2026 — Realidade do Paraná](notebooks/pcpr-2026-realidade-do-parana.md) | 6 | 0 |
+| Contabilidade Geral | 5 | [PCPR 2026 — Contabilidade Geral](notebooks/pcpr-2026-contabilidade-geral.md) | 12 | 809 |
+| Estatística | 5 | [Estatística FGV — PCPR 2026 (Recorte de Prova)](notebooks/estatistica-fgv-pcpr-2026-recorte-de-prova.md) | 13 | 552 |
+| Legislação Estadual e Institucional | 5 | [PC-PR Legislação Estadual e Institucional](notebooks/pc-pr-legislacao-estadual-e-institucional.md) | 14 | 60 |
+| Direito Penal (com Legislação Penal Extravagante) | 3 | [PCPR 2026 — Direito Penal (Apostilas)](notebooks/pcpr-2026-direito-penal-apostilas.md) | 28 | 280 |
+| Direito Processual Penal | 3 | [PC-PR PROCESSO PENAL](notebooks/pc-pr-processo-penal.md) | 9 | 113 |
+| Direito Constitucional | 3 | [PC-PR Direito constitucional](notebooks/pc-pr-direito-constitucional.md) | 14 | 214 |
+| Direito Administrativo | 3 | [PC-PR Direito Administrativo](notebooks/pc-pr-direito-administrativo.md) | 15 | 601 |
+| Direitos Humanos | 3 | nenhum | 11 | 363 |
+| Método de estudo, memória e mentalidade | — | [Método de estudo para concursos (videoaulas)](notebooks/metodo-de-estudo-para-concursos.md); [Ciência da Memória: Guia de Aprendizagem Ativa e Anki](notebooks/ciencia-da-memoria-guia-de-aprendizagem-ativa.md); [Estratégias de Aprendizagem e o Poder da Prática de Recuperação](notebooks/estrategias-de-aprendizagem-e-o-poder-da-prat.md); [Neurociência e Aprendizagem](notebooks/neurociencia-e-aprendizagem.md); [Guia do Palácio da Memória: Técnicas, Ciência e Tecnologia](notebooks/guia-do-palacio-da-memoria-tecnicas-ciencia-e.md); [Cognitive Toolkits for Deep Learning and Mastery](notebooks/cognitive-toolkits-for-deep-learning-and-mast.md) | — | — |
+| IA e engenharia de prompts | — | [Guia Completo de Chatbots e Prompt Engineering para Educadores](notebooks/guia-completo-de-chatbots-e-prompt-engineerin.md) | — | — |
+| Edital | — | [Edital 01/2026 Concurso Público Polícia Civil do Paraná](notebooks/edital-01-2026-concurso-publico-policia-civil.md) | — | — |
 
-## Instalação
+Direitos Humanos não tem notebook no NotebookLM. A cobertura dessa matéria vem das apostilas do cofre e das questões do banco.
+
+### 4.1 Assuntos por matéria
+
+Os assuntos abaixo são os rótulos usados pela própria plataforma de questões, ordenados pelo número de questões no banco. Essa ordem é, na prática, a incidência observada da banca no recorte coletado.
+
+**Língua Portuguesa** (722 questões, 56 assuntos): Interpretação de Textos (Compreensão) (254); (sem assunto) (71); Tipologia e Gênero Textual (49); Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc) (40); Reescrita de Frases. Substituição de Palavras ou Trechos de Texto. (37); Adjetivo (19); Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc) (15); Figuras de Linguagem (14); Acentuação (11); Sinônimos e Antônimos (11); Fatos da Língua Portuguesa (Porque, Por Que, Porquê e Por Quê; Onde, Aonde e Donde; Há e A, etc) (10); Formação e Estrutura das Palavras (10); e mais 44 assuntos.
+
+**Tecnologia, Segurança Cibernética e Crimes Digitais** (446 questões, 73 assuntos): Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD) (114); Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD) (33); Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD) (31); Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD) (18); Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD) (16); Redes de Computadores - Cloud Computing (Computação em Nuvem) (16); Das Sanções Administrativas (arts. 52 a 54 da Lei nº 13.709/2018 - LGPD) (12); Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação (11); Redes de Computadores - Máscara e Endereçamento IP (10); Segurança da Informação - Algoritmos de Criptografia (10); Da Segurança e do Sigilo de Dados (arts. 46 a 49 da Lei nº 13.709/2018 - LGPD) (9); Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD) (9); e mais 61 assuntos.
+
+**Ciências Forenses** (72 questões, 9 assuntos): Fenômenos Cadavéricos (62); Criminologia (conceito, objeto, método, função, finalidade) (3); Locais de Crime (1); Resolução CNJ nº 417/2021 - Banco Nacional de Medidas Penais e Prisões (BNMP 3.0) (1); Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola) (1); Agronegócio (1); Provas, Vestígios e Indícios (1); Traumatologia: Energia de Ordem Mecânica (1); Identificação de Ossadas (1).
+
+**Raciocínio Lógico-Matemático** (250 questões, 39 assuntos): Porcentagem (72); Análise Combinatória (Princípio Fundamental da Contagem, Arranjos, Combinações, Permutações) (23); Unidades de Medida (Distância, Massa, Volume, Tempo, etc) (14); Quadriláteros (Propriedades, Área, Perímetro, Soma dos Ângulos, etc) (13); Proporções. Grandezas Proporcionais. Divisão em Partes Proporcionais (11); Equivalências Lógicas (Inclui Negação de Proposições Compostas) (10); Adição, Subtração, Multiplicação e Divisão de Números Naturais (10); Divisibilidade, Números Primos, Fatores Primos, Divisor e Múltiplo Comum (MMC) (10); Frações e Dízimas Periódicas (10); Orientação no Plano, no Espaço e no Tempo (9); Associação de Informações (7); Exercícios Envolvendo Datas e Calendários (6); e mais 27 assuntos.
+
+**Contabilidade Geral** (809 questões, 14 assuntos): Balanço Patrimonial (168); Provisões, Passivos e Ativos Contingentes (CPC 25, Lei 6.404) (130); Demonstração do Resultado do Exercício (DRE) e Destinação do Resultado (126); Índices de Liquidez. Capital Circulante Líquido (96); CPC 16 - Tratamento Contábil para os Estoques (77); Elaboração e Apresentação das Demonstrações Contábeis (CPC 26, Lei 6.404, arts. 176 e 177) (68); Demonstração de Fluxo de Caixa (DFC - CPC 03, Lei 6.404, art. 188, I) (58); Demonstração do Valor Adicionado (DVA - CPC 09, Lei 6.404, art. 188, II) (39); Demonstração Contábil Consolidada (CPC 36, Lei 6.404, art. 249 e 250) (23); Demonstração das Mutações do Patrimônio Líquido (DMPL) (11); Notas Explicativas (Contabilidade Geral) (9); Origens, Aplicações, Capital Circulante Líquido (2); e mais 2 assuntos.
+
+**Estatística** (552 questões, 42 assuntos): Problemas Introdutórios de Probabilidade: Eventos Equiprováveis e Abordagem Frequentista (71); Cálculo de Probabilidades Usando Análise Combinatória (66); Média para Dados não Agrupados (47); Probabilidade Condicional (33); Desvio Padrão e Variância (32); Probabilidade da Intersecção (30); Quantis (Mediana, Quartil, Decil, Percentil) e Interpolação Linear da Ogiva (28); Probabilidade do Evento Complementar (22); Teorema da Probabilidade Total (22); Eventos Independentes e Eventos Mutuamente Excludentes (19); Probabilidade da União (19); Amostragem Estratificada (17); e mais 30 assuntos.
+
+**Legislação Estadual e Institucional** (60 questões, 16 assuntos): Lei nº 14.735/2023 - Lei Orgânica Nacional das Polícias Civis (9); Do Regime Disciplinar (arts. 272 a 305 da Lei Estadual nº 6.174/1970) (9); Do Provimento dos Cargos (arts. 18 a 122 da Lei Estadual nº 6.174/1970) (8); Da Organização dos Poderes (arts. 52 a 128 da CE-PR) (6); Da Organização do Estado e dos Municípios (arts. 1º a 26 da CE-PR) (5); Dos Tributos e dos Orçamentos (arts. 129 a 138 da CE-PR) (4); Da Administração Pública (arts. 27 a 51 da CE-PR) (3); Dos Direitos, Vantagens e Concessões (arts. 128 a 254 da Lei Estadual nº 6.174/1970) (3); Da Ordem Social (arts. 165 a 226 da CE-PR) (3); Lei Complementar Estadual nº 37/2004 - Estatuto da Polícia Civil (PI) (3); Dos Cargos e da Função Gratificada (arts. 3º a 17 da Lei Estadual nº 6.174/1970) (2); Do Processo Administrativo e sua Revisão (arts. 306 a 341 da Lei Estadual nº 6.174/1970) (1); e mais 4 assuntos.
+
+**Direito Penal (com Legislação Penal Extravagante)** (280 questões, 92 assuntos): Lei nº 12.037/2009 - Identificação Criminal (55); Lei nº 13.869/2019 - Lei de Abuso de Autoridade (antiga Lei nº 4.898/1965) (43); Imputabilidade Penal (arts. 26 a 28 do CP) (6); Peculato (art. 312 do CP) (6); Lei nº 8.072/1990 - Crimes Hediondos (6); Dos Crimes contra a Honra (arts. 138 a 145 do CP) (5); Dos Crimes contra a Liberdade Sexual e da Exposição da Intimidade Sexual (arts. 213 a 216-B do CP) (5); Da Violência Doméstica e Familiar Contra a Mulher (arts. 5º a 7º da Lei nº 11.340/2006) (5); Concurso de Crimes (arts. 69 a 76 do CP) (4); Do Roubo e da Extorsão (arts. 157 a 160 do CP) (4); Estado de Necessidade (art. 24 do CP) (4); Potencial Consciência da Ilicitude: Erro de Proibição e Descriminantes Putativas (arts. 20, §1º, e 21 do CP) (4); e mais 80 assuntos.
+
+**Direito Processual Penal** (113 questões, 13 assuntos): Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP) (88); Inquérito Policial (arts. 4º a 23 do CPP) (5); Questões Mescladas sobre Prisão, Medidas Cautelares e Liberdade Provisória (arts. 282 a 350 do CPP) (5); Da Busca e Apreensão (arts. 240 a 250 do CPP) (2); Da Prisão em Flagrante (arts. 301 a 310 do CPP) (2); Jurisprudência dos Tribunais Superiores sobre Inquérito Policial (2); Questões Mescladas sobre a Prova (arts. 155 a 250 do CPP) (2); Teoria Geral da Prova Penal (arts. 155 a 157 do CPP) (2); Da Liberdade Provisória, com ou sem Fiança (arts. 321 a 350 do CPP) (1); Jurisprudência dos Tribunais Superiores sobre Teoria Geral da Prova Penal (1); Da Acareação (arts. 229 a 230 do CPP) (1); Da Prisão Domiciliar (arts. 317 e 318 do CPP) (1); e mais 1 assuntos.
+
+**Direito Constitucional** (214 questões, 10 assuntos): Dos Direitos e Deveres Individuais e Coletivos (art. 5º da CF/1988) (84); União: Bens e Competências Exclusivas, Privativas, Comuns e Concorrentes (arts. 20 a 24 da CF/1988) (73); Jurisprudência dos Tribunais Superiores sobre Direitos e Deveres Individuais e Coletivos (50); Habeas Data (1); Das Atribuições do Congresso Nacional (arts. 48 a 50 da CF/1988) (1); Segurança Pública (art. 144 da CF/1988) (1); Ação Declaratória de Constitucionalidade (ADC) (1); Questões Mescladas de Ministério Público (arts. 127 a 130 da CF/1988) (1); Ação Popular (1); Perda da Nacionalidade (1).
+
+**Direito Administrativo** (601 questões, 20 assuntos): Contratação Direta, Inexigibilidade e Dispensa (arts. 72 a 75 da Lei nº 14.133/2021) (62); Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011) (54); Do Procedimento Administrativo e do Processo Judicial (arts. 14 a 18-A da Lei nº 8.429/1992) (48); Modalidades de Licitação (arts. 28 a 32 da Lei nº 14.133/2021) (47); Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011) (45); Terceiro Setor (OSs, OSCIPs, Sistema S e Fundações de Apoio) (45); Dos Atos de Improbidade (arts. 9º a 11 da Lei nº 8.429/1992) (41); Administração Indireta (40); Lei nº 11.079/2004 - Parceria Público-Privada (PPP) (37); Das Definições (art. 6º da Lei nº 14.133/2021) (37); Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011) (36); Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011) (32); e mais 8 assuntos.
+
+**Direitos Humanos** (363 questões, 61 assuntos): Disposições Gerais (arts. 1º ao 3º da Lei nº 13.146/2015) (30); Sistema Interamericano de Direitos Humanos (22); Direitos Humanos na Constituição Federal (20); Conceitos, Histórico e Gerações dos Direitos Humanos (16); Da Igualdade e da Não Discriminação (arts. 4º ao 9º da Lei nº 13.146/2015) (16); Do Direito à Saúde (arts. 15 ao 19 da Lei nº 10.741/2003) (16); Incorporação dos Tratados Internacionais de DH ao Direito Brasileiro. Posição Hierárquica. (14); Outros Temas e Tópicos Mesclados de Proteção dos Direitos Humanos (14); Do Direito à Educação (arts. 27 a 30 da Lei nº 13.146/2015) (13); Deveres dos Estados e Direitos Protegidos (arts. 1º a 32 da CADH-OAS) (12); Lei nº 8.842/1994 - Política Nacional do Idoso (12); Agenda 2030 - Desenvolvimento Sustentável (11); e mais 49 assuntos.
+
+
+### 4.2 Aulas disponíveis no cofre
+
+**Língua Portuguesa** (17 aulas): Nivelamento; Ortografia e acentuação gráfica; Classes de palavras I; Classes de palavras II; Classes de palavras III; Estrutura e formação de palavras; Organização sintática das frases; Tipologia da frase e pontuação; Concordância verbal e nominal; Regência verbal e nominal e crase; Coesão e coerência; Semântica: sinônimos, antônimos e parônimos; Interpretação e compreensão de texto; Tipos textuais; Norma culta e registros de linguagem; Atos de comunicação e dicionários; Aula extra.
+
+**Tecnologia, Segurança Cibernética e Crimes Digitais** (30 aulas): Internet, redes e tecnologias digitais; Intranet: VPN; Computação em nuvem: dispositivos e serviços em nuvem; Navegadores: cookies: cache; Correio eletrônico; Redes sociais: plataformas digitais; Segurança da informação e segurança cibernética; Vulnerabilidades: malware: ransomware: phishing; Segurança em redes: Firewall; Backup: recuperação de dados; Prevenção e resposta a incidentes de segurança; Microsoft 365 (BR) - Excel; LibreOffice-BrOffice - Calc; Microsoft 365 (BR) - Word; LibreOffice-BrOffice - Writer; Microsoft 365 (BR) - PowerPoint; LibreOffice-BrOffice - Impress; Sistemas operacionais - Windows 11 (BR); Android e iOS - instalação, configuração e segurança; Google Workspace; Fundamentos de informática - hardware e software; Noções de lógica de programação; Aplicações web, HTML; CSS; Bancos de dados; APIs; JavaScript; Legislação e ética digital - LGPD; Marco Civil da Internet (Lei 12.965-2014); Lei dos Crimes Informáticos (Lei 12.737-2012).
+
+**Ciências Forenses** (11 aulas): Perícias Médico-Legais; Medicina Legal - Conceitos e Divisões; Antropologia Forense; Identificação Humana; Traumatologia Forense; Asfixiologia; Balística Forense; Tanatologia Forense e Cronotanatognose; Local de Crime, Vestígios e Cadeia de Custódia; Documentoscopia e Grafoscopia; Escolas e Teorias da Criminologia.
+
+**Raciocínio Lógico-Matemático** (25 aulas): Estruturas Lógicas I; Estruturas Lógicas II; Equivalências e Negações Lógicas; Diagramas Lógicos; Lógica de Primeira Ordem; Lógica de Argumentação; Raciocínio Sequencial; Problemas de Lógica I; Problemas de Lógica II; Teoria dos Conjuntos; Conjuntos Numéricos; Operações Básicas, Potenciação e Radiciação; Unidades de Medida; Frações, Razão e Proporção; Regra de Três Simples e Composta; Porcentagem; Equações de 1º Grau; Geometria Plana; Geometria Espacial; Matrizes e Determinantes; Sistemas Lineares; Geometria Analítica; Diagramas, Tabelas e Gráficos; Análise Combinatória; Probabilidade.
+
+**Realidade do Paraná** (6 aulas): Período Pré-Colonial e Colonial (Povos Indígenas); Geografia do Paraná - Aspectos Naturais; Geografia do Paraná - Aspectos Humanos e Econômicos; História do Paraná Colonial; História do Paraná Imperial; História do Paraná Republicano.
+
+**Contabilidade Geral** (12 aulas): Conceitos, objetivos e finalidades; Situação Líquida e Equação Fundamental; Atos e Fatos Contábeis; Plano de Contas e Partidas Dobradas; Regime de Competência e de Caixa; Demonstrações contábeis; Balanço patrimonial: Estoques; Depreciação e Exaustão. CPC 27 - Ativo Imobilizado; CPC 01 Redução ao Valor Recuperável de Ativos; CPC 04 (R1) - Ativo Intangível. Amortização; Princípios contábeis; Movimentações Bancárias Aplicadas à Perícia Contábil.
+
+**Estatística** (13 aulas): Apresentação de Dados; Médias; Medidas Separatrizes ou Quantis; Moda; Medidas de Variabilidade ou Dispersão; Análise Combinatória; Probabilidade; Teoria da Amostragem; Regressão Linear Simples; Séries Temporais; Números Índices; Análise Exploratória de Dados; Porcentagem.
+
+**Legislação Estadual e Institucional** (14 aulas): Constituição do Estado do Paraná; Lei 6.174-1970 - Disposições Constitucionais aos Servidores; Lei 6.174-1970 - Provimento e Vacância; Lei 6.174-1970 - Direitos e Vantagens; Lei 6.174-1970 - Deveres, Proibições e Responsabilidades; Sindicância e Processo Administrativo Disciplinar; Ética no serviço público e sigilo funcional; Lei de Acesso à Informação (12.527-2011); LGPD (13.709-2018); Lei de Abuso de Autoridade; Legislação Institucional e Policial (parte 2); Lei Orgânica Nacional das Polícias Civis (14.735-2023); Estruturação das Carreiras da PC-PR; Lei Orgânica da Polícia Civil do Paraná.
+
+**Direito Penal (com Legislação Penal Extravagante)** (28 aulas): Princípios do Direito Penal; Aplicação da Lei Penal; Teoria do Delito I; Teoria do Delito II; Concurso de pessoas e de crimes; Das penas: espécies e cominação; Aplicação da pena e livramento condicional; Efeitos da condenação e extinção da punibilidade; Crimes contra a pessoa; Crimes contra o patrimônio; Crimes contra a dignidade sexual; Crimes contra a fé pública; Crimes contra a administração pública I; Crimes contra a administração pública II; Crimes contra a administração pública III; Crimes em licitações e contratos; Lei de Execução Penal (7.210-1984); Lei dos Crimes Hediondos (8.072-1990); Crimes contra a ordem tributária e econômica; Lei de Interceptação Telefônica (9.296-1996); Estatuto do Desarmamento (10.826-2003); Lei Maria da Penha (11.340-2006); Lei de Drogas (11.343-2006); Lei das Organizações Criminosas (12.850-2013); Pacote Anticrime (13.964-2019); Estatuto da Advocacia e OAB (8.906-1994); Lavagem de Dinheiro (Lei 9.613-1998); Código de Trânsito Brasileiro.
+
+**Direito Processual Penal** (9 aulas): Introdução e princípios do Processo Penal; Inquérito Policial; Processo, procedimento e relação jurídica processual; Jurisdição e competência; Sujeitos processuais; Provas I: teoria geral e preservação do local; Provas II: provas em espécie; Prisão e liberdade provisória I; Prisão e liberdade provisória II.
+
+**Direito Constitucional** (14 aulas): Aplicabilidade das normas constitucionais; Princípios fundamentais da CF; Direitos e garantias fundamentais I; Direitos e garantias fundamentais II; Direitos sociais; Nacionalidade; Direitos políticos; Organização do Estado; Poder Executivo; Poder Legislativo; Processo Legislativo; Poder Judiciário; Segurança pública na CF (art. 144); Controle de constitucionalidade.
+
+**Direito Administrativo** (15 aulas): Princípios do Direito Administrativo; Conceito e fontes; Administração direta e indireta: autarquias; Fundações, empresas públicas e sociedades de economia mista; Poderes administrativos; Atos administrativos; Licitações I (Lei 14.133-2021); Licitações II (Lei 14.133-2021); Contratos administrativos; Serviços públicos; Controle da Administração Pública; Responsabilidade civil do Estado; Agentes públicos: cargos, empregos e funções; Improbidade administrativa (Lei 8.429-1992); Lei de Introdução às Normas do Direito Brasileiro (LINDB).
+
+**Direitos Humanos** (11 aulas): Teoria Geral dos Direitos Humanos; Características e evolução histórica dos Direitos Humanos; Sistemas de proteção I; Sistemas de proteção II; Tratados internacionais de proteção; Democracia, cidadania e Direitos Humanos; Grupos vulneráveis; Segurança pública e Direitos Humanos; Política Nacional de Direitos Humanos; Agenda 2030 e ODS; CF-88 e Direitos Humanos.
+
+
+## 5. Como usar
+
+### 5.1 Instalação
 
 ```bash
 pip install "notebooklm-py[browser]"
 notebooklm login                       # autentica no Google uma vez
 notebooklm auth check --test --json    # tem que devolver "token_fetch": true
 
-# instalar o professor no Claude Code
 mkdir -p ~/.claude/skills/professor && cp ferramenta/SKILL.md ~/.claude/skills/professor/
 cp ferramenta/agent-professor.md ~/.claude/agents/professor.md
-
-# reconstruir ou atualizar a base depois de adicionar fontes ou notebooks
-python _build/rebuild.py
-python _build/rebuild.py --force <ID-do-notebook>
 ```
 
-Depois disso, no Claude Code: `/professor me explica cadeia de custódia com as pegadinhas da FGV`.
+### 5.2 Reconstrução
 
-Os caminhos dentro da skill apontam para `C:\Users\USER\Professor`. Quem clonar em outro lugar precisa ajustar.
+```bash
+python _build/rebuild.py                 # notebooks: só refaz o que falta
+python _build/rebuild.py --force <ID>    # refaz um notebook inteiro
+python _build/build_questoes.py          # cadernos novos no cofre
+python _build/build_vault.py             # notas novas no cofre
+python _build/build_mapa.py              # mapa geral
+```
 
-## O que quebrou no caminho
+### 5.3 Uso no dia a dia
 
-Anoto aqui porque perdi tempo com cada um desses.
+No Claude Code, `/professor` seguido do pedido. Exemplos de pedidos que a skill trata de forma diferente:
 
-O `notebooklm ask --new` apaga o histórico de chat do notebook. Eu usei sem saber no primeiro lote e perdi as conversas de dois notebooks antes de perceber. O `rebuild.py` não usa essa flag em lugar nenhum.
+| Pedido | O que o tutor entrega |
+|---|---|
+| "me explica X" | Definição curta, regra, exceção, uma questão real resolvida, pegadinhas codificadas |
+| "revisão de X" | Conceitos-chave em ordem de incidência |
+| "questões de X" | Duas reais do banco e três inéditas no mesmo molde, com gabarito comentado |
+| "pegadinhas de X" | Pares "parece / é", cada um com código |
+| "plano" | Cruzamento de peso da prova, erros registrados e volume de questões por assunto |
+| "cards de X" | Itens certo/errado atômicos no formato de importação do Anki |
 
-Pedidos muito grandes ao `ask` falham com `RPCResponseTooLargeError`. Não tem a ver com o tamanho do notebook: um notebook de três PDFs falhou tanto quanto um de 50 páginas web. É um bug de streaming do CLI. O que resolve é perguntar em partes, ou pedir uma resposta compacta, com no máximo 90 linhas e sem citar fontes. Os prompts `pc_*.txt` fazem isso e o script usa eles como segunda tentativa automática.
+### 5.4 Estrutura do repositório
 
-A sessão do Google expira no meio de lotes longos. Se o perfil do navegador ainda estiver logado, `notebooklm login` resolve sozinho, sem abrir nada para clicar.
+```
+MAPA-GERAL.md          ponto de entrada: matérias, pesos, notebooks, contagens
+notebooks/             um arquivo por notebook (índice, conceitos, pegadinhas, fontes)
+questoes/INDICE.md     contagem de questões por matéria e assunto
+vault/INDICE-VAULT.md  aulas, cadernos e notas do cofre, por matéria
+materiais/             guias de estudo, quizzes, flashcards, mapas mentais gerados
+ferramenta/            SKILL.md e agent-professor.md para o Claude Code
+_build/                scripts e prompts
+```
 
-Para rodar vários notebooks em paralelo, o jeito é passar `-n <ID>` em cada comando. O `notebooklm use` grava um contexto compartilhado e os lotes atropelam uns aos outros.
+Os arquivos com as questões na íntegra (`questoes/*.md`, `questoes/banco.json`) e as notas pessoais copiadas do cofre (`vault/notas/`) ficam fora do repositório. O índice de contagens está incluído.
 
-## O que está coberto
+## 6. Reaproveitamento em outro edital
 
-Todos os conceitos estão em `notebooks/`. A tabela abaixo mostra os temas de primeiro nível de cada índice.
+A estrutura não depende do concurso. O que é específico da PC-PR está em poucos lugares:
 
-| Área | Notebook | Fontes | Temas principais |
-|---|---|---|---|
-| Edital | [Edital 01/2026 Concurso Público Polícia Civil do Paraná](notebooks/edital-01-2026-concurso-publico-policia-civil.md) | 2 | 1. Organização do Certame e Disposições Preliminares; 2. Cargos, Requisitos, Atribuições e Remunerações; 3. Inscrições, Taxas e Isenções de Pagamento; 4. Regime de Cotas e Bancas de Heteroidentificação; 5. Atendimentos Especiais e Diferenciados; 6. Provas Escritas: Objetiva e Discursiva; 7. Exame de Inspeção de Saúde e do TAF; 8. Avaliação Psicológica, Investigação Social e Prova Oral; 9. Títulos, Classificação Final, Recursos e Posse |
-| Língua Portuguesa (25 q) | [PCPR 2026 — Língua Portuguesa (Apostilas)](notebooks/pcpr-2026-lingua-portuguesa-apostilas.md) | 17 | Aula 00 - Nivelamento da Língua; Aula 01 - Ortografia e Acentuação Gráfica; Aula 02 - Classes de Palavras I; Aula 03 - Classes de Palavras II; Aula 04 - Classes de Palavras III; Aula 05 - Estrutura e Formação de Palavras; Aula 06 - Organização Sintática das Frases; Aula 07 - Tipologia da Frase e Pontuação; Aula 08 - Concordância Verbal e Nominal; Aula 09 - Regência Verbal e Nominal e Crase; Aula 10 - Coesão e Coerência; Aula 11 - Semântica: Sinônimos, Antônimos e Parônimos; Aula 12 - Interpretação e Compreensão de Texto; Aula 13 - Gêneros Textuais e Domínios Discursivos |
-| Língua Portuguesa (25 q) | [PCPR 2026 — Português](notebooks/pcpr-2026-portugues.md) | 19 | I. Guia-Mestre e Estratégia de Prova (O Jeito FGV); II. Morfologia Contextual e Formação de Palavras; III. Sintaxe do Período Simples e Composto; IV. Sintaxe das Orações Reduzidas; V. Regência Verbal, Nominal e Emprego da Crase; VI. Concordância Verbal e Nominal; VII. Colocação Pronominal; VIII. Paralelismo Sintático e Semântico; IX. Pontuação como Sintaxe Aplicada; X. Coerência e Coesão Textual (Anáfora, Catáfora e Conectores); XI. Semântica, Relações Lexicais e Modalização Discursiva; XII. Reescrita de Frases e Técnicas de Substituição de Trechos; XIII. Clareza, Correção e Propriedades de Estilo do Período; XIV. Tipologia, Gênero Textual e Intertextualidade |
-| Língua Portuguesa (25 q) | [PC-PR PORTUGUÊS](notebooks/pc-pr-portugues.md) | 24 | Nivelamento e Fonologia Básica; Ortografia, Acentuação Gráfica e Prosódia; Morfologia I: Classes de Palavras Variáveis; Morfologia II: Classes de Palavras Invariáveis e Conectivos; Verbos e Sintaxe Verbal; Estrutura e Formação das Palavras; Organização Sintática da Oração e do Período; Pontuação e Tipologia da Frase; Mecanismos de Concordância; Regência e Crase; Semântica e Figuras de Linguagem; Coesão e Coerência Textual; Compreensão, Interpretação e Análise Textual; Variação Linguística, Atos de Fala e Lexicografia |
-| Tecnologia / Segurança Cibernética (25 q) | [PC-PR TECNOLOGIA DA INFORMAÇÃO](notebooks/pc-pr-tecnologia-da-informacao.md) | 49 | Redes de Computadores e Internet; Intranets, Extranets e VPNs; Computação em nuvem; Navegadores, Cookies e Cache; Correio Eletrônico; Redes sociais e plataformas digitais; Segurança da Informação e Segurança Cibernética; Ameaças Cibernéticas e Malwares; Segurança de Redes e Firewalls; Backup e Recuperação de Dados; Prevenção e Resposta a Incidentes de Segurança; Planilhas Eletrônicas: MS Excel e LibreOffice Calc; Processadores de Texto: MS Word e LibreOffice Writer; Editores de Apresentação: MS PowerPoint e LibreOffice Impress |
-| Ciências Forenses (10 q) | [PCPR 2026 — Ciências Forenses](notebooks/pcpr-2026-ciencias-forenses.md) | 16 | Perícias Médico-Legais e Legislação Processual; Traumatologia Forense (Lesonologia); Balística Forense; Asfixiologia Forense; Tanatologia Forense e Cronotanatognose; Antropologia Forense e Identificação Humana; Local de Crime, Vestígios e Cadeia de Custódia; Documentoscopia e Grafoscopia; Criminologia |
-| Ciências Forenses (10 q) | [exame de corpo de delito](notebooks/exame-de-corpo-de-delito.md) | 3 |  |
-| Raciocínio Lógico (5 q) | [Felippe Loureiro](notebooks/felippe-loureiro.md) | 292 | Raciocínio Lógico Proposicional; Matemática Básica para Concursos; Análise Combinatória e Probabilidade; Matemática Financeira e Estatística; Técnicas de Estudo e Preparação Mental |
-| Realidade do Paraná (5 q) | [PCPR 2026 — Realidade do Paraná](notebooks/pcpr-2026-realidade-do-parana.md) | 12 | I. Período Pré-Colonial e Povos Originários do Paraná; II. O Peabiru e a Colonização Espanhola do Guairá; III. Colonização Portuguesa e Mineração Litorânea; IV. O Tropeirismo e a Ocupação dos Campos Gerais; V. A Emancipação Política do Paraná (1853); VI. O Ciclo da Erva-Mate e a Modernização dos Transportes; VII. Ciclos da Madeira, do Café e a Colonização do Século XX; VIII. Imigração Europeia e Formação Étnica; IX. Geografia Física e Aspectos Naturais do Paraná; X. Geografia Humana, Economia e Patrimônio do Paraná |
-| Contabilidade (5 q) | [PCPR 2026 — Contabilidade Geral](notebooks/pcpr-2026-contabilidade-geral.md) | 15 |  |
-| Estatística (5 q) | [Estatística FGV — PCPR 2026 (Recorte de Prova)](notebooks/estatistica-fgv-pcpr-2026-recorte-de-prova.md) | 53 | I. Lógica Proposicional, Argumentação e Teoria dos Conjuntos; II. Matemática Básica, Razão, Proporção e Porcentagem; III. Álgebra Linear, Matrizes, Determinantes e Sistemas; IV. Geometria Plana, Espacial e Analítica; V. Estatística Descritiva, Medidas Estatísticas e Amostragem; VI. Análise Combinatória e Teoria da Probabilidade |
-| Legislação Estadual (5 q) | [PC-PR Legislação Estadual e Institucional](notebooks/pc-pr-legislacao-estadual-e-institucional.md) | 14 | I. Regulação Constitucional e Administrativa Geral (CE/PR); II. Estatuto dos Servidores Públicos Civis do Paraná (Lei Estadual nº 6.174/1970); III. Sindicância e Processo Administrativo Disciplinar (Lei Estadual nº 20.655/2021); IV. Ética e Sigilo no Serviço Público; V. Lei Geral de Proteção de Dados Pessoais (Lei Federal nº 13.709/2018 - LGPD); VI. Lei de Acesso à Informação (Lei Federal nº 12.527/2011 - LAI); VII. Lei de Abuso de Autoridade (Lei Federal nº 13.869/2019); VIII. Identificação Criminal (Lei Federal nº 12.037/2009); IX. Lei Orgânica Nacional das Polícias Civis (Lei Federal nº 14.735/2023); X. Estruturação das Carreiras da Polícia Civil do Estado do Paraná (Lei Complementar nº 259/2023); XI. Organização Administrativa e Operacional (Lei Orgânica da PCPR - Lei Estadual nº 23.213/2026) |
-| Direito Penal (3 q) | [PCPR 2026 — Direito Penal (Apostilas)](notebooks/pcpr-2026-direito-penal-apostilas.md) | 3 | Princípios do Direito Penal; Aplicação da Lei Penal no Tempo e Espaço; Conflito de Normas e Interpretação; Teoria Geral da Infração Penal e Fato Típico; Elemento Subjetivo do Tipo; Iter Criminis e Graus de Desenvolvimento; Teoria da Ilicitude |
-| Processo Penal (3 q) | [PC-PR PROCESSO PENAL](notebooks/pc-pr-processo-penal.md) | 23 | I. Introdução e Princípios do Processo Penal; II. Juiz das Garantias; III. Inquérito Policial; IV. Ação Penal e Acordo de Não Persecução Penal (ANPP); V. Jurisdição e Competência; VI. Sujeitos Processuais e Auxiliares da Justiça; VII. Teoria Geral da Prova e Cadeia de Custódia; VIII. Provas em Espécie; IX. Prisão e Liberdade Provisória; X. Legislação Penal e Processual Penal Extravagante |
-| Constitucional (3 q) | [PC-PR Direito constitucional](notebooks/pc-pr-direito-constitucional.md) | 23 | Aplicabilidade das Normas Constitucionais; Princípios Fundamentais (Arts. 1º a 4º da CF/88); Direitos e Deveres Individuais e Coletivos (Art. 5º da CF/88); Direitos Sociais (Arts. 6º a 11 da CF/88); Nacionalidade (Arts. 12 e 13 da CF/88); Direitos Políticos e Partidos Políticos (Arts. 14 a 17 da CF/88); Organização do Estado e Repartição de Competências (Arts. 18 a 24 da CF/88); Poder Executivo (Arts. 76 a 83 da CF/88); Poder Legislativo e Processo Legislativo (Arts. 44 a 75 da CF/88); Poder Judiciário (Arts. 92 a 126 da CF/88); Defesa do Estado e Segurança Pública (Art. 136 a 144 da CF/88); Noções de Controle de Constitucionalidade (Aula 13) |
-| Administrativo (3 q) | [PC-PR Direito Administrativo](notebooks/pc-pr-direito-administrativo.md) | 21 | Conceito, Fontes e Princípios do Direito Administrativo; Organização da Administração Pública; Poderes e Deveres Administrativos; Atos Administrativos; Licitações Públicas (Lei nº 14.133/2021); Contratos Administrativos (Lei nº 14.133/2021); Serviços Públicos (Lei nº 8.987/1995); Controle da Administração Pública; Responsabilidade Civil do Estado; Agentes Públicos; Improbidade Administrativa (Lei nº 8.429/1992); Lei de Introdução às Normas do Direito Brasileiro (LINDB) |
-| Método, memória e mentalidade | [Valter Rodrigues](notebooks/valter-rodrigues.md) | 63 | I. Mentalidade Inabalável, Psicologia e Comportamento do Concurseiro; II. Fundamentos e Princípios de Estudo Ativo; III. Planejamento de Ciclos de Estudo, Filtros e Cronogramas; IV. Utilização Científica e Algorítmica do Anki; V. Engenharia de Prompts de Inteligência Artificial para Concursos; VI. Estratégias por Disciplinas e Concursos Específicos; 💡 Minha sugestão para você: |
-| Método, memória e mentalidade | [Ciência da Memória: Guia de Aprendizagem Ativa e Anki](notebooks/ciencia-da-memoria-guia-de-aprendizagem-ativa.md) | 33 | I. Ciência Cognitiva e Teoria da Aprendizagem Humana; II. Sequenciamento e Organização da Prática de Estudo; III. Sistemas e Algoritmos de Repetição Espaçada (Spaced Repetition); IV. Configuração Prática de Estudo no Anki; V. Engenharia de Prompts para Criação de Flashcards Atômicos |
-| Método, memória e mentalidade | [Estratégias de Aprendizagem e o Poder da Prática de Recuperação](notebooks/estrategias-de-aprendizagem-e-o-poder-da-prat.md) | 44 | Prática de Recuperação e o Efeito de Teste; Teoria das Dificuldades Desejáveis; Efeito de Teste Progressivo (Forward Testing Effect); Engenharia de Estudo Prático e Repetição Espaçada; O Método do Estudo Reverso; Neurobiologia, fMRI e Dinâmicas de Reconsolidação; Feedback Corretivo no Aprendizado Ativo |
-| Método, memória e mentalidade | [Neurociência e Aprendizagem](notebooks/neurociencia-e-aprendizagem.md) | 3 | E-book: Neurociência e Aprendizagem (Lucas Gazarini); Livro: Tudo O Que Tu E O Teu Professor Precisam De Saber Acerca De Um Cérebro Em Aprendizagem (Frontiers for Young Minds); Artigo: Spaced Repetition Promotes Efficient and Effective Learning (Sean H. K. Kang) |
-| Método, memória e mentalidade | [Guia do Palácio da Memória: Técnicas, Ciência e Tecnologia](notebooks/guia-do-palacio-da-memoria-tecnicas-ciencia-e.md) | 8 | 1. Origens Históricas e Fundamentação do Método de Loci; 2. Neurociência da Memória Espacial e Estudos de fMRI; 3. Evidências Clínicas de Eficácia e Limitações; 4. Planejamento, Construção e Prática do Palácio da Memória; 5. Aplicações Práticas Setoriais; 6. Tecnologia e Gamificação da Memória Humana (Mind Palace App); 7. Arquitetura Tecnológica de Memória para IA (MemPalace); 8. Análise Crítica, Benchmarks e Controvérsias do MemPalace |
-| Método, memória e mentalidade | [Cognitive Toolkits for Deep Learning and Mastery](notebooks/cognitive-toolkits-for-deep-learning-and-mast.md) | 50 | I. Fundamentos Neurobiológicos e Plasticidade Sináptica; II. Prática de Recuperação Ativa e Efeito de Testagem; III. Espaçamento de Estudo e Repetição Espaçada; IV. Prática Intercalada (*Interleaving*) e Aprendizagem de Categorias; V. Processamento Semântico e Técnicas de Elaboração; VI. Teoria da Carga Cognitiva (CLT) e Design Instrucional; VII. Metacognição, Mentalidade de Crescimento e Autorregulação; VIII. Suporte Fisiológico, Estilo de Vida e Saúde Cognitiva |
-| IA e prompts | [Guia Completo de Chatbots e Prompt Engineering para Educadores](notebooks/guia-completo-de-chatbots-e-prompt-engineerin.md) | 32 |  |
+1. **Pesos e matérias.** A lista `G` em `_build/build_mapa.py` e `_build/make_readme.py` define as matérias, o peso e quais notebooks pertencem a cada uma. Troque pelos blocos do novo edital.
+2. **Notebooks.** `_build/nb_index.json` é gerado a partir de `notebooklm list`. Qualquer conjunto de notebooks serve; o `rebuild.py` descobre notebooks novos sozinho.
+3. **Cofre.** `build_vault.py` espera uma pasta por matéria com aulas nomeadas `Aula NN - Assunto - {Resumo|Simplificada|Apostila completa}.md` e uma nota-hub `00 — Hub <Matéria>.md`. Ajuste os caminhos no topo do script.
+4. **Cadernos.** `build_questoes.py` lê qualquer exportação em markdown com o link da questão na fonte. A tabela `MAT` no script mapeia os rótulos de matéria da plataforma para as matérias do edital; é ela que muda de concurso para concurso.
+5. **Skill.** O trecho "Como ensinar" da `SKILL.md` traz os pesos e o estilo da banca. Para outra banca, troque a descrição do estilo (a FGV usa caso concreto e literalidade aplicada; outras bancas usam certo/errado ou cobram doutrina).
 
-Direitos Humanos vale 3 questões e não tem notebook. É a única matéria do edital sem cobertura.
+Os prompts de extração e o parser de questões são genéricos. O catálogo de pegadinhas com códigos vale para qualquer banca que trabalhe com lei seca.
 
-## Materiais baixados
+## 7. Limitações
 
-- [01d11b38_note_guia-de-improbidade-administrativa-para-concursos.md](materiais/01d11b38_note_guia-de-improbidade-administrativa-para-concursos.md)
-- [01d11b38_quiz_improbidade-quiz_059d56.md](materiais/01d11b38_quiz_improbidade-quiz_059d56.md)
-- [185c9e3e_flash_estat-stica-flashcards.md](materiais/185c9e3e_flash_estat-stica-flashcards.md)
-- [185c9e3e_mindmap_estat-stica-mapa.json](materiais/185c9e3e_mindmap_estat-stica-mapa.json)
-- [185c9e3e_quiz_estat-stica-quiz_213a1a.md](materiais/185c9e3e_quiz_estat-stica-quiz_213a1a.md)
-- [185c9e3e_report_guia-de-estudo-de-reta-final-estat-stica-pcpr-banc.md](materiais/185c9e3e_report_guia-de-estudo-de-reta-final-estat-stica-pcpr-banc.md)
-- [367433a3_note_guia-pr-tico-de-tanatologia-forense-e-fen-menos-ca.md](materiais/367433a3_note_guia-pr-tico-de-tanatologia-forense-e-fen-menos-ca.md)
-- [367433a3_quiz_medicina-quiz_f729ab.md](materiais/367433a3_quiz_medicina-quiz_f729ab.md)
-- [367433a3_quiz_quiz-forense_aa7976.md](materiais/367433a3_quiz_quiz-forense_aa7976.md)
-- [367433a3_quiz_tanatologia-quiz_52205e.md](materiais/367433a3_quiz_tanatologia-quiz_52205e.md)
-- [367433a3_quiz_tanatologia-quiz_702617.md](materiais/367433a3_quiz_tanatologia-quiz_702617.md)
-- [42b917ff_quiz_paran-quiz_13b145.md](materiais/42b917ff_quiz_paran-quiz_13b145.md)
-- [42b917ff_quiz_paran-quiz_15bab7.md](materiais/42b917ff_quiz_paran-quiz_15bab7.md)
-- [42b917ff_quiz_paran-quiz_2c0a15.md](materiais/42b917ff_quiz_paran-quiz_2c0a15.md)
-- [42b917ff_quiz_paran-quiz_3f6982.md](materiais/42b917ff_quiz_paran-quiz_3f6982.md)
-- [42b917ff_report_guia-de-estudo-realidade-tnica-social-hist-rica-ge.md](materiais/42b917ff_report_guia-de-estudo-realidade-tnica-social-hist-rica-ge.md)
-- [546f0cb3_quiz_nuvem-quiz_a712ac.md](materiais/546f0cb3_quiz_nuvem-quiz_a712ac.md)
-- [5714ea7c_flash_conjuntos-flashcards.md](materiais/5714ea7c_flash_conjuntos-flashcards.md)
-- [5714ea7c_note_dom-nio-da-an-lise-combinat-ria-guia-pr-tico-de-co.md](materiais/5714ea7c_note_dom-nio-da-an-lise-combinat-ria-guia-pr-tico-de-co.md)
-- [5714ea7c_note_estrat-gia-de-alta-performance-para-concursos-de-e.md](materiais/5714ea7c_note_estrat-gia-de-alta-performance-para-concursos-de-e.md)
-- [5714ea7c_note_guia-de-alta-performance-para-exatas-pcpr.md](materiais/5714ea7c_note_guia-de-alta-performance-para-exatas-pcpr.md)
-- [5714ea7c_quiz_l-gica-quiz_093710.md](materiais/5714ea7c_quiz_l-gica-quiz_093710.md)
-- [73efc3d0_quiz_contabilidade-quiz_066eaf.md](materiais/73efc3d0_quiz_contabilidade-quiz_066eaf.md)
-- [73efc3d0_quiz_contabilidade-quiz_532919.md](materiais/73efc3d0_quiz_contabilidade-quiz_532919.md)
-- [73efc3d0_quiz_contabilidade-quiz_706b7a.md](materiais/73efc3d0_quiz_contabilidade-quiz_706b7a.md)
-- [73efc3d0_quiz_quiz-contabilidade_4f9a5f.md](materiais/73efc3d0_quiz_quiz-contabilidade_4f9a5f.md)
-- [73efc3d0_report_guia-de-estudo-contabilidade-geral-para-pc-pr-2026.md](materiais/73efc3d0_report_guia-de-estudo-contabilidade-geral-para-pc-pr-2026.md)
-- [8498c1e7_quiz_per-cia-quiz_622a64.md](materiais/8498c1e7_quiz_per-cia-quiz_622a64.md)
-- [8498c1e7_quiz_per-cias-quiz_78e9e3.md](materiais/8498c1e7_quiz_per-cias-quiz_78e9e3.md)
-- [84eec3f0_mindmap_concursos-mapa.json](materiais/84eec3f0_mindmap_concursos-mapa.json)
-- [84eec3f0_note_plano-de-elite-estrat-gia-de-aprova-o-para-pc-pr.md](materiais/84eec3f0_note_plano-de-elite-estrat-gia-de-aprova-o-para-pc-pr.md)
-- [84eec3f0_note_prompt-definitivo.md](materiais/84eec3f0_note_prompt-definitivo.md)
-- [84eec3f0_note_prompt-gerador-de-quest-es-e-flashcards-pcpr-v5-3.md](materiais/84eec3f0_note_prompt-gerador-de-quest-es-e-flashcards-pcpr-v5-3.md)
-- [84eec3f0_table_estrat-gias-e-dicas-para-estudos-e-concursos-p-bli.csv](materiais/84eec3f0_table_estrat-gias-e-dicas-para-estudos-e-concursos-p-bli.csv)
-- [ae986a01_quiz_coes-o-quiz_080f60.md](materiais/ae986a01_quiz_coes-o-quiz_080f60.md)
-- [ae986a01_quiz_g-neros-quiz_64e9e9.md](materiais/ae986a01_quiz_g-neros-quiz_64e9e9.md)
-- [ae986a01_quiz_gram-tica-quiz_bc2181.md](materiais/ae986a01_quiz_gram-tica-quiz_bc2181.md)
-- [ae986a01_quiz_gram-tica-quiz_f9cd84.md](materiais/ae986a01_quiz_gram-tica-quiz_f9cd84.md)
-- [ae986a01_quiz_pontua-o-quiz_76ec87.md](materiais/ae986a01_quiz_pontua-o-quiz_76ec87.md)
-- [ae986a01_report_resumo-estrat-gico-ortografia-acentua-o-e-classes.md](materiais/ae986a01_report_resumo-estrat-gico-ortografia-acentua-o-e-classes.md)
-- [b63c5fdb_note_constitucional-pc-bens-e-compet-ncias-da-uni-o-e-e.md](materiais/b63c5fdb_note_constitucional-pc-bens-e-compet-ncias-da-uni-o-e-e.md)
-- [b63c5fdb_note_guia-definitivo-do-artigo-5-para-carreiras-policia.md](materiais/b63c5fdb_note_guia-definitivo-do-artigo-5-para-carreiras-policia.md)
-- [b63c5fdb_quiz_direito-quiz_96d209.md](materiais/b63c5fdb_quiz_direito-quiz_96d209.md)
-- [b63c5fdb_quiz_quiz-constitucional_3c496d.md](materiais/b63c5fdb_quiz_quiz-constitucional_3c496d.md)
-- [bee037d5_quiz_legisla-o-quiz_304f42.md](materiais/bee037d5_quiz_legisla-o-quiz_304f42.md)
-- [bee037d5_quiz_lgpd-quiz_4a2270.md](materiais/bee037d5_quiz_lgpd-quiz_4a2270.md)
-- [bee037d5_quiz_pc-pr-quiz_3d6635.md](materiais/bee037d5_quiz_pc-pr-quiz_3d6635.md)
-- [e5690053_mindmap_portugu-s-mapa.json](materiais/e5690053_mindmap_portugu-s-mapa.json)
-- [e5690053_report_guia-de-estudo-completo-portugu-s-padr-o-fgv.md](materiais/e5690053_report_guia-de-estudo-completo-portugu-s-padr-o-fgv.md)
+- As sínteses dos notebooks são geradas por modelo de linguagem a partir das fontes. Podem omitir detalhes; por isso a skill consulta o notebook ao vivo quando o arquivo não basta.
+- O comando `notebooklm ask --new` apaga o histórico de chat do notebook. Foi usado uma vez por engano durante a montagem; nenhum script deste repositório usa a opção.
+- Pedidos muito longos ao NotebookLM falham com `RPCResponseTooLargeError`, um erro de streaming da ferramenta que não depende do tamanho do notebook. Os scripts tentam de novo com um prompt compacto.
+- Cerca de 109 questões vieram sem alternativas legíveis por causa de exportações achatadas; estão no banco marcadas, sem alternativas.
+- O banco reflete o recorte coletado pelo aluno, não o universo de questões da banca.
 
-## Sobre os dados
+## 8. Ferramentas usadas
 
-A extração foi feita em 05/09/2026 com o notebooklm-py v0.8.1. Os arquivos em `notebooks/` são sínteses que o NotebookLM gerou a partir das minhas fontes. O texto integral das fontes não está aqui.
+- Google NotebookLM, acessado pela linha de comando `notebooklm-py` v0.8.1.
+- Obsidian, como cofre de notas em markdown.
+- Claude Code, onde a skill roda.
+- Anki, destino dos flashcards gerados pelo método descrito nas notas de método.
+- Python 3, sem dependências além da biblioteca padrão para os scripts de montagem.
+
+Extração e montagem feitas em 05/09/2026.

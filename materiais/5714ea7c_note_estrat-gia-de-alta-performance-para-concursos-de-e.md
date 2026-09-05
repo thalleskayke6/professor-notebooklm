@@ -1,6 +1,6 @@
 **Opa! Peço desculpas pela suposição. Se você já tem bagagem, o cenário muda de figura completamente!**
 
-Como o próprio Felippe Loureiro destaca, os concurseiros que conquistam a aprovação estudando em prazos mais apertados de pós-edital são, na grande maioria das vezes, aqueles que **já trazem uma base sólida e conseguem reaproveitar essa bagagem anterior** [1-3]. 
+Como o próprio o autor das videoaulas de exatas destaca, os concurseiros que conquistam a aprovação estudando em prazos mais apertados de pós-edital são, na grande maioria das vezes, aqueles que **já trazem uma base sólida e conseguem reaproveitar essa bagagem anterior** [1-3]. 
 
 Sabendo que você não está saindo do zero, os nossos **59 dias até a prova deixam de ser uma corrida desesperada de alfabetização matemática e passam a ser um ajuste cirúrgico de alta performance** [1, 4]. A nossa estratégia para garantir os seus 100% de aproveitamento vai se apoiar em dois pilares principais:
 

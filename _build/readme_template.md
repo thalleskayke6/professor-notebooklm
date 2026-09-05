@@ -1,112 +1,149 @@
-# Professor NotebookLM: como transformei 23 notebooks em um professor particular
+# Professor: um tutor de concurso construído sobre NotebookLM, Obsidian e um banco de questões reais
 
-Eu estudo para o concurso de Agente de Polícia Judiciária da PC-PR 2026, banca FGV. Ao longo dos meses fui jogando tudo no Google NotebookLM: apostilas, aulas em vídeo, artigos, leis, prompts que escrevi para gerar questões. Deu 23 notebooks e 819 fontes. O problema é que o NotebookLM responde bem a uma pergunta de cada vez, mas não sabe olhar para o conjunto. Eu queria alguém que tivesse lido tudo aquilo e soubesse me explicar qualquer tema do edital do jeito que a FGV cobra.
+## Resumo
 
-Este repositório é o resultado. Tem duas partes: a base de conhecimento, que é o conteúdo dos notebooks convertido em markdown, e a ferramenta, que é o script que monta essa base mais a skill do Claude Code que a usa para responder.
+Este repositório documenta a construção de um tutor automatizado para a prova de Agente de Polícia Judiciária da Polícia Civil do Paraná (Edital 01/2026, banca FGV). O tutor combina três bases: {n_notebooks} notebooks do Google NotebookLM com {n_fontes} fontes, um cofre do Obsidian com {n_aulas} aulas em formato markdown distribuídas por {n_materias_vault} matérias, e um banco de {n_questoes} questões reais de concurso, deduplicadas e com gabarito, classificadas em {n_assuntos} assuntos. Um conjunto de scripts em Python extrai, normaliza e indexa esse material; uma skill do Claude Code o consulta na hora de responder. O texto descreve as fontes, o pipeline, a cobertura por matéria e assunto, o modo de uso e o que é preciso mudar para reaproveitar a estrutura em outro edital.
 
-## A ideia em uma imagem
+## 1. O problema
 
-```
-NotebookLM (23 notebooks, 819 fontes)
-        |  notebooklm-py CLI  (summary, source list, ask, download)
-        v
-_build/rebuild.py  -->  notebooks/<slug>.md   (indice + conceitos + pegadinhas + fontes)
-                   -->  materiais/            (guias, quizzes, flashcards, notas, mapas mentais)
-                   -->  MAPA-GERAL.md         (indice por materia, peso na prova, ID do notebook)
-        |
-        v
-Skill /professor (Claude Code)  -->  le o MAPA-GERAL, abre o notebook certo, responde no estilo FGV
-                                -->  se faltar detalhe: `notebooklm ask "..." -n <ID>` ao vivo
-```
+Quem estuda para concurso acumula material em três lugares que não conversam entre si. As apostilas e videoaulas ficam em um serviço de anotações. Os cadernos de questões ficam na plataforma onde foram resolvidos. As anotações de método, o plano de estudo e o registro de erros ficam em um terceiro lugar. Cada ferramenta responde bem a uma pergunta de cada vez sobre o próprio acervo, mas nenhuma sabe cruzar as três coisas: o que a apostila ensina, como a banca cobra isso na prática e onde o aluno está errando.
 
-## Como a base é extraída
+O objetivo aqui foi montar um único "professor" que tivesse lido tudo, soubesse o peso de cada matéria na prova e respondesse no recorte da banca, com questões reais como referência.
 
-Não dá para baixar o texto de 819 fontes e esperar que um modelo leia tudo a cada pergunta. O caminho que funcionou foi pedir ao próprio NotebookLM que resumisse cada notebook de três ângulos diferentes. Cada ângulo é um prompt fixo, guardado em `_build/`, enviado com `notebooklm ask`.
+## 2. Materiais
 
-| Prompt | O que pede | Seção que gera |
+A base foi montada a partir de três origens. Nomes de autores, cursos e plataformas foram omitidos de propósito; o que importa para reprodução é o tipo de material e o formato.
+
+**Notebooks do NotebookLM.** {n_notebooks} notebooks com {n_fontes} fontes no total: apostilas em PDF, videoaulas, artigos, textos de lei, planilhas e prompts. Treze deles cobrem matérias do edital; seis tratam de método de estudo, memória e mentalidade; um trata de engenharia de prompts; um contém o edital.
+
+**Cofre do Obsidian.** Cerca de 440 notas em markdown. As principais são as apostilas convertidas de PDF, uma por aula, em até três versões (resumo, simplificada e completa), organizadas em {n_materias_vault} matérias com uma nota-hub por matéria. Além delas, notas curadas de método (um catálogo de pegadinhas da banca com códigos fixos, instruções para geração de flashcards), plano de estudo (pesos, ciclo de blocos, reta final) e registro (análise de erros, assuntos a treinar após simulado).
+
+**Cadernos de questões.** Exportações em markdown de uma plataforma de questões, filtradas por banca. Havia 44 arquivos com forte sobreposição (o mesmo caderno exportado mais de uma vez). Após deduplicação pelo identificador da questão na fonte, restaram {n_questoes} questões únicas, {n_gabarito} delas com gabarito.
+
+## 3. Método
+
+### 3.1 Extração dos notebooks
+
+O NotebookLM não expõe o texto consolidado de um notebook. A solução foi perguntar ao próprio NotebookLM, por linha de comando, três coisas sobre cada notebook, com prompts fixos:
+
+| Prompt | Pergunta | Seção gerada |
 |---|---|---|
-| `p_indice.txt` | Um índice hierárquico de todos os temas e subtemas, cobrindo todas as fontes e não só as primeiras | Índice hierárquico |
-| `p_conceitos.txt` | Definições, regras, classificações, prazos, números, fórmulas e exceções, tema a tema | Conceitos-chave por tema |
-| `p_pegadinhas.txt` | O que se confunde com o quê, o que a FGV costuma cobrar, quais temas dependem de quais, o que o notebook não cobre | Pegadinhas, relações e lacunas |
+| `p_indice.txt` | Índice hierárquico de todos os temas e subtemas, cobrindo todas as fontes | Índice hierárquico |
+| `p_conceitos.txt` | Definições, regras, classificações, prazos, números, fórmulas e exceções por tema | Conceitos-chave por tema |
+| `p_pegadinhas.txt` | O que se confunde com o quê, o que a banca cobra, dependências entre temas, lacunas | Pegadinhas, relações e lacunas |
 
-Além das três perguntas, o script baixa o resumo automático que o NotebookLM já faz para cada notebook, a lista de fontes, as notas que eu tinha salvo lá dentro e os artefatos que já existiam: relatórios, quizzes, flashcards, mapas mentais e tabelas.
+O script também baixa o resumo automático de cada notebook, a lista de fontes, as notas salvas e os artefatos já gerados (relatórios, quizzes, flashcards, mapas mentais, tabelas). O notebook de videoaulas de método, com 63 vídeos, precisou ser extraído em cinco partes temáticas porque um pedido único estourava o limite de resposta da ferramenta.
 
-O notebook do Valter Rodrigues foi a exceção. São 63 vídeos e um pedido único estourava o limite de resposta do CLI. Ele foi extraído em cinco partes temáticas: índice, metodologia de estudo, mentalidade, Anki com IA, e o plano de aprovação.
+### 3.2 Extração das questões
 
-Tudo isso é idempotente. Se eu rodar `rebuild.py` de novo, ele só refaz o que estiver faltando. Quando quero forçar um notebook inteiro, passo `--force` com o ID.
+Os cadernos vieram em quatro formatos diferentes de markdown, conforme a época e a ferramenta de exportação. O parser reconhece os quatro: cabeçalho com link para a fonte e gabarito em tabela no fim do bloco; cabeçalho com link em rodapé; exportação bruta com linha de banca, linha de matéria e assunto e gabarito inline; e exportação achatada em uma linha por questão. Cada questão é registrada com identificador, banca e órgão, matéria, assunto, enunciado, alternativas, gabarito e arquivo de origem. As 91 rotulagens de matéria encontradas nas fontes foram normalizadas para as 13 matérias do edital mais Legislação Penal Extravagante.
 
-## Como os arquivos são montados
+### 3.3 Índice do cofre
 
-O `build.py` junta, para cada notebook, o resumo automático, as três respostas, a lista de materiais baixados e a lista de fontes, e grava um arquivo em `notebooks/`. O `build_mapa.py` gera o `MAPA-GERAL.md`, que agrupa os notebooks por matéria da prova.
+Um terceiro script percorre o cofre, lista cada aula com versão e tamanho, associa os cadernos de questões e as notas soltas à matéria correspondente e copia as notas curadas pequenas (hubs, método, plano, registro) para consulta direta. Apostilas e despejos de curso ficam apenas referenciados por caminho, por tamanho e por direitos autorais.
 
-O agrupamento carrega o peso de cada matéria, porque isso muda como se estuda. Pelo Edital 01/2026, a prova do Agente tem 100 questões de peso 1. Português e Tecnologia valem 25 cada, ou seja, metade da prova. Ciências Forenses vale 10. Lógica, Realidade do Paraná, Contabilidade, Estatística e Legislação Estadual valem 5 cada. Direito Penal, Processo Penal, Constitucional, Administrativo e Direitos Humanos valem 3 cada. Um professor que não sabe disso gasta o mesmo tempo em tudo.
+### 3.4 Montagem
 
-## Como o professor responde
+Um arquivo por notebook junta resumo, as três respostas, materiais e fontes. Um mapa geral agrupa tudo por matéria da prova, com o peso de cada uma e a contagem de questões reais disponíveis. Todos os passos são idempotentes: rodar de novo só refaz o que falta.
 
-A skill fica em `ferramenta/SKILL.md`. Copiada para `~/.claude/skills/professor/`, ela vira o comando `/professor` no Claude Code. Quando recebe uma pergunta, segue esta ordem:
+### 3.5 O tutor
 
-1. Lê o `MAPA-GERAL.md` e escolhe o notebook pela matéria.
-2. Lê o arquivo do notebook em `notebooks/`. Se a pergunta for pontual, faz Grep em vez de ler o arquivo inteiro, porque alguns passam de 100 KB.
-3. Se o arquivo não tiver o detalhe pedido, pergunta ao notebook ao vivo com `notebooklm ask "..." -n <ID>`.
-4. Responde no estilo da FGV: a letra da lei aplicada a um caso concreto, o parágrafo que ninguém lê, a alternativa quase certa. Sempre fecha com as pegadinhas do tema e diz de qual notebook a informação veio.
-5. Calibra a profundidade pelo peso da matéria na prova.
+A skill (`ferramenta/SKILL.md`) descreve como o assistente deve responder. A ordem é fixa: ler o mapa e escolher a matéria; buscar o tema no arquivo do notebook; buscar o assunto no arquivo de questões e usar duas ou três questões reais como molde; se faltar teoria, abrir a aula certa do cofre; se ainda faltar, perguntar ao notebook ao vivo. A profundidade é proporcional ao peso da matéria. Toda explicação termina com as pegadinhas do tema, codificadas pelo catálogo do usuário (P1 a P10 para pegadinhas jurídicas, T1 a T4 para técnicas). O registro de erros do aluno entra na priorização.
 
-Ela sabe explicar, revisar, gerar questões, listar pegadinhas, montar plano de estudo e escrever cards para o Anki no padrão do prompt v5.3 que está em `materiais/`. O arquivo `ferramenta/agent-professor.md` é a mesma coisa em formato de subagente.
+## 4. Cobertura
 
-## O que tem em cada pasta
+A prova tem 100 questões de peso igual. A tabela abaixo cruza cada matéria com o que existe na base.
 
-```
-MAPA-GERAL.md          indice geral por materia (comece aqui)
-notebooks/             23 arquivos, um por notebook (todos os conceitos)
-materiais/             {n_mats} guias de estudo, quizzes, flashcards, notas e mapas mentais
-ferramenta/            SKILL.md (skill Claude Code) e agent-professor.md
-_build/                rebuild.py, build.py, build_mapa.py, dl.py, prompts, nb_index.json
-```
+{tabela_cobertura}
 
-## Instalação
+Direitos Humanos não tem notebook no NotebookLM. A cobertura dessa matéria vem das apostilas do cofre e das questões do banco.
+
+### 4.1 Assuntos por matéria
+
+Os assuntos abaixo são os rótulos usados pela própria plataforma de questões, ordenados pelo número de questões no banco. Essa ordem é, na prática, a incidência observada da banca no recorte coletado.
+
+{assuntos_por_materia}
+
+### 4.2 Aulas disponíveis no cofre
+
+{aulas_por_materia}
+
+## 5. Como usar
+
+### 5.1 Instalação
 
 ```bash
 pip install "notebooklm-py[browser]"
 notebooklm login                       # autentica no Google uma vez
 notebooklm auth check --test --json    # tem que devolver "token_fetch": true
 
-# instalar o professor no Claude Code
 mkdir -p ~/.claude/skills/professor && cp ferramenta/SKILL.md ~/.claude/skills/professor/
 cp ferramenta/agent-professor.md ~/.claude/agents/professor.md
-
-# reconstruir ou atualizar a base depois de adicionar fontes ou notebooks
-python _build/rebuild.py
-python _build/rebuild.py --force <ID-do-notebook>
 ```
 
-Depois disso, no Claude Code: `/professor me explica cadeia de custódia com as pegadinhas da FGV`.
+### 5.2 Reconstrução
 
-Os caminhos dentro da skill apontam para `C:\Users\USER\Professor`. Quem clonar em outro lugar precisa ajustar.
+```bash
+python _build/rebuild.py                 # notebooks: só refaz o que falta
+python _build/rebuild.py --force <ID>    # refaz um notebook inteiro
+python _build/build_questoes.py          # cadernos novos no cofre
+python _build/build_vault.py             # notas novas no cofre
+python _build/build_mapa.py              # mapa geral
+```
 
-## O que quebrou no caminho
+### 5.3 Uso no dia a dia
 
-Anoto aqui porque perdi tempo com cada um desses.
+No Claude Code, `/professor` seguido do pedido. Exemplos de pedidos que a skill trata de forma diferente:
 
-O `notebooklm ask --new` apaga o histórico de chat do notebook. Eu usei sem saber no primeiro lote e perdi as conversas de dois notebooks antes de perceber. O `rebuild.py` não usa essa flag em lugar nenhum.
+| Pedido | O que o tutor entrega |
+|---|---|
+| "me explica X" | Definição curta, regra, exceção, uma questão real resolvida, pegadinhas codificadas |
+| "revisão de X" | Conceitos-chave em ordem de incidência |
+| "questões de X" | Duas reais do banco e três inéditas no mesmo molde, com gabarito comentado |
+| "pegadinhas de X" | Pares "parece / é", cada um com código |
+| "plano" | Cruzamento de peso da prova, erros registrados e volume de questões por assunto |
+| "cards de X" | Itens certo/errado atômicos no formato de importação do Anki |
 
-Pedidos muito grandes ao `ask` falham com `RPCResponseTooLargeError`. Não tem a ver com o tamanho do notebook: um notebook de três PDFs falhou tanto quanto um de 50 páginas web. É um bug de streaming do CLI. O que resolve é perguntar em partes, ou pedir uma resposta compacta, com no máximo 90 linhas e sem citar fontes. Os prompts `pc_*.txt` fazem isso e o script usa eles como segunda tentativa automática.
+### 5.4 Estrutura do repositório
 
-A sessão do Google expira no meio de lotes longos. Se o perfil do navegador ainda estiver logado, `notebooklm login` resolve sozinho, sem abrir nada para clicar.
+```
+MAPA-GERAL.md          ponto de entrada: matérias, pesos, notebooks, contagens
+notebooks/             um arquivo por notebook (índice, conceitos, pegadinhas, fontes)
+questoes/INDICE.md     contagem de questões por matéria e assunto
+vault/INDICE-VAULT.md  aulas, cadernos e notas do cofre, por matéria
+materiais/             guias de estudo, quizzes, flashcards, mapas mentais gerados
+ferramenta/            SKILL.md e agent-professor.md para o Claude Code
+_build/                scripts e prompts
+```
 
-Para rodar vários notebooks em paralelo, o jeito é passar `-n <ID>` em cada comando. O `notebooklm use` grava um contexto compartilhado e os lotes atropelam uns aos outros.
+Os arquivos com as questões na íntegra (`questoes/*.md`, `questoes/banco.json`) e as notas pessoais copiadas do cofre (`vault/notas/`) ficam fora do repositório. O índice de contagens está incluído.
 
-## O que está coberto
+## 6. Reaproveitamento em outro edital
 
-Todos os conceitos estão em `notebooks/`. A tabela abaixo mostra os temas de primeiro nível de cada índice.
+A estrutura não depende do concurso. O que é específico da PC-PR está em poucos lugares:
 
-{tabela}
+1. **Pesos e matérias.** A lista `G` em `_build/build_mapa.py` e `_build/make_readme.py` define as matérias, o peso e quais notebooks pertencem a cada uma. Troque pelos blocos do novo edital.
+2. **Notebooks.** `_build/nb_index.json` é gerado a partir de `notebooklm list`. Qualquer conjunto de notebooks serve; o `rebuild.py` descobre notebooks novos sozinho.
+3. **Cofre.** `build_vault.py` espera uma pasta por matéria com aulas nomeadas `Aula NN - Assunto - {Resumo|Simplificada|Apostila completa}.md` e uma nota-hub `00 — Hub <Matéria>.md`. Ajuste os caminhos no topo do script.
+4. **Cadernos.** `build_questoes.py` lê qualquer exportação em markdown com o link da questão na fonte. A tabela `MAT` no script mapeia os rótulos de matéria da plataforma para as matérias do edital; é ela que muda de concurso para concurso.
+5. **Skill.** O trecho "Como ensinar" da `SKILL.md` traz os pesos e o estilo da banca. Para outra banca, troque a descrição do estilo (a FGV usa caso concreto e literalidade aplicada; outras bancas usam certo/errado ou cobram doutrina).
 
-Direitos Humanos vale 3 questões e não tem notebook. É a única matéria do edital sem cobertura.
+Os prompts de extração e o parser de questões são genéricos. O catálogo de pegadinhas com códigos vale para qualquer banca que trabalhe com lei seca.
 
-## Materiais baixados
+## 7. Limitações
 
-{materiais}
+- As sínteses dos notebooks são geradas por modelo de linguagem a partir das fontes. Podem omitir detalhes; por isso a skill consulta o notebook ao vivo quando o arquivo não basta.
+- O comando `notebooklm ask --new` apaga o histórico de chat do notebook. Foi usado uma vez por engano durante a montagem; nenhum script deste repositório usa a opção.
+- Pedidos muito longos ao NotebookLM falham com `RPCResponseTooLargeError`, um erro de streaming da ferramenta que não depende do tamanho do notebook. Os scripts tentam de novo com um prompt compacto.
+- Cerca de {n_sem_alt} questões vieram sem alternativas legíveis por causa de exportações achatadas; estão no banco marcadas, sem alternativas.
+- O banco reflete o recorte coletado pelo aluno, não o universo de questões da banca.
 
-## Sobre os dados
+## 8. Ferramentas usadas
 
-A extração foi feita em 05/09/2026 com o notebooklm-py v0.8.1. Os arquivos em `notebooks/` são sínteses que o NotebookLM gerou a partir das minhas fontes. O texto integral das fontes não está aqui.
+- Google NotebookLM, acessado pela linha de comando `notebooklm-py` v0.8.1.
+- Obsidian, como cofre de notas em markdown.
+- Claude Code, onde a skill roda.
+- Anki, destino dos flashcards gerados pelo método descrito nas notas de método.
+- Python 3, sem dependências além da biblioteca padrão para os scripts de montagem.
+
+Extração e montagem feitas em 05/09/2026.

@@ -31,7 +31,7 @@ De acordo com os conceitos de Diagramas de Venn, se $70\%$ dos funcionários de 
 **Hint:** O valor que ultrapassa o total de $100\%$ indica a região de interseção.
 
 ## Question 4
-Felippe Loureiro cita três motivos principais para ter deixado o serviço público após 15 anos. Qual desses valores foi considerado por ele como 'inegociável' no momento da decisão?
+o autor das videoaulas de exatas cita três motivos principais para ter deixado o serviço público após 15 anos. Qual desses valores foi considerado por ele como 'inegociável' no momento da decisão?
 
 - [x] Liberdade
 - [ ] Estabilidade financeira
@@ -71,7 +71,7 @@ Na Tabela Verdade do conectivo condicional '$P \rightarrow Q$', em qual única s
 **Hint:** Lembre-se do mnemônico da atriz famosa citado pelo professor.
 
 ## Question 8
-Sobre o comportamento de quem busca aprovação, Felippe Loureiro afirma que 'quem só faz o que gosta, colhe o que não gosta'. O que ele sugere para combater a procrastinação?
+Sobre o comportamento de quem busca aprovação, o autor das videoaulas de exatas afirma que 'quem só faz o que gosta, colhe o que não gosta'. O que ele sugere para combater a procrastinação?
 
 - [x] Controlar o excesso de dopamina gerado pelo uso constante do celular
 - [ ] Estudar apenas nos momentos em que houver inspiração e vontade
@@ -91,7 +91,7 @@ Ao resolver questões de sequências lógicas com figuras, qual é a principal r
 **Hint:** Divida a figura complexa em partes menores para entender o que muda.
 
 ## Question 10
-Na análise de Felippe Loureiro sobre a fala do presidente Lula quanto aos preços de supermercado, qual conceito econômico/matemático é discutido?
+Na análise de o autor das videoaulas de exatas sobre a fala do presidente Lula quanto aos preços de supermercado, qual conceito econômico/matemático é discutido?
 
 - [x] Lei da Oferta e da Procura (Demanda)
 - [ ] Teorema de Pitágoras aplicado ao consumo

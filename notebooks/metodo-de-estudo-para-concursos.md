@@ -1,4 +1,4 @@
-# Valter Rodrigues
+# o autor das videoaulas de método
 
 - **Notebook ID:** `84eec3f0-185a-475a-bbdb-171dac0733e1`
 - **Fontes:** 63
@@ -7,7 +7,7 @@
 
 ## Resumo do NotebookLM
 
-As fontes apresentam a metodologia de estudo de **Valter Rodrigues**, focada em **consistência, objetividade e estudo ativo** para concursos públicos. O autor defende que a aprovação depende da **memorização de padrões** e da resolução massiva de questões, em vez de um aprendizado acadêmico profundo. Ele detalha o uso de ferramentas tecnológicas, como o **Anki** para repetição espaçada e a **Inteligência Artificial** para criar *flashcards* cirúrgicos com "pegadinhas" típicas de bancas examinadoras. Além das técnicas práticas, os textos abordam o **gerenciamento emocional**, desencorajando o sofrimento desnecessário e a comparação prejudicial com terceiros nas redes sociais. O núcleo da estratégia reside em **construir uma base sólida** nas matérias básicas e manter o foco no progresso diário para garantir a sustentabilidade do estudo a longo prazo.
+As fontes apresentam a metodologia de estudo de **o autor das videoaulas de método**, focada em **consistência, objetividade e estudo ativo** para concursos públicos. O autor defende que a aprovação depende da **memorização de padrões** e da resolução massiva de questões, em vez de um aprendizado acadêmico profundo. Ele detalha o uso de ferramentas tecnológicas, como o **Anki** para repetição espaçada e a **Inteligência Artificial** para criar *flashcards* cirúrgicos com "pegadinhas" típicas de bancas examinadoras. Além das técnicas práticas, os textos abordam o **gerenciamento emocional**, desencorajando o sofrimento desnecessário e a comparação prejudicial com terceiros nas redes sociais. O núcleo da estratégia reside em **construir uma base sólida** nas matérias básicas e manter o foco no progresso diário para garantir a sustentabilidade do estudo a longo prazo.
 
 
 ## Índice hierárquico
@@ -153,7 +153,7 @@ Guerreiro, o que acha de usarmos o nosso ambiente de computação para **constru
 *   **Números/parâmetros citados:** 
     *   Carga horária diária recomendada: **2 a 4 horas líquidas de estudo**.
     *   No pós-edital, a carga máxima recomendada é de **6 a 8 horas líquidas** (ou 5 horas conforme a rotina) por um curto período de até **60 dias**.
-    *   Consistência prática do Valter: estudou **120 dias seguidos** antes do nascimento do filho, falhando em apenas **2 dias**; em outra preparação, estudou mais de **6 meses (192 dias)** seguidos sem falhar um único dia, incluindo Natal, Ano Novo e jogos da Copa do Mundo.
+    *   Consistência prática do o autor das videoaulas: estudou **120 dias seguidos** antes do nascimento do filho, falhando em apenas **2 dias**; em outra preparação, estudou mais de **6 meses (192 dias)** seguidos sem falhar um único dia, incluindo Natal, Ano Novo e jogos da Copa do Mundo.
     *   Média de tempo para aprovação saindo do zero: **91 dias** (cerca de 3 meses) para atingir **70% de rendimento** nas questões, e média de **206,8 dias** (cerca de 7 meses) para alcançar **85% de rendimento** e se tornar altamente competitivo.
 *   **O que ele diz para NÃO fazer:** 
     *   Não tenha picos de 10 a 11 horas de estudo em um único dia para depois ficar dias sem estudar por exaustão.
@@ -263,7 +263,7 @@ Guerreiro, o que acha de usarmos o nosso ambiente de computação para **constru
 ---
 
 ### 💡 Minha sugestão para você:
-Guerreiro, agora que detalhamos de forma exaustiva as regras práticas e os parâmetros matemáticos do Valter, o que você acha de eu **escrever um script em Python para rodar uma simulação do algoritmo FSRS** no nosso ambiente? Com ele, podemos projetar o tempo exato de estabilização dos seus cartões e o volume de revisões diárias com base no seu limite de novos cards (25 ou 30). É só autorizar e colocamos a máquina para rodar!
+Guerreiro, agora que detalhamos de forma exaustiva as regras práticas e os parâmetros matemáticos do o autor das videoaulas, o que você acha de eu **escrever um script em Python para rodar uma simulação do algoritmo FSRS** no nosso ambiente? Com ele, podemos projetar o tempo exato de estabilização dos seus cartões e o volume de revisões diárias com base no seu limite de novos cards (25 ou 30). É só autorizar e colocamos a máquina para rodar!
 
 
 ## Mentalidade e vida de concurseiro
@@ -307,7 +307,7 @@ Guerreiro, agora que detalhamos de forma exaustiva as regras práticas e os par�
 
 ## Anki, IA e prompts
 
-Vamos destrinchar de forma exaustiva o ecossistema tecnológico de preparação do método Valter Rodrigues, conectando a ciência por trás do **Anki** à aplicação prática da **Inteligência Artificial** para esmagar bancas de concurso.
+Vamos destrinchar de forma exaustiva o ecossistema tecnológico de preparação do método o autor das videoaulas de método, conectando a ciência por trás do **Anki** à aplicação prática da **Inteligência Artificial** para esmagar bancas de concurso.
 
 ---
 
@@ -347,7 +347,7 @@ Vamos destrinchar de forma exaustiva o ecossistema tecnológico de preparação 
 
 ---
 
-### IV. IA para Concursos: Aulas 01 e 02 do Valter
+### IV. IA para Concursos: Aulas 01 e 02 do o autor das videoaulas
 
 *   **Aula 01 — Elaborador Técnico de Itens (Foco Operacional):**
     *   O objetivo da Inteligência Artificial nos concursos não é resumir PDFs gigantes (o que é estudo passivo e gera obesidade mental), mas sim ser seu estagiário mecânico de geração de **itens inéditos e flashcards baseados estritamente nas suas dúvidas e erros práticos do TEC**.
@@ -363,7 +363,7 @@ Vamos destrinchar de forma exaustiva o ecossistema tecnológico de preparação 
 
 ### V. Estrutura e Inovações dos Prompts de Flashcards (v5.3, v5.4 e Comparação)
 
-O método Valter Rodrigues desenvolveu prompts ultra-calibrados para garantir que a IA produza questões de alta performance sem alucinações.
+O método o autor das videoaulas de método desenvolveu prompts ultra-calibrados para garantir que a IA produza questões de alta performance sem alucinações.
 
 #### A. A Evolução Cognitiva: v5.3 vs. v5.4
 O prompt **v5.4 (Cognitive Ultra-Consolidation)** é definitivamente superior e padrão-ouro em relação ao v5.3 pelos seguintes avanços cognitivos:
@@ -403,9 +403,9 @@ A IA deve entregar o cartão exatamente nesta estrutura para facilitar a cópia:
 
 ### VI. O Prompt Mentor e o Prompt Criador de Planilha
 
-Estes prompts definem a parte gerencial, estratégica e comportamental do método do Valter.
+Estes prompts definem a parte gerencial, estratégica e comportamental do método do o autor das videoaulas.
 
-#### A. Prompt Mentor Valter (O "Velho Testamento")
+#### A. Prompt Mentor o autor das videoaulas (O "Velho Testamento")
 *   **Tom de Voz:** Direto, pragmático, firme, sem rodeios e focado na ação física de sentar e estudar. Abomina "frescura de estudo colorido" e defende a simplicidade do "feijão com arroz".
 *   **A Rotação do Dual-Cycle (PC PR 2026):** Divide o edital de 100 questões em dois eixos, combatendo a divisão homogênea e ineficiente de tempo:
     1.  **Ciclo de Elite (60% da Prova):** Língua Portuguesa (25q), Tecnologia e Crimes Digitais (25q) e Ciências Forenses (10q). Matérias que decidem a vida e rodam de forma acelerada no ciclo de estudos.
@@ -488,7 +488,7 @@ Guerreiro, o que acha de usarmos o nosso ambiente de computação para **gerar d
 
 ### 3. Relações entre os Temas do Notebook
 
-O método ensinado por Valter Rodrigues é um ecossistema integrado cujas engrenagens se retroalimentam de forma lógica:
+O método ensinado por o autor das videoaulas de método é um ecossistema integrado cujas engrenagens se retroalimentam de forma lógica:
 
 *   **A Ponte "Questões" ➔ "Anki" ➔ "IA":**
     O estudo ativo por questões (engenharia reversa) no site de questões é o coração do método. Quando o candidato erra ou acerta uma questão por pura sorte ("na cagada"), o erro serve como gatilho imediato para a produção de cards no Anki. O prompt de IA entra nesse fluxo estritamente como um processador técnico: ele pega o comentário correto ou a lei violada pelo erro e gera o flashcard cirúrgico em 3 camadas, blindando o cérebro contra o esquecimento. O Anki serve como o escudo contra a curva do esquecimento, enquanto as questões no site simulam o dia de jogo.
@@ -506,7 +506,7 @@ Embora o notebook apresente um método extremamente robusto, científico e detal
 *   **O Conteúdo Teórico Substancial e Fático das Matérias:**
     O material ensina as diretrizes operacionais de como filtrar e criar prompts de estudo, mas **não apresenta a matéria fática em si**. Não há explicações gramaticais completas (regras de crase, morfologia ou sintaxe), descrições de protocolos de rede e conceitos cibernéticos avançados, definições científicas exaustivas de Traumatologia/Tanatologia na Medicina Legal, ou explicações detalhadas das demonstrações contábeis exigidas na prova. Cabe ao candidato fornecer esses excertos de lei e teoria para a IA processar.
 *   **Roteiro e Planilha de Treinamento para o Teste de Aptidão Física (TAF):**
-    O TAF é uma fase eliminatória crucial nos concursos policiais. Valter Rodrigues menciona a importância de manter "alguma atividade física" na rotina e até cita que já enfrentou reprovações no TAF no passado, mas o notebook **não traz nenhum cronograma físico, dicas de treinos específicos para barra, corrida ou natação**, nem os índices mínimos exigidos pelo edital da PCPR.
+    O TAF é uma fase eliminatória crucial nos concursos policiais. o autor das videoaulas de método menciona a importância de manter "alguma atividade física" na rotina e até cita que já enfrentou reprovações no TAF no passado, mas o notebook **não traz nenhum cronograma físico, dicas de treinos específicos para barra, corrida ou natação**, nem os índices mínimos exigidos pelo edital da PCPR.
 *   **Direcionamento para Outras Fases do Concurso:**
     O material se encerra no dia da Prova Objetiva e na preparação para a Redação Discursiva. Não há nenhuma cobertura técnica, tática ou psicológica sobre como se portar e vencer as etapas de **Investigação Social, Exame Psicotécnico (Avaliação Psicológica) ou os Exames Médicos**.
 *   **Aplicação para Áreas Fora de Segurança Pública e Carreiras Jurídicas:**

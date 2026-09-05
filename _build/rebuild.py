@@ -47,5 +47,5 @@ for n in nbs:
             open(out,'w',encoding='utf-8').write(r.stdout)
             if ok(out) and '"error"' not in r.stdout[:40]: break
 json.dump(nbs,open('nb_index.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)
-subprocess.run([sys.executable,'dl.py']); subprocess.run([sys.executable,'build.py']); subprocess.run([sys.executable,'build_mapa.py'])
+subprocess.run([sys.executable,'dl.py']); subprocess.run([sys.executable,'build.py']); subprocess.run([sys.executable,'build_mapa.py']); subprocess.run([sys.executable,os.path.join(HERE,'anonimizar.py')])
 print('REBUILD OK')

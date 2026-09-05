@@ -7,7 +7,7 @@
 
 ## Resumo do NotebookLM
 
-Os documentos fornecidos consistem em materiais educativos da **Estratégia Concursos** voltados ao ensino de **Redes de Computadores** e **Informática**. O conteúdo detalha conceitos fundamentais como os tipos de conexões, direções de transmissão e a classificação de redes conforme sua **abrangência geográfica** ou arquitetura. Há uma explicação minuciosa sobre as **topologias de rede**, como estrela e barramento, além do funcionamento de meios físicos como **cabos de par trançado** e **fibra óptica**. Os textos também exploram o papel de equipamentos essenciais, incluindo **roteadores**, **switches** e **modems**, na infraestrutura da internet. Por fim, o material aborda padrões de comunicação **IEEE 802** e tecnologias de acesso à web, servindo como um guia técnico para estudantes e candidatos a concursos públicos.
+Os documentos fornecidos consistem em materiais educativos da **curso preparatório** voltados ao ensino de **Redes de Computadores** e **Informática**. O conteúdo detalha conceitos fundamentais como os tipos de conexões, direções de transmissão e a classificação de redes conforme sua **abrangência geográfica** ou arquitetura. Há uma explicação minuciosa sobre as **topologias de rede**, como estrela e barramento, além do funcionamento de meios físicos como **cabos de par trançado** e **fibra óptica**. Os textos também exploram o papel de equipamentos essenciais, incluindo **roteadores**, **switches** e **modems**, na infraestrutura da internet. Por fim, o material aborda padrões de comunicação **IEEE 802** e tecnologias de acesso à web, servindo como um guia técnico para estudantes e candidatos a concursos públicos.
 
 
 ## Índice hierárquico
