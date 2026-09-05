@@ -16,7 +16,7 @@ SUBS = [
     (r'\bQConcursos\b', 'plataforma de questões'),
 ]
 files = glob.glob(os.path.join(ROOT, 'notebooks', '*.md')) + glob.glob(os.path.join(ROOT, 'guias', '*.md')) + [os.path.join(ROOT, 'MAPA-GERAL.md'),
-        os.path.join(ROOT, 'vault', 'INDICE-VAULT.md'), os.path.join(ROOT, 'questoes', 'INDICE.md')] + glob.glob(os.path.join(ROOT, 'materiais', '*'))
+        os.path.join(ROOT, 'vault', 'INDICE-VAULT.md'), os.path.join(ROOT, 'questoes', 'INDICE.md')] + glob.glob(os.path.join(ROOT, 'materiais', '*')) + glob.glob(os.path.join(ROOT, 'materias', '**', '*.md'), recursive=True)
 n = 0
 for f in files:
     if not os.path.exists(f): continue

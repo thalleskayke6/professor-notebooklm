@@ -1,0 +1,116 @@
+# Tecnologia, Segurança Cibernética e Crimes Digitais
+
+**25 questões** na prova do Agente PC-PR 2026 (de 100).
+
+- 📘 [Guia completo: PC-PR TECNOLOGIA DA INFORMAÇÃO](guia-pc-pr-tecnologia-da-informacao.md)
+- 🧩 [Índice, conceitos-chave e pegadinhas](../../notebooks/pc-pr-tecnologia-da-informacao.md)
+
+## Assuntos em ordem de incidência (446 questões da banca no banco)
+
+- Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD) (114)
+- Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD) (33)
+- Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD) (31)
+- Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD) (18)
+- Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD) (16)
+- Redes de Computadores - Cloud Computing (Computação em Nuvem) (16)
+- Das Sanções Administrativas (arts. 52 a 54 da Lei nº 13.709/2018 - LGPD) (12)
+- Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação (11)
+- Redes de Computadores - Máscara e Endereçamento IP (10)
+- Segurança da Informação - Algoritmos de Criptografia (10)
+- Da Segurança e do Sigilo de Dados (arts. 46 a 49 da Lei nº 13.709/2018 - LGPD) (9)
+- Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD) (9)
+- Da ANPD (arts. 55-A a 55-M da Lei nº 13.709/2018 - LGPD) (8)
+- Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD) (8)
+- Do Tratamento de Dados Pessoais de Crianças e de Adolescentes (art. 14 da Lei nº 13.709/2018 - LGPD) (7)
+- Banco de Dados - Conceitos e Fundamentos de Modelo Relacional (7)
+- Desenvolvimento de Sistemas - Javascript (7)
+- Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.) (7)
+- Da Responsabilidade e do Ressarcimento de Danos (arts. 42 a 45 da Lei nº 13.709/2018 - LGPD) (6)
+- Do Término do Tratamento de Dados (arts. 15 a 16 da Lei nº 13.709/2018 - LGPD) (6)
+- Desenvolvimento de Sistemas - HTML (6)
+- Segurança da Informação - Backup (6)
+- Windows 10 (5)
+- Windows 11 (5)
+- Banco de Dados - Modelo Entidade-Relacionamento (MER) (4)
+- Redes de Computadores - DNS (Domain Name System) (4)
+- Recursos, Campos, Endereçamento (Correio Eletrônico) (4)
+- Do CNPD (arts. 58-A a 58-B da Lei nº 13.709/2018 - LGPD) (3)
+- Desenvolvimento de Sistemas - CSS (3)
+- Redes de Computadores - Conceitos e Especificações do IP (3)
+- Segurança da Informação - Eventos e Incidentes de Segurança (NBR ISO/IEC 27001, 27002 e outras) (3)
+- Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.) (3)
+- Das Boas Práticas e da Governança (arts. 50 a 51 da Lei nº 13.709/2018 - LGPD) (2)
+- Disposições Finais e Transitórias (arts. 60 a 65 da Lei nº 13.709/2018 - LGPD) (2)
+- Desenvolvimento de Sistemas - Definição de Algoritmos e Estruturas de Controle (2)
+- Segurança da Informação - Análise de Tráfego e Logs (2)
+- Segurança da Informação - Conceitos de Certificado Digital (2)
+- Segurança da Informação - Conceitos de Firewall, Proxy e DMZ (2)
+- Barramentos, Placa-mãe e BIOS (2)
+- Conceitos de Internet (2)
+- Google Chrome (2)
+- Periféricos (Dispositivos de Entrada e Saída) (2)
+- Da Neutralidade de Rede (art. 9º da Lei nº 12.965/2014) (2)
+- Ciência de Dados e Inteligência Artificial - Conceitos Iniciais e Gerais de Inteligência Artificial (1)
+- Da Transferência Internacional de Dados (arts. 33 a 36 da Lei nº 13.709/2018 - LGPD) (1)
+- Segurança da Informação - Autenticação Multifator (MFA) (1)
+- Segurança da Informação - Computação Forense (1)
+- Segurança da Informação - Engenharia Social e Phishing (1)
+- Segurança da Informação - Senhas (Gerenciamento, Política, etc.) (1)
+- Segurança da Informação - VPN O analista Bruno deseja acessar a rede corporativa do Tribunal de Justiça a partir da sua residência. Para isso, ele planeja utilizar a VPN (Rede Virtual Privada) (1)
+- Sistemas Operacionais - Sistemas Operacionais para Dispositivos Móveis (IOS, Android, etc.) (1)
+- Conceitos Gerais de Google Workspace (1)
+- Demais Recursos do Google Workspace (1)
+- Extensão de Arquivos Francisco, agente da Nittrans, precisa enviar um manual de procedimentos por e-mail. Ele optou por salvar o documento original do MS Word 365 (BR) em PDF (1)
+- Google Docs (1)
+- Intranet e Extranet (1)
+- Memórias (RAM, ROM, CACHE, HD, etc.) (1)
+- Processador (CPU) e Arquitetura de Computador (1)
+- Questões Mescladas de Hardware (1)
+- Writer Ana edita seus documentos no LibreOffice e, sempre que executa a opção salvar, a pasta C:\Users\Ana\Documents é aberta. Contudo, Ana quer alterar essa pasta (1)
+- Writer No LibreOffice Writer, caso o usuário tenha copiado um texto de um documento e deseje herdar o estilo do parágrafo do texto original no ponto de inserção no (1)
+- Da Responsabilidade pelo Tratamento de Dados Pessoais (arts. 31 a 32 da Lei nº 13.709/2018 - LGPD) (1)
+- Disposições Preliminares (arts. 1º a 6º da Lei nº 12.965/2014) (1)
+- Proteção de Registros, Dados Pessoais e Comunicações Privadas (arts. 10 a 17 da Lei nº 12.965/2014) (1)
+- Responsabilidade por Danos De. de Conteúdo Gerado por Terceiros (arts. 18 a 21 da Lei nº 12.965/2014 (1)
+- Tópicos Mesclados da Lei nº 12.965/2014 (1)
+- Redes de Computadores - HTTP (1)
+- Word 2019 (1)
+- Banco de Dados - Arquitetura ANSI/SPARC (1)
+- Segurança da Informação - Sistemas de Proteção Locais (Antivírus, Antispyware, etc.) (1)
+- Segurança da Informação - Tópicos Mesclados de Recursos de Segurança da Informação (1)
+- Ciência de Dados e Inteligência Artificial - IA Generativa (1)
+- Sistemas Operacionais (1)
+
+## Programa de aulas coberto (31)
+
+- Aula 00 · Internet, redes e tecnologias digitais
+- Aula 01 · Internet, redes e tecnologias digitais
+- Aula 02 · Intranet_ VPN
+- Aula 03 · Computação em nuvem_ dispositivos e serviços em nuvem
+- Aula 04 · Navegadores_ cookies_ cache
+- Aula 05 · Correio eletrônico
+- Aula 06 · Redes sociais_ plataformas digitais
+- Aula 07 · Segurança da informação e segurança cibernética
+- Aula 08 · Vulnerabilidades_ malware_ ransomware_ phishing
+- Aula 09 · Segurança em redes_ Firewall
+- Aula 10 · Backup_ recuperação de dados
+- Aula 11 · Prevenção e resposta a incidentes de segurança
+- Aula 12 · Microsoft 365 (BR) - Excel
+- Aula 13 · LibreOffice-BrOffice - Calc
+- Aula 14 · Microsoft 365 (BR) - Word
+- Aula 15 · LibreOffice-BrOffice - Writer
+- Aula 16 · Microsoft 365 (BR) - PowerPoint
+- Aula 17 · LibreOffice-BrOffice - Impress
+- Aula 18 · Sistemas operacionais - Windows 11 (BR)
+- Aula 19 · Android e iOS - instalação, configuração e segurança
+- Aula 20 · Google Workspace
+- Aula 21 · Fundamentos de informática - hardware e software
+- Aula 23 · Noções de lógica de programação
+- Aula 24 · Aplicações web, HTML
+- Aula 25 · CSS
+- Aula 26 · Bancos de dados
+- Aula 27 · APIs
+- Aula 28 · JavaScript
+- Aula 29 · Legislação e ética digital - LGPD
+- Aula 30 · Marco Civil da Internet (Lei 12.965-2014)
+- Aula 31 · Lei dos Crimes Informáticos (Lei 12.737-2012)

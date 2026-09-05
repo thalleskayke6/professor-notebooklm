@@ -1,0 +1,140 @@
+# Direito Penal e Legislação Penal Extravagante
+
+**3 questões** na prova do Agente PC-PR 2026 (de 100).
+
+- 📘 [Guia completo: PCPR 2026 — Direito Penal (Apostilas)](guia-pcpr-2026-direito-penal-apostilas.md)
+- 🧩 [Índice, conceitos-chave e pegadinhas](../../notebooks/pcpr-2026-direito-penal-apostilas.md)
+- 📚 Guias por tema (7):
+  - [principios do direito penal](temas-pcpr-2026-direito-penal-apostilas/01-principios-do-direito-penal.md)
+  - [aplicacao da lei penal no tempo e espaco](temas-pcpr-2026-direito-penal-apostilas/02-aplicacao-da-lei-penal-no-tempo-e-espaco.md)
+  - [conflito de normas e interpretacao](temas-pcpr-2026-direito-penal-apostilas/03-conflito-de-normas-e-interpretacao.md)
+  - [teoria geral da infracao penal e fato tipico](temas-pcpr-2026-direito-penal-apostilas/04-teoria-geral-da-infracao-penal-e-fato-tipico.md)
+  - [elemento subjetivo do tipo](temas-pcpr-2026-direito-penal-apostilas/05-elemento-subjetivo-do-tipo.md)
+  - [ter criminis e graus de desenvolvimento](temas-pcpr-2026-direito-penal-apostilas/06-ter-criminis-e-graus-de-desenvolvimento.md)
+  - [teoria da ilicitude](temas-pcpr-2026-direito-penal-apostilas/07-teoria-da-ilicitude.md)
+
+## Assuntos em ordem de incidência (280 questões da banca no banco)
+
+- Lei nº 12.037/2009 - Identificação Criminal (55)
+- Lei nº 13.869/2019 - Lei de Abuso de Autoridade (antiga Lei nº 4.898/1965) (43)
+- Imputabilidade Penal (arts. 26 a 28 do CP) (6)
+- Peculato (art. 312 do CP) (6)
+- Lei nº 8.072/1990 - Crimes Hediondos (6)
+- Dos Crimes contra a Honra (arts. 138 a 145 do CP) (5)
+- Dos Crimes contra a Liberdade Sexual e da Exposição da Intimidade Sexual (arts. 213 a 216-B do CP) (5)
+- Da Violência Doméstica e Familiar Contra a Mulher (arts. 5º a 7º da Lei nº 11.340/2006) (5)
+- Concurso de Crimes (arts. 69 a 76 do CP) (4)
+- Do Roubo e da Extorsão (arts. 157 a 160 do CP) (4)
+- Estado de Necessidade (art. 24 do CP) (4)
+- Potencial Consciência da Ilicitude: Erro de Proibição e Descriminantes Putativas (arts. 20, §1º, e 21 do CP) (4)
+- Da Assistência à Mulher em Situação de Violência Doméstica e Familiar (arts. 8º a 12-C da Lei nº 11.340/2006) (4)
+- Do Condenado e do Internado (arts. 5º a 60 da Lei nº 7.210/1984 - LEP) (4)
+- Jurisprudência sobre a Lei nº 8.137/1990 (Crimes contra a Ordem Tributária, Econômica e R. Consumo) (4)
+- Lei nº 9.296/1996 - Interceptação Telefônica (4)
+- Advocacia Administrativa (art. 321 do CP) (3)
+- Concurso de Pessoas (arts. 29 a 31 do CP) (3)
+- Concussão e Excesso de Exação (art. 316 do CP) (3)
+- Dos Crimes contra a Inviolabilidade dos Segredos (arts. 153 a 154-B do CP) (3)
+- Dos Crimes contra a Liberdade Pessoal (arts. 146 a 149-A do CP) (3)
+- Erro de Tipo (art. 20 do CP) (3)
+- Jurisprudência dos Tribunais Superiores sobre Penas (3)
+- Legítima Defesa (art. 25 do CP) (3)
+- Princípio da Extraterritorialidade (art. 7º do CP) (3)
+- Da Execução das Penas em Espécie (arts. 105 a 170 da Lei nº 7.210/1984 - LEP) (3)
+- Das Medidas Protetivas de Urgência (arts. 18 a 24-A da Lei nº 11.340/2006) (3)
+- Corrupção Ativa (art. 333 do CP) (2)
+- Corrupção Passiva (art. 317 do CP) (2)
+- Da Aplicação da Pena (arts. 59 a 68 do CP) (2)
+- Da Apropriação Indébita (arts. 168 a 170 do CP) (2)
+- Denunciação Caluniosa (art. 339 do CP) (2)
+- Desistência Voluntária (art. 15 do CP) (2)
+- Do Estelionato e das Outras Fraudes (arts. 171 a 179 do CP) (2)
+- Do Furto (arts. 155 e 156 do CP) (2)
+- Dos Crimes em Licitações e Contratos Administrativos (arts. 337-E a 337-P do CP) (2)
+- Dos Crimes Sexuais contra Vulnerável (arts. 217-A a 226 do CP) (2)
+- Falsificação de Documento Público (art. 297 do CP) (2)
+- Feminicídio (art. 121-A do CP) (2)
+- Infanticídio (art. 123 do CP) (2)
+- Lugar do Crime (art. 6 do CP) (2)
+- Princípio da Territorialidade (art. 5º do CP) (2)
+- Tempo do Crime (art. 4º do CP) (2)
+- Lei nº 8.137/1990 - Crimes contra a Ordem Tributária, Econômica e Relações de Consumo (2)
+- Lei nº 9.503/1997 - Crimes no Código de Trânsito Brasileiro - CTB (arts. 291 a 312-B) (2)
+- Tópicos Mesclados da Lei nº 11.343/2006 (2)
+- Adulteração de Sinal Identificador de Veículo Automotor (art. 311 do CP) (1)
+- Arrependimento Posterior (art. 16 do CP) (1)
+- Causas de Extinção da Punibilidade (arts. 107 e 120 do CP) (1)
+- Certidão/Atestado Ideologicamente Falso e Falsidade Material de Atestado/Certidão (art. 301 do CP) (1)
+- Comunicação Falsa de Crime ou de Contravenção (art. 340 do CP) (1)
+- Conceito de Crime (1)
+- Conflitos de Leis Penais no Tempo (arts. 1º e 2º do CP) (1)
+- Considerações Gerais sobre a Ilicitude e suas Excludentes (art. 23 do CP) (1)
+- Crime Impossível (art. 17 do CP) (1)
+- Da Periclitação da Vida e da Saúde (arts. 130 a 136 do CP) (1)
+- Da Receptação (arts. 180 e 180-A do CP) (1)
+- Das Lesões Corporais (art. 129 do CP) (1)
+- Das Penas Restritivas de Direitos (arts. 43 a 48 e 54 a 57 do CP) (1)
+- Do Ultraje Público ao Pudor (arts. 233 a 234 do CP) (1)
+- Dolo, Culpa e Preterdolo (arts. 18 e 19 do CP) (1)
+- Dos Crimes contra a Inviolabilidade de Domicílio (art. 150 do CP) (1)
+- Dos Crimes contra as Finanças Públicas (arts. 359-A a 359-H do CP) (1)
+- Efeitos da Condenação (arts. 91 a 92 do CP) (1)
+- Exigibilidade de Conduta Diversa (art. 22 do CP) (1)
+- Falsificação de Documento Particular (art. 298 do CP) (1)
+- Fases do Delito (1)
+- Induzimento, Instigação ou Auxílio a Suicídio ou a Automutilação (art. 122 do CP) (1)
+- Jurisprudência dos Tribunais Superiores sobre Extinção da Punibilidade (1)
+- Jurisprudência dos Tribunais Superiores sobre Lei Penal (1)
+- Jurisprudência dos Tribunais Superiores sobre Princípios do Direito Penal (1)
+- Nexo de Causalidade: Teorias (art. 13, caput, do CP) (1)
+- Prevaricação (arts. 319 e 319-A do CP) (1)
+- Princípios Constitucionais de Direito Penal (1)
+- Questões Mescladas sobre Crimes contra a Administração Pública (arts. 312 a 359-H do CP) (1)
+- Questões Mescladas sobre Crimes Contra o Patrimônio (arts. 155 a 183 do CP) (1)
+- Resistência (art. 329 do CP) (1)
+- Suspensão Condicional da Pena e Livramento Condicional (arts. 77 a 90 do CP) (1)
+- Tipicidade e Resultado (1)
+- Da Execução das Medidas de Segurança (arts. 171 a 179 da Lei nº 7.210/1984 - LEP) (1)
+- Disposições Transitórias e Finais (arts. 33 a 46 da Lei nº 11.340/2006) (1)
+- Do Procedimento Penal e da Apreensão, Arrecadação e Destinação de Bens do Acusado (arts. 48 a 64 da Lei nº 11.343/2006) (1)
+- Do Registro (arts 3º ao 5º da Lei nº 10.826/2003) (1)
+- Do Sistema Nacional de Políticas Públicas sobre Drogas - SISNAD (art. 3º a 17 da Lei nº 11.343/2006) (1)
+- Dos Crimes e das Penas (arts. 12 ao 21 da Lei nº 10.826/2003) (1)
+- Jurisprudência sobre o Estatuto do Desarmamento (Lei nº 10.826/2003, Decreto nº 9.847/2019 e Decreto nº 11.615/2023) (1)
+- Penas Privativas de Liberdade: Espécies, Regimes e Progressão (arts. 32 a 42 e 53 do CP) (1)
+- Lei nº 7.960/1989 - Prisão Temporária (1)
+- Violação de Sigilo Funcional (art. 325 do CP) (1)
+- Lei nº 8.069/1990 - (Dos Crimes - ECA, arts. 225 ao 244-B) (1)
+- Da Competência e dos Atos Processuais (arts. 63 a 68 da Lei nº 9.099/1995) (1)
+- Disposições Gerais (arts. 13 a 17 da Lei nº 11.340/2006) (1)
+
+## Programa de aulas coberto (28)
+
+- Aula 00 · Princípios do Direito Penal
+- Aula 01 · Aplicação da Lei Penal
+- Aula 02 · Teoria do Delito I
+- Aula 03 · Teoria do Delito II
+- Aula 04 · Concurso de pessoas e de crimes
+- Aula 05 · Das penas_ espécies e cominação
+- Aula 06 · Aplicação da pena e livramento condicional
+- Aula 07 · Efeitos da condenação e extinção da punibilidade
+- Aula 08 · Crimes contra a pessoa
+- Aula 09 · Crimes contra o patrimônio
+- Aula 10 · Crimes contra a dignidade sexual
+- Aula 11 · Crimes contra a fé pública
+- Aula 12 · Crimes contra a administração pública I
+- Aula 13 · Crimes contra a administração pública II
+- Aula 14 · Crimes contra a administração pública III
+- Aula 15 · Crimes em licitações e contratos
+- Aula 00 · Lei de Execução Penal (7.210-1984)
+- Aula 01 · Lei dos Crimes Hediondos (8.072-1990)
+- Aula 02 · Crimes contra a ordem tributária e econômica
+- Aula 03 · Lei de Interceptação Telefônica (9.296-1996)
+- Aula 04 · Estatuto do Desarmamento (10.826-2003)
+- Aula 05 · Lei Maria da Penha (11.340-2006)
+- Aula 06 · Lei de Drogas (11.343-2006)
+- Aula 07 · Lei das Organizações Criminosas (12.850-2013)
+- Aula 08 · Pacote Anticrime (13.964-2019)
+- Aula 09 · Estatuto da Advocacia e OAB (8.906-1994)
+- Aula 10 · Lavagem de Dinheiro (Lei 9.613-1998)
+- Aula 11 · Código de Trânsito Brasileiro

@@ -1,0 +1,127 @@
+# Língua Portuguesa
+
+**25 questões** na prova do Agente PC-PR 2026 (de 100).
+
+- 📘 [Guia completo: PCPR 2026 — Língua Portuguesa (Apostilas)](guia-pcpr-2026-lingua-portuguesa-apostilas.md)
+- 🧩 [Índice, conceitos-chave e pegadinhas](../../notebooks/pcpr-2026-lingua-portuguesa-apostilas.md)
+- 📚 Guias por tema (17):
+  - [aula 00 nivelamento da lingua](temas-pcpr-2026-lingua-portuguesa-apostilas/01-aula-00-nivelamento-da-lingua.md)
+  - [aula 01 ortografia e acentuacao grafica](temas-pcpr-2026-lingua-portuguesa-apostilas/02-aula-01-ortografia-e-acentuacao-grafica.md)
+  - [aula 02 classes de palavras i](temas-pcpr-2026-lingua-portuguesa-apostilas/03-aula-02-classes-de-palavras-i.md)
+  - [aula 03 classes de palavras ii](temas-pcpr-2026-lingua-portuguesa-apostilas/04-aula-03-classes-de-palavras-ii.md)
+  - [aula 04 classes de palavras iii](temas-pcpr-2026-lingua-portuguesa-apostilas/05-aula-04-classes-de-palavras-iii.md)
+  - [aula 05 estrutura e formacao de palavras](temas-pcpr-2026-lingua-portuguesa-apostilas/06-aula-05-estrutura-e-formacao-de-palavras.md)
+  - [aula 06 organizacao sintatica das frases](temas-pcpr-2026-lingua-portuguesa-apostilas/07-aula-06-organizacao-sintatica-das-frases.md)
+  - [aula 07 tipologia da frase e pontuacao](temas-pcpr-2026-lingua-portuguesa-apostilas/08-aula-07-tipologia-da-frase-e-pontuacao.md)
+  - [aula 08 concordancia verbal e nominal](temas-pcpr-2026-lingua-portuguesa-apostilas/09-aula-08-concordancia-verbal-e-nominal.md)
+  - [aula 09 regencia verbal e nominal e crase](temas-pcpr-2026-lingua-portuguesa-apostilas/10-aula-09-regencia-verbal-e-nominal-e-crase.md)
+  - [aula 10 coesao e coerencia](temas-pcpr-2026-lingua-portuguesa-apostilas/11-aula-10-coesao-e-coerencia.md)
+  - [aula 11 semantica sinonimos antonimos e paronimos](temas-pcpr-2026-lingua-portuguesa-apostilas/12-aula-11-semantica-sinonimos-antonimos-e-paronimos.md)
+  - [aula 12 interpretacao e compreensao de texto](temas-pcpr-2026-lingua-portuguesa-apostilas/13-aula-12-interpretacao-e-compreensao-de-texto.md)
+  - [aula 13 generos textuais e dominios discursivos](temas-pcpr-2026-lingua-portuguesa-apostilas/14-aula-13-generos-textuais-e-dominios-discursivos.md)
+  - [aula 14 norma culta e registros de linguagem](temas-pcpr-2026-lingua-portuguesa-apostilas/15-aula-14-norma-culta-e-registros-de-linguagem.md)
+  - [aula 15 atos de comunicacao e dicionarios](temas-pcpr-2026-lingua-portuguesa-apostilas/16-aula-15-atos-de-comunicacao-e-dicionarios.md)
+  - [aula 16 aula extra](temas-pcpr-2026-lingua-portuguesa-apostilas/17-aula-16-aula-extra.md)
+- 📘 [Guia completo: PCPR 2026 — Português](guia-pcpr-2026-portugues.md)
+- 🧩 [Índice, conceitos-chave e pegadinhas](../../notebooks/pcpr-2026-portugues.md)
+- 📚 Guias por tema (18):
+  - [guia mestre e estrategia de prova o jeito fgv](temas-pcpr-2026-portugues/01-guia-mestre-e-estrategia-de-prova-o-jeito-fgv.md)
+  - [morfologia contextual e formacao de palavras](temas-pcpr-2026-portugues/02-morfologia-contextual-e-formacao-de-palavras.md)
+  - [sintaxe do periodo simples e composto](temas-pcpr-2026-portugues/03-sintaxe-do-periodo-simples-e-composto.md)
+  - [sintaxe das oracoes reduzidas](temas-pcpr-2026-portugues/04-sintaxe-das-oracoes-reduzidas.md)
+  - [regencia verbal nominal e emprego da crase](temas-pcpr-2026-portugues/05-regencia-verbal-nominal-e-emprego-da-crase.md)
+  - [concordancia verbal e nominal](temas-pcpr-2026-portugues/06-concordancia-verbal-e-nominal.md)
+  - [colocacao pronominal](temas-pcpr-2026-portugues/07-colocacao-pronominal.md)
+  - [paralelismo sintatico e semantico](temas-pcpr-2026-portugues/08-paralelismo-sintatico-e-semantico.md)
+  - [pontuacao como sintaxe aplicada](temas-pcpr-2026-portugues/09-pontuacao-como-sintaxe-aplicada.md)
+  - [coerencia e coesao textual anafora catafora e cone](temas-pcpr-2026-portugues/10-coerencia-e-coesao-textual-anafora-catafora-e-cone.md)
+  - [semantica relacoes lexicais e modalizacao discursi](temas-pcpr-2026-portugues/11-semantica-relacoes-lexicais-e-modalizacao-discursi.md)
+  - [reescrita de frases e tecnicas de substituicao de ](temas-pcpr-2026-portugues/12-reescrita-de-frases-e-tecnicas-de-substituicao-de-.md)
+  - [clareza correcao e propriedades de estilo do perio](temas-pcpr-2026-portugues/13-clareza-correcao-e-propriedades-de-estilo-do-perio.md)
+  - [tipologia genero textual e intertextualidade](temas-pcpr-2026-portugues/14-tipologia-genero-textual-e-intertextualidade.md)
+  - [tipos de discurso direto indireto e indireto livre](temas-pcpr-2026-portugues/15-tipos-de-discurso-direto-indireto-e-indireto-livre.md)
+  - [linguagem variacao registro e redacao oficial](temas-pcpr-2026-portugues/16-linguagem-variacao-registro-e-redacao-oficial.md)
+  - [ortografia acentuacao e convencoes graficas](temas-pcpr-2026-portugues/17-ortografia-acentuacao-e-convencoes-graficas.md)
+  - [interpretacao de texto argumentacao e questoes mes](temas-pcpr-2026-portugues/18-interpretacao-de-texto-argumentacao-e-questoes-mes.md)
+- 📘 [Guia completo: PC-PR PORTUGUÊS](guia-pc-pr-portugues.md)
+- 🧩 [Índice, conceitos-chave e pegadinhas](../../notebooks/pc-pr-portugues.md)
+- ✍️ Notas de autoria própria (17) em [notas/](notas/)
+
+## Assuntos em ordem de incidência (722 questões da banca no banco)
+
+- Interpretação de Textos (Compreensão) (254)
+- (sem assunto) (71)
+- Tipologia e Gênero Textual (49)
+- Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc) (40)
+- Reescrita de Frases. Substituição de Palavras ou Trechos de Texto. (37)
+- Adjetivo (19)
+- Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc) (15)
+- Figuras de Linguagem (14)
+- Acentuação (11)
+- Sinônimos e Antônimos (11)
+- Fatos da Língua Portuguesa (Porque, Por Que, Porquê e Por Quê; Onde, Aonde e Donde; Há e A, etc) (10)
+- Formação e Estrutura das Palavras (10)
+- Questões Variadas de Classe de Palavras (10)
+- Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais (9)
+- Substantivo (9)
+- Concordância (Verbal e Nominal) (8)
+- Conjunção (8)
+- Crase (8)
+- Homônimos e Parônimos (8)
+- Ortografia - Casos Gerais e Emprego das Letras (8)
+- Denotação e Conotação (7)
+- Preposição (7)
+- Variações da Linguagem: Não Verbal, Regional, Histórica, Contextual. Neologismos e Estrangeirismos (7)
+- Adjunto adnominal x Complemento Nominal (6)
+- Colocação Pronominal (6)
+- Linguagem Formal e Informal (6)
+- Sujeito (6)
+- Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo (6)
+- Advérbio (5)
+- Paralelismo (5)
+- Transitividade Verbal e Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da (5)
+- Clareza e Correção (4)
+- Orações Subordinadas Adjetivas (4)
+- Polissemia (4)
+- Questões Variadas de Verbo (4)
+- Convenções de Escrita (Itálico, Siglas, etc) (3)
+- Orações Subordinadas Adverbiais (3)
+- Questões Mescladas de Ortografia (3)
+- Outras Questões de Português e Questões Mescladas (Interpretação de Textos ou Gramática) (2)
+- Pronomes de Tratamento (2)
+- Pronomes Demonstrativos (2)
+- Questões Mescladas sobre Pronomes (2)
+- Artigo (1)
+- Correlação Verbal (1)
+- Crase Texto I (1)
+- Frase, Oração e Período (1)
+- Numeral (1)
+- Ordenação de Parágrafos (1)
+- Pronomes Indefinidos (1)
+- Pronomes Pessoais (1)
+- Pronomes Possessivos (1)
+- Pronomes Relativos (1)
+- Tipos de Discurso (Direto, Indireto e Indireto Livre) (1)
+- Uso do Hífen (1)
+- Vozes (Voz Passiva e Voz Ativa) (1)
+- Orações Subordinadas Substantivas (1)
+
+## Programa de aulas coberto (17)
+
+- Aula 00 · Nivelamento
+- Aula 01 · Ortografia e acentuação gráfica
+- Aula 02 · Classes de palavras I
+- Aula 03 · Classes de palavras II
+- Aula 04 · Classes de palavras III
+- Aula 05 · Estrutura e formação de palavras
+- Aula 06 · Organização sintática das frases
+- Aula 07 · Tipologia da frase e pontuação
+- Aula 08 · Concordância verbal e nominal
+- Aula 09 · Regência verbal e nominal e crase
+- Aula 10 · Coesão e coerência
+- Aula 11 · Semântica_ sinônimos, antônimos e parônimos
+- Aula 12 · Interpretação e compreensão de texto
+- Aula 13 · Tipos textuais
+- Aula 14 · Norma culta e registros de linguagem
+- Aula 15 · Atos de comunicação e dicionários
+- Aula 16 · Aula extra
