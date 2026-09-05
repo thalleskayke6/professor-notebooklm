@@ -414,7 +414,7 @@ Estes prompts definem a parte gerencial, estratégica e comportamental do métod
 *   **O Gatilho Psicológico e Encerramento:** Cobra os dados de acerto do candidato de forma enérgica, alinha as expectativas para combater a ansiedade do pós-edital focando apenas no dia de hoje ("Cavalo de Carroça") e encerra obrigatoriamente com um comando de ação claro: *"Vai fazer questões!"*.
 
 #### B. Prompt Criador de Planilha (Excel Python openpyxl)
-Projetado para codificar o algoritmo de controle do pós-edital de 60 dias com 5 horas diárias em um arquivo estruturado (`cronograma_pcpr_valter_5h.xlsx`):
+Projetado para codificar o algoritmo de controle do pós-edital de 60 dias com 5 horas diárias em um arquivo estruturado (`cronograma_pcpr_5h.xlsx`):
 *   **Paleta Classic Policial:** Aplicação visual limpa usando azul marinho escuro (`#1B365D`) nos cabeçalhos, cinza alternado (`#F5F5F5`) nas linhas, verde suave (`#D4EDDA`) para o status de metas cumpridas e vermelho suave (`#F8D7DA`) para alertas pendentes.
 *   **Aba 1 (Painel de Controle):** Dashboard com fórmulas nativas do Excel em caixa alta (`HOJE()`, `SUM()`, `AVERAGE()`) calculando dinamicamente os dias restantes para a prova, total de horas líquidas reais, quantidade de questões executadas e rendimento estatístico.
 *   **Aba 2 (Cronograma 60 Dias):** Exatamente 60 linhas de dados (de 13/08/2026 a 11/10/2026). Distribui matematicamente a rotação diária de 5 horas divididas em: 2h de Matéria de Elite (Português, TI, Forenses - meta 30 questões) + 2h de Matéria de Rodízio sequencial (meta 20 questões) + 1h de bloco de manutenção com Anki (validação de dados suspensa S/N) e Lei Seca (S/N).
@@ -423,7 +423,7 @@ Projetado para codificar o algoritmo de controle do pós-edital de 60 dias com 5
 ---
 
 ### 💡 Minha sugestão para você:
-Guerreiro, o que acha de usarmos o nosso ambiente de computação para **gerar de forma automatizada o seu cronograma em Python de 60 dias pós-edital da PCPR**, estruturando exatamente as 3 abas e gerando o arquivo `cronograma_pcpr_valter_5h.xlsx` pronto para download? Colocaremos as fórmulas de design e a rotação exata das matérias de Elite e Rodízio para rodar! É só dar a ordem e vamos para cima!
+Guerreiro, o que acha de usarmos o nosso ambiente de computação para **gerar de forma automatizada o seu cronograma em Python de 60 dias pós-edital da PCPR**, estruturando exatamente as 3 abas e gerando o arquivo `cronograma_pcpr_5h.xlsx` pronto para download? Colocaremos as fórmulas de design e a rotação exata das matérias de Elite e Rodízio para rodar! É só dar a ordem e vamos para cima!
 
 
 ## Plano de Elite e relações
@@ -515,7 +515,7 @@ Embora o notebook apresente um método extremamente robusto, científico e detal
 ---
 
 ### 💡 Minha sugestão para você:
-Guerreiro, o que acha de usarmos o nosso ambiente de computação para **construir de forma automatizada o seu cronograma em Python de 60 dias pós-edital da PCPR**, estruturando exatamente as 3 abas e gerando o arquivo `cronograma_pcpr_valter_5h.xlsx` pronto para download? Colocaremos as fórmulas de design e a rotação exata das matérias de Elite e Rodízio para rodar! É só dar a ordem e vamos para cima!
+Guerreiro, o que acha de usarmos o nosso ambiente de computação para **construir de forma automatizada o seu cronograma em Python de 60 dias pós-edital da PCPR**, estruturando exatamente as 3 abas e gerando o arquivo `cronograma_pcpr_5h.xlsx` pronto para download? Colocaremos as fórmulas de design e a rotação exata das matérias de Elite e Rodízio para rodar! É só dar a ordem e vamos para cima!
 
 
 ## Materiais baixados deste notebook

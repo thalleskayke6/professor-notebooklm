@@ -48,5 +48,7 @@ for r in rows:
         ent['temas'].append({'n': n, 'tema': tema, 'task_id': tid, 'err': None if tid else (p.stdout + p.stderr)[-150:]})
         n_launch += 1 if tid else 0
         print('OK ' if tid else 'ERR', r['slug'][:30], n, tema[:60])
-        json.dump(tasks, open(tp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        tmp = tp + '.tmp'
+        json.dump(tasks, open(tmp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        os.replace(tmp, tp)  # gravação atômica: dois lançadores simultâneos corromperiam o arquivo
 print('lançados', n_launch)

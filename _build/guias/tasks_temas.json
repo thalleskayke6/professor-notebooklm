@@ -493,25 +493,19 @@
     "tema": "Geometria Plana, Espacial e Analítica",
     "task_id": "c0553a3c-5695-4841-8720-bbded5cefc4d",
     "err": null
-   },
-   {
-    "n": 5,
-    "tema": "Estatística Descritiva, Medidas Estatísticas e Amostragem",
-    "task_id": null,
-    "err": "RROR\n12:23:46 ERROR [notebooklm._rpc_executor] [req=a1e5d669] RPC CREATE_ARTIFACT failed after 0.969s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR\n"
-   },
-   {
-    "n": 5,
-    "tema": "Estatística Descritiva, Medidas Estatísticas e Amostragem",
-    "task_id": null,
-    "err": "RROR\n12:30:18 ERROR [notebooklm._rpc_executor] [req=e1f87998] RPC CREATE_ARTIFACT failed after 0.866s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR\n"
-   },
-   {
-    "n": 6,
-    "tema": "Análise Combinatória e Teoria da Probabilidade",
-    "task_id": null,
-    "err": "RROR\n12:33:25 ERROR [notebooklm._rpc_executor] [req=c48231ec] RPC CREATE_ARTIFACT failed after 0.646s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR\n"
    }
   ]
+ },
+ "5714ea7c-de27-44b2-aab4-aeb30121b411": {
+  "slug": "exatas-e-logica-videoaulas",
+  "temas": []
+ },
+ "73efc3d0-2a26-482e-a98a-f65ee6f3b538": {
+  "slug": "pcpr-2026-contabilidade-geral",
+  "temas": []
+ },
+ "546f0cb3-6aab-4b5b-97ac-7e8c7adec19c": {
+  "slug": "pc-pr-tecnologia-da-informacao",
+  "temas": []
  }
 }

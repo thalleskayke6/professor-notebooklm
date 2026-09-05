@@ -5,6 +5,7 @@ import os, re, io, sys, glob
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SUBS = [
+    (r'cronograma_pcpr_valter_5h', 'cronograma_pcpr_5h'),
     (r'Método Valter Rodrigues', 'Método do autor das videoaulas'),
     (r'Valter Rodrigues', 'o autor das videoaulas de método'),
     (r'\bValter\b', 'o autor das videoaulas'),
