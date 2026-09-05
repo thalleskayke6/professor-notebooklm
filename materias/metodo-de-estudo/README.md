@@ -1,5 +1,8 @@
 # Método de estudo
 
+> [!CAUTION]
+> **Uso exclusivo para estudo pessoal. Venda proibida.** Nenhuma pessoa pode vender, revender, incluir em curso, mentoria, assinatura ou grupo pago, nem monetizar este material de qualquer forma. Ver [AVISO-DE-USO.md](../../AVISO-DE-USO.md).
+
 
 - 📘 [Guia completo: o autor das videoaulas de método](guia-metodo-de-estudo-para-concursos.md)
 - 🧩 [Índice, conceitos-chave e pegadinhas](../../notebooks/metodo-de-estudo-para-concursos.md)

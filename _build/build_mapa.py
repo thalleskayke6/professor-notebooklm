@@ -65,7 +65,7 @@ for name, peso, ids in G:
     L.append(f"### {name}" + (f" — {peso}" if peso else ""))
     qm = QMAP.get(name)
     if qm and qm in qcount:
-        L.append(f"- Questões reais: **{qcount[qm]}** em [questoes/{slugq(qm)}.md](questoes/{slugq(qm)}.md)")
+        L.append(f"- Questões reais: **{qcount[qm]}** no banco (arquivo local `questoes/{slugq(qm)}.md`; contagem por assunto em [questoes/INDICE.md](questoes/INDICE.md))")
     if qm:
         L.append(f"- Apostilas e notas do vault: ver seção \"{qm}\" em [vault/INDICE-VAULT.md](vault/INDICE-VAULT.md)")
     if not ids and name == "Direitos Humanos":
@@ -79,7 +79,7 @@ for name, peso, ids in G:
     L.append("")
 if "Legislação Penal Extravagante" in qcount:
     L += ["### Legislação Penal Extravagante (dentro de Direito Penal no edital)",
-          f"- Questões reais: **{qcount['Legislação Penal Extravagante']}** em [questoes/legislacao-penal-extravagante.md](questoes/legislacao-penal-extravagante.md)",
+          f"- Questões reais: **{qcount['Legislação Penal Extravagante']}** no banco (arquivo local `questoes/legislacao-penal-extravagante.md`)",
           "- Apostilas no vault: ver `vault/INDICE-VAULT.md`.", ""]
 L += ["## Materiais baixados (materiais/)", ""]
 for m in sorted(os.listdir(os.path.join(OUT, 'materiais'))):

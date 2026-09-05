@@ -1,5 +1,8 @@
 # Raciocínio Lógico-Matemático
 
+> [!CAUTION]
+> **Uso exclusivo para estudo pessoal. Venda proibida.** Nenhuma pessoa pode vender, revender, incluir em curso, mentoria, assinatura ou grupo pago, nem monetizar este material de qualquer forma. Ver [AVISO-DE-USO.md](../../AVISO-DE-USO.md).
+
 **5 questões** na prova do Agente PC-PR 2026 (de 100).
 
 - 📘 [Guia completo: o autor das videoaulas de exatas](guia-exatas-e-logica-videoaulas.md)

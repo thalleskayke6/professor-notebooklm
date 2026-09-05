@@ -4,21 +4,24 @@
 Cada arquivo abaixo tem as questões da matéria agrupadas por assunto, com gabarito logo após cada questão.
 Uso pelo professor: Grep pelo assunto ou por palavra-chave no arquivo da matéria; use as questões reais como modelo antes de inventar uma.
 
+> Os arquivos por matéria, com os enunciados na íntegra, ficam só na máquina local: são questões de terceiros.
+> O que este índice publica é a contagem por matéria e assunto, que é a incidência observada da banca.
+
 | Matéria | Questões | Com gabarito | Assuntos | Arquivo |
 |---|---:|---:|---:|---|
-| Contabilidade Geral | 809 | 768 | 14 | [contabilidade-geral.md](contabilidade-geral.md) |
-| Língua Portuguesa | 722 | 715 | 56 | [lingua-portuguesa.md](lingua-portuguesa.md) |
-| Direito Administrativo | 601 | 598 | 20 | [direito-administrativo.md](direito-administrativo.md) |
-| Estatística | 552 | 552 | 42 | [estatistica.md](estatistica.md) |
-| Tecnologia e Segurança Cibernética | 446 | 437 | 73 | [tecnologia-e-seguranca-cibernetica.md](tecnologia-e-seguranca-cibernetica.md) |
-| Direitos Humanos | 363 | 359 | 61 | [direitos-humanos.md](direitos-humanos.md) |
-| Raciocínio Lógico-Matemático | 250 | 247 | 39 | [raciocinio-logico-matematico.md](raciocinio-logico-matematico.md) |
-| Direito Constitucional | 214 | 157 | 10 | [direito-constitucional.md](direito-constitucional.md) |
-| Legislação Penal Extravagante | 148 | 140 | 24 | [legislacao-penal-extravagante.md](legislacao-penal-extravagante.md) |
-| Direito Penal | 132 | 126 | 68 | [direito-penal.md](direito-penal.md) |
-| Direito Processual Penal | 113 | 109 | 13 | [direito-processual-penal.md](direito-processual-penal.md) |
-| Ciências Forenses | 72 | 63 | 9 | [ciencias-forenses.md](ciencias-forenses.md) |
-| Legislação Estadual e Institucional | 60 | 52 | 16 | [legislacao-estadual-e-institucional.md](legislacao-estadual-e-institucional.md) |
+| Contabilidade Geral | 809 | 768 | 14 | `contabilidade-geral.md` |
+| Língua Portuguesa | 722 | 715 | 56 | `lingua-portuguesa.md` |
+| Direito Administrativo | 601 | 598 | 20 | `direito-administrativo.md` |
+| Estatística | 552 | 552 | 42 | `estatistica.md` |
+| Tecnologia e Segurança Cibernética | 446 | 437 | 73 | `tecnologia-e-seguranca-cibernetica.md` |
+| Direitos Humanos | 363 | 359 | 61 | `direitos-humanos.md` |
+| Raciocínio Lógico-Matemático | 250 | 247 | 39 | `raciocinio-logico-matematico.md` |
+| Direito Constitucional | 214 | 157 | 10 | `direito-constitucional.md` |
+| Legislação Penal Extravagante | 148 | 140 | 24 | `legislacao-penal-extravagante.md` |
+| Direito Penal | 132 | 126 | 68 | `direito-penal.md` |
+| Direito Processual Penal | 113 | 109 | 13 | `direito-processual-penal.md` |
+| Ciências Forenses | 72 | 63 | 9 | `ciencias-forenses.md` |
+| Legislação Estadual e Institucional | 60 | 52 | 16 | `legislacao-estadual-e-institucional.md` |
 
 ## Assuntos por matéria
 

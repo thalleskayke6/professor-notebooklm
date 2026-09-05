@@ -1,5 +1,8 @@
 # Ciências Forenses
 
+> [!CAUTION]
+> **Uso exclusivo para estudo pessoal. Venda proibida.** Nenhuma pessoa pode vender, revender, incluir em curso, mentoria, assinatura ou grupo pago, nem monetizar este material de qualquer forma. Ver [AVISO-DE-USO.md](../../AVISO-DE-USO.md).
+
 **10 questões** na prova do Agente PC-PR 2026 (de 100).
 
 - 📘 [Guia completo: PCPR 2026 — Ciências Forenses](guia-pcpr-2026-ciencias-forenses.md)

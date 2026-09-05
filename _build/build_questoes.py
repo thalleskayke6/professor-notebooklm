@@ -11,6 +11,10 @@ import os, re, json, io, sys, glob, unicodedata
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 VAULT = r"C:\Users\USER\OneDrive\EstudoObsidian\Estudo"
 OUT = r"C:\Users\USER\Professor\questoes"
+if os.path.isdir(OUT):  # limpa saidas antigas do parser anterior
+    for _f in os.listdir(OUT):
+        if _f.endswith('.md'):
+            os.remove(os.path.join(OUT, _f))
 os.makedirs(OUT, exist_ok=True)
 
 def slug(s):
@@ -21,6 +25,7 @@ def clean(t):
     t = t.replace('\u00a0', ' ')
     t = re.sub(r'!\[\]\([^)]*\)', '', t)
     t = re.sub(r'<sub>.*?</sub>', '', t, flags=re.S)
+    t = re.sub(r'!?\[[^\]]*\]\(chrome-extension://[^)]*\)', '', t)
     t = re.sub(r'[ \t]+\n', '\n', t)
     t = re.sub(r'\n{3,}', '\n\n', t)
     return t.strip()
@@ -40,7 +45,7 @@ def split_alts(lines):
                 alts[-1][1] += ' ' + ln.strip()
         else:
             enun.append(ln)
-    return clean('\n'.join(enun)), [tuple(a) for a in alts]
+    return clean('\n'.join(enun)), [(a[0], clean(a[1])) for a in alts]
 
 def gab_table(text):
     return {m.group(1): m.group(2) for m in re.finditer(r'\|\s*Q(\d+)\s*\|\s*([A-E])\s*\|', text)}
@@ -198,6 +203,8 @@ idx = ['# Banco de questões (vault Obsidian)', '',
        f'{len(bank)} questões únicas (dedup por ID da fonte), {sum(1 for q in bank.values() if q["gabarito"])} com gabarito, extraídas de {len(stats)} arquivos do vault.',
        'Cada arquivo abaixo tem as questões da matéria agrupadas por assunto, com gabarito logo após cada questão.',
        'Uso pelo professor: Grep pelo assunto ou por palavra-chave no arquivo da matéria; use as questões reais como modelo antes de inventar uma.', '',
+       '> Os arquivos por matéria, com os enunciados na íntegra, ficam só na máquina local: são questões de terceiros.',
+       '> O que este índice publica é a contagem por matéria e assunto, que é a incidência observada da banca.', '',
        '| Matéria | Questões | Com gabarito | Assuntos | Arquivo |', '|---|---:|---:|---:|---|']
 for m in sorted(by_m, key=lambda x: -len(by_m[x])):
     qs = by_m[m]
@@ -205,7 +212,7 @@ for m in sorted(by_m, key=lambda x: -len(by_m[x])):
     by_a = {}
     for q in qs:
         by_a.setdefault(q['assunto'] or '(sem assunto)', []).append(q)
-    idx.append(f'| {m} | {len(qs)} | {sum(1 for q in qs if q["gabarito"])} | {len(by_a)} | [{fn}]({fn}) |')
+    idx.append(f'| {m} | {len(qs)} | {sum(1 for q in qs if q["gabarito"])} | {len(by_a)} | `{fn}` |')
     L = [f'# {m} — {len(qs)} questões', '', '## Assuntos (por volume)', '']
     for a in sorted(by_a, key=lambda x: -len(by_a[x])):
         L.append(f'- {a}: {len(by_a[a])}')

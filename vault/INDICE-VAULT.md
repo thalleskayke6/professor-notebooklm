@@ -4,10 +4,13 @@ Vault: `C:\Users\USER\OneDrive\EstudoObsidian\Estudo` (OneDrive; conferir se a p
 Comece pelo hub de cada matéria. Apostilas têm até três versões: R = resumo, S = simplificada, A = apostila completa.
 Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md` lá).
 
+> As notas listadas abaixo são copiadas para `vault/notas/` na máquina local, para o professor consultar.
+> Essa pasta não faz parte do repositório público (conteúdo pessoal), por isso os nomes aparecem sem link.
+
 ## Matérias
 
 ### Língua Portuguesa — 25 questões
-- Hub: [00 — Hub Língua Portuguesa.md](notas/00 — Hub Língua Portuguesa.md)  ·  vault: `PCPR 2026/Resumos MD/Língua Portuguesa/00 — Hub Língua Portuguesa.md`
+- Hub: `00 — Hub Língua Portuguesa.md`  ·  vault: `PCPR 2026/Resumos MD/Língua Portuguesa/00 — Hub Língua Portuguesa.md`
 - Apostilas (17 aulas) em `PCPR 2026/Resumos MD/Língua Portuguesa/`:
   - Aula 00 · Nivelamento · S 2KB
   - Aula 01 · Ortografia e acentuação gráfica · S 141KB
@@ -32,7 +35,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Nota solta: `PCPR 2026/Relatório de Incidência — Língua Portuguesa FGV.md` (65KB)
 
 ### Tecnologia e Segurança Cibernética — 25 questões
-- Hub: [00 — Hub Tecnologia e Segurança Cibernética.md](notas/00 — Hub Tecnologia e Segurança Cibernética.md)  ·  vault: `PCPR 2026/Resumos MD/Tecnologia e Segurança Cibernética/00 — Hub Tecnologia e Segurança Cibernética.md`
+- Hub: `00 — Hub Tecnologia e Segurança Cibernética.md`  ·  vault: `PCPR 2026/Resumos MD/Tecnologia e Segurança Cibernética/00 — Hub Tecnologia e Segurança Cibernética.md`
 - Apostilas (31 aulas) em `PCPR 2026/Resumos MD/Tecnologia e Segurança Cibernética/`:
   - Aula 00 · Internet, redes e tecnologias digitais · R 13KB · S 218KB
   - Aula 01 · Internet, redes e tecnologias digitais · R 12KB · S 204KB
@@ -69,11 +72,11 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Nota solta: `PCPR 2026/PCPR 2026 — TI, Direito Digital e Da Prova (CPP)_2.md` (107KB)
 
 ### Ciências Forenses — 10 questões
-- Hub: [00 — Hub Ciências Forenses.md](notas/00 — Hub Ciências Forenses.md)  ·  vault: `PCPR 2026/Resumos MD/Ciências Forenses/00 — Hub Ciências Forenses.md`
+- Hub: `00 — Hub Ciências Forenses.md`  ·  vault: `PCPR 2026/Resumos MD/Ciências Forenses/00 — Hub Ciências Forenses.md`
 - Apostilas (11 aulas) em `PCPR 2026/Resumos MD/Ciências Forenses/`:
   - Aula 00 · Perícias Médico-Legais · A 170KB
   - Aula 01 · Medicina Legal - Conceitos e Divisões · A 112KB
-  - Aula 02 · Antropologia Forense · A 155KB
+  - Aula 02 · Antropologia Forense · A 153KB
   - Aula 03 · Identificação Humana · A 93KB
   - Aula 08 · Traumatologia Forense · A 288KB
   - Aula 10 · Asfixiologia · A 169KB
@@ -87,7 +90,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Nota solta: `pcpi questoes.md` (101KB)
 
 ### Raciocínio Lógico-Matemático — 5 questões
-- Hub: [00 — Hub Raciocínio Lógico-Matemático.md](notas/00 — Hub Raciocínio Lógico-Matemático.md)  ·  vault: `PCPR 2026/Resumos MD/Raciocínio Lógico-Matemático/00 — Hub Raciocínio Lógico-Matemático.md`
+- Hub: `00 — Hub Raciocínio Lógico-Matemático.md`  ·  vault: `PCPR 2026/Resumos MD/Raciocínio Lógico-Matemático/00 — Hub Raciocínio Lógico-Matemático.md`
 - Apostilas (25 aulas) em `PCPR 2026/Resumos MD/Raciocínio Lógico-Matemático/`:
   - Aula 00 · Estruturas Lógicas I · S 120KB
   - Aula 01 · Estruturas Lógicas II · S 128KB
@@ -117,7 +120,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Cadernos de questões (vault): `PCPR 2026/Cadernos de Questões/Caderno — Raciocínio Lógico e Matemática.md` (141KB)
 
 ### Realidade do Paraná — 5 questões
-- Hub: [00 — Hub Realidade do Paraná.md](notas/00 — Hub Realidade do Paraná.md)  ·  vault: `PCPR 2026/Resumos MD/Realidade do Paraná/00 — Hub Realidade do Paraná.md`
+- Hub: `00 — Hub Realidade do Paraná.md`  ·  vault: `PCPR 2026/Resumos MD/Realidade do Paraná/00 — Hub Realidade do Paraná.md`
 - Apostilas (6 aulas) em `PCPR 2026/Resumos MD/Realidade do Paraná/`:
   - Aula 01 · Período Pré-Colonial e Colonial (Povos Indígenas) · A 230KB
   - Aula 02 · Geografia do Paraná - Aspectos Naturais · A 55KB
@@ -128,7 +131,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Nota solta: `PCPR 2026/REALIDADE DO PARÁNA.md` (3KB)
 
 ### Contabilidade Geral — 5 questões
-- Hub: [00 — Hub Contabilidade Geral.md](notas/00 — Hub Contabilidade Geral.md)  ·  vault: `PCPR 2026/Resumos MD/Contabilidade Geral/00 — Hub Contabilidade Geral.md`
+- Hub: `00 — Hub Contabilidade Geral.md`  ·  vault: `PCPR 2026/Resumos MD/Contabilidade Geral/00 — Hub Contabilidade Geral.md`
 - Apostilas (13 aulas) em `PCPR 2026/Resumos MD/Contabilidade Geral/`:
   - Aula 00 · Conceitos, objetivos e finalidades · S 46KB
   - Aula 01 · Situação Líquida e Equação Fundamental · R 3KB · S 55KB
@@ -146,7 +149,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Cadernos de questões (vault): `PCPR 2026/Cadernos de Questões/Caderno — Contabilidade Geral.md` (230KB) · `PCPR 2026/Cadernos de Questões/BALANCOPATRIMONIAL.md` (155KB) · `PCPR 2026/Cadernos de Questões/CPC 16 - Tratamento Contábil para os Estoques.md` (75KB) · `PCPR 2026/Cadernos de Questões/Provisões, Passivos e Ativos Contingentes (CPC 25, Lei 6.404).md` (140KB) · `PCPR 2026/Cadernos de Questões/Índices de Liquidez. Capital Circulante Líquido.md` (94KB) · `PCPR 2026/Cadernos de Questões/Demonstração do Resultado do Exercício (DRE) e Destinação do Resultado.md` (117KB) · `PCPR 2026/Cadernos de Questões/Elaboração e Apresentação das Demonstrações Contábeis (CPC 26, Lei 6.404, arts. 176 e 177).md` (72KB)
 
 ### Estatística — 5 questões
-- Hub: [00 — Hub Estatística.md](notas/00 — Hub Estatística.md)  ·  vault: `PCPR 2026/Resumos MD/Estatística/00 — Hub Estatística.md`
+- Hub: `00 — Hub Estatística.md`  ·  vault: `PCPR 2026/Resumos MD/Estatística/00 — Hub Estatística.md`
 - Apostilas (13 aulas) em `PCPR 2026/Resumos MD/Estatística/`:
   - Aula 00 · Apresentação de Dados · R 4KB · S 154KB
   - Aula 01 · Médias · R 6KB · S 54KB
@@ -164,7 +167,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Cadernos de questões (vault): `PCPR 2026/Cadernos de Questões/Caderno — Estatística.md` (223KB) · `PCPR 2026/Cadernos de Questões/Caderno Estatística para Agente - PC-PR 2026 (Tec).md` (272KB)
 
 ### Legislação Estadual e Institucional — 5 questões
-- Hub: [00 — Hub Legislação Estadual e Institucional.md](notas/00 — Hub Legislação Estadual e Institucional.md)  ·  vault: `PCPR 2026/Resumos MD/Legislação Estadual e Institucional/00 — Hub Legislação Estadual e Institucional.md`
+- Hub: `00 — Hub Legislação Estadual e Institucional.md`  ·  vault: `PCPR 2026/Resumos MD/Legislação Estadual e Institucional/00 — Hub Legislação Estadual e Institucional.md`
 - Apostilas (14 aulas) em `PCPR 2026/Resumos MD/Legislação Estadual e Institucional/`:
   - Aula 01 · Constituição do Estado do Paraná · A 147KB
   - Aula 02 · Lei 6.174-1970 - Disposições Constitucionais aos Servidores · A 143KB
@@ -183,7 +186,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Cadernos de questões (vault): `PCPR 2026/Cadernos de Questões/Caderno Legislação Estadual e Institucional - PC-PR 2026.md` (447KB) · `PCPR 2026/Cadernos de Questões/Caderno Inéditas - PC-PR 2026.md` (18KB)
 
 ### Direito Penal — 3 questões
-- Hub: [00 — Hub Direito Penal.md](notas/00 — Hub Direito Penal.md)  ·  vault: `PCPR 2026/Resumos MD/Direito Penal/00 — Hub Direito Penal.md`
+- Hub: `00 — Hub Direito Penal.md`  ·  vault: `PCPR 2026/Resumos MD/Direito Penal/00 — Hub Direito Penal.md`
 - Apostilas (16 aulas) em `PCPR 2026/Resumos MD/Direito Penal/`:
   - Aula 00 · Princípios do Direito Penal · S 89KB
   - Aula 01 · Aplicação da Lei Penal · R 39KB · S 174KB
@@ -204,7 +207,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Cadernos de questões (vault): `PCPR 2026/Cadernos de Questões/Caderno — Direito Penal e Processual Penal.md` (261KB)
 
 ### Direito Processual Penal — 3 questões
-- Hub: [00 — Hub Direito Processual Penal.md](notas/00 — Hub Direito Processual Penal.md)  ·  vault: `PCPR 2026/Resumos MD/Direito Processual Penal/00 — Hub Direito Processual Penal.md`
+- Hub: `00 — Hub Direito Processual Penal.md`  ·  vault: `PCPR 2026/Resumos MD/Direito Processual Penal/00 — Hub Direito Processual Penal.md`
 - Apostilas (9 aulas) em `PCPR 2026/Resumos MD/Direito Processual Penal/`:
   - Aula 00 · Introdução e princípios do Processo Penal · R 11KB · S 206KB
   - Aula 01 · Inquérito Policial · S 187KB
@@ -218,7 +221,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Cadernos de questões (vault): `PCPR 2026/Cadernos de Questões/Caderno — Direito Penal e Processual Penal.md` (261KB)
 
 ### Direito Constitucional — 3 questões
-- Hub: [00 — Hub Direito Constitucional.md](notas/00 — Hub Direito Constitucional.md)  ·  vault: `PCPR 2026/Resumos MD/Direito Constitucional/00 — Hub Direito Constitucional.md`
+- Hub: `00 — Hub Direito Constitucional.md`  ·  vault: `PCPR 2026/Resumos MD/Direito Constitucional/00 — Hub Direito Constitucional.md`
 - Apostilas (14 aulas) em `PCPR 2026/Resumos MD/Direito Constitucional/`:
   - Aula 00 · Aplicabilidade das normas constitucionais · S 79KB
   - Aula 01 · Princípios fundamentais da CF · S 92KB
@@ -240,7 +243,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Nota solta: `Questões Jurisprudência dos Tribunais Superiores sobre Direitos e Deveres Individuais e Coletivos.md` (90KB)
 
 ### Direito Administrativo — 3 questões
-- Hub: [00 — Hub Direito Administrativo.md](notas/00 — Hub Direito Administrativo.md)  ·  vault: `PCPR 2026/Resumos MD/Direito Administrativo/00 — Hub Direito Administrativo.md`
+- Hub: `00 — Hub Direito Administrativo.md`  ·  vault: `PCPR 2026/Resumos MD/Direito Administrativo/00 — Hub Direito Administrativo.md`
 - Apostilas (15 aulas) em `PCPR 2026/Resumos MD/Direito Administrativo/`:
   - Aula 00 · Princípios do Direito Administrativo · S 336KB
   - Aula 01 · Conceito e fontes · S 71KB
@@ -261,7 +264,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Nota solta: `questoes direito adm.md` (571KB)
 
 ### Direitos Humanos — 3 questões
-- Hub: [00 — Hub Direitos Humanos.md](notas/00 — Hub Direitos Humanos.md)  ·  vault: `PCPR 2026/Resumos MD/Direitos Humanos/00 — Hub Direitos Humanos.md`
+- Hub: `00 — Hub Direitos Humanos.md`  ·  vault: `PCPR 2026/Resumos MD/Direitos Humanos/00 — Hub Direitos Humanos.md`
 - Apostilas (11 aulas) em `PCPR 2026/Resumos MD/Direitos Humanos/`:
   - Aula 00 · Teoria Geral dos Direitos Humanos · R 5KB · S 78KB
   - Aula 01 · Características e evolução histórica dos Direitos Humanos · A 160KB
@@ -277,7 +280,7 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 - Cadernos de questões (vault): `PCPR 2026/Cadernos de Questões/Caderno — Direitos Humanos.md` (433KB)
 
 ### Legislação Penal Extravagante — 3 questões
-- Hub: [00 — Hub Legislação Penal Extravagante.md](notas/00 — Hub Legislação Penal Extravagante.md)  ·  vault: `PCPR 2026/Resumos MD/Legislação Penal Extravagante/00 — Hub Legislação Penal Extravagante.md`
+- Hub: `00 — Hub Legislação Penal Extravagante.md`  ·  vault: `PCPR 2026/Resumos MD/Legislação Penal Extravagante/00 — Hub Legislação Penal Extravagante.md`
 - Apostilas (12 aulas) em `PCPR 2026/Resumos MD/Legislação Penal Extravagante/`:
   - Aula 00 · Lei de Execução Penal (7.210-1984) · A 571KB
   - Aula 01 · Lei dos Crimes Hediondos (8.072-1990) · A 112KB
@@ -295,115 +298,115 @@ Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md
 ## Notas curadas do usuário (copiadas em `notas/`)
 
 ### Plano — plano de estudo, pesos, rotina, ciclo de blocos
-- [Ciclo de blocos.md](notas/Ciclo de blocos.md)
-- [Edital e pesos PCPR 2026.md](notas/Edital e pesos PCPR 2026.md)
-- [Perfil e rotina de estudo.md](notas/Perfil e rotina de estudo.md)
-- [Plano da reta final.md](notas/Plano da reta final.md)
+- `Ciclo de blocos.md`
+- `Edital e pesos PCPR 2026.md`
+- `Perfil e rotina de estudo.md`
+- `Plano da reta final.md`
 
 ### Método — método FGV, catálogo de pegadinhas P1-P10/T1-T4, prompts mestres
-- [00 — Hub do Método.md](notas/00 — Hub do Método.md)
-- [Catálogo de pegadinhas.md](notas/Catálogo de pegadinhas.md)
-- [Guia — montar o método do zero.md](notas/Guia — montar o método do zero.md)
-- [Método FGV — instruções do projeto.md](notas/Método FGV — instruções do projeto.md)
-- [Prompt Mestre — Engenharia Reversa FGV (PCPR 2026).md](notas/Prompt Mestre — Engenharia Reversa FGV (PCPR 2026).md)
-- [Prompt Mestre — Professor Reverso FGV.md](notas/Prompt Mestre — Professor Reverso FGV.md)
+- `00 — Hub do Método.md`
+- `Catálogo de pegadinhas.md`
+- `Guia — montar o método do zero.md`
+- `Método FGV — instruções do projeto.md`
+- `Prompt Mestre — Engenharia Reversa FGV (PCPR 2026).md`
+- `Prompt Mestre — Professor Reverso FGV.md`
 
 ### Registro — autópsia de erros, simulado, decisões
-- [00 — Hub do Registro.md](notas/00 — Hub do Registro.md)
-- [Assuntos a treinar — 1º Simulado PCPR.md](notas/Assuntos a treinar — 1º Simulado PCPR.md)
-- [Autópsia do caderno de erros — 273 questões.md](notas/Autópsia do caderno de erros — 273 questões.md)
-- [Histórico de decisões.md](notas/Histórico de decisões.md)
+- `00 — Hub do Registro.md`
+- `Assuntos a treinar — 1º Simulado PCPR.md`
+- `Autópsia do caderno de erros — 273 questões.md`
+- `Histórico de decisões.md`
 
 ### Português FGV — 18 notas por tema de Português no recorte FGV
-- [00 — Guia-Mestre do Português FGV.md](notas/00 — Guia-Mestre do Português FGV.md)
-- [01 — Morfologia.md](notas/01 — Morfologia.md)
-- [02 — Coerência e Coesão.md](notas/02 — Coerência e Coesão.md)
-- [03 — Tipologia e Gênero Textual.md](notas/03 — Tipologia e Gênero Textual.md)
-- [04 — Reescrita de Frases.md](notas/04 — Reescrita de Frases.md)
-- [05 — Ortografia e Acentuação.md](notas/05 — Ortografia e Acentuação.md)
-- [06 — Semântica.md](notas/06 — Semântica.md)
-- [07 — Sintaxe.md](notas/07 — Sintaxe.md)
-- [07a — Orações Reduzidas.md](notas/07a — Orações Reduzidas.md)
-- [08 — Linguagem, Variação e Registro.md](notas/08 — Linguagem, Variação e Registro.md)
-- [09 — Pontuação.md](notas/09 — Pontuação.md)
-- [10 — Regência e Crase.md](notas/10 — Regência e Crase.md)
-- [11 — Concordância Verbal e Nominal.md](notas/11 — Concordância Verbal e Nominal.md)
-- [12 — Clareza e Correção.md](notas/12 — Clareza e Correção.md)
-- [13 — Tipos de Discurso.md](notas/13 — Tipos de Discurso.md)
-- [14 — Colocação Pronominal.md](notas/14 — Colocação Pronominal.md)
-- [15 — Paralelismo.md](notas/15 — Paralelismo.md)
-- [16 — Interpretação e Questões Mescladas.md](notas/16 — Interpretação e Questões Mescladas.md)
+- `00 — Guia-Mestre do Português FGV.md`
+- `01 — Morfologia.md`
+- `02 — Coerência e Coesão.md`
+- `03 — Tipologia e Gênero Textual.md`
+- `04 — Reescrita de Frases.md`
+- `05 — Ortografia e Acentuação.md`
+- `06 — Semântica.md`
+- `07 — Sintaxe.md`
+- `07a — Orações Reduzidas.md`
+- `08 — Linguagem, Variação e Registro.md`
+- `09 — Pontuação.md`
+- `10 — Regência e Crase.md`
+- `11 — Concordância Verbal e Nominal.md`
+- `12 — Clareza e Correção.md`
+- `13 — Tipos de Discurso.md`
+- `14 — Colocação Pronominal.md`
+- `15 — Paralelismo.md`
+- `16 — Interpretação e Questões Mescladas.md`
 
-### o autor das videoaulas — método o autor das videoaulas de método em 10 notas
-- [00 - Metodo o autor das videoaulas de método (indice).md](notas/00 - Metodo o autor das videoaulas de método (indice).md)
-- [01 - Mentalidade e filosofia da jornada.md](notas/01 - Mentalidade e filosofia da jornada.md)
-- [02 - O nucleo do metodo - Questoes, Anki e nada mais.md](notas/02 - O nucleo do metodo - Questoes, Anki e nada mais.md)
-- [03 - Cadernos de questoes e filtros.md](notas/03 - Cadernos de questoes e filtros.md)
-- [04 - Especificidade e escolha do concurso.md](notas/04 - Especificidade e escolha do concurso.md)
-- [05 - Tempo, volume e cronograma.md](notas/05 - Tempo, volume e cronograma.md)
-- [06 - Materias especificas - Adm, Jurisprudencia, LEP e Redacao.md](notas/06 - Materias especificas - Adm, Jurisprudencia, LEP e Redacao.md)
-- [07 - IA para concursos.md](notas/07 - IA para concursos.md)
-- [08 - Reta final e dia de prova.md](notas/08 - Reta final e dia de prova.md)
-- [09 - Saude, foco e substancias.md](notas/09 - Saude, foco e substancias.md)
+### o autor das videoaulas — método de estudo em 10 notas
+- `00 - Metodo o autor das videoaulas de método (indice).md`
+- `01 - Mentalidade e filosofia da jornada.md`
+- `02 - O nucleo do metodo - Questoes, Anki e nada mais.md`
+- `03 - Cadernos de questoes e filtros.md`
+- `04 - Especificidade e escolha do concurso.md`
+- `05 - Tempo, volume e cronograma.md`
+- `06 - Materias especificas - Adm, Jurisprudencia, LEP e Redacao.md`
+- `07 - IA para concursos.md`
+- `08 - Reta final e dia de prova.md`
+- `09 - Saude, foco e substancias.md`
 
 ### Leis e Doutrina — lei de carreira da PC-PR
-- [Quadro Próprio da Polícia Civil do Paraná.md](notas/Quadro Próprio da Polícia Civil do Paraná.md)
+- `Quadro Próprio da Polícia Civil do Paraná.md`
 
 ### Baralhos — mapa de baralhos e workflow Anki
-- [00 — Hub dos Dumps de Estudo.md](notas/00 — Hub dos Dumps de Estudo.md)
-- [Mapa de baralhos Anki.md](notas/Mapa de baralhos Anki.md)
-- [Workflow de exportação Anki.md](notas/Workflow de exportação Anki.md)
-- [Árvore antiga de subdecks (superada).md](notas/Árvore antiga de subdecks (superada).md)
+- `00 — Hub dos Dumps de Estudo.md`
+- `Mapa de baralhos Anki.md`
+- `Workflow de exportação Anki.md`
+- `Árvore antiga de subdecks (superada).md`
 
 ### Cadernos de Questões — hub dos cadernos
-- [00 — Hub dos Cadernos de Questões.md](notas/00 — Hub dos Cadernos de Questões.md)
+- `00 — Hub dos Cadernos de Questões.md`
 
 ### NotebookLM — uma nota por notebook do NotebookLM
-- [00 — Hub dos NotebookLM.md](notas/00 — Hub dos NotebookLM.md)
-- [NLM — Chatbots e Prompt Engineering para Educadores.md](notas/NLM — Chatbots e Prompt Engineering para Educadores.md)
-- [NLM — Ciência da Memória — Aprendizagem Ativa e Anki.md](notas/NLM — Ciência da Memória — Aprendizagem Ativa e Anki.md)
-- [NLM — Cognitive Toolkits for Deep Learning and Mastery.md](notas/NLM — Cognitive Toolkits for Deep Learning and Mastery.md)
-- [NLM — Edital 01 - 2026 — Concurso PC do Paraná.md](notas/NLM — Edital 01 - 2026 — Concurso PC do Paraná.md)
-- [NLM — Estatística FGV — PCPR 2026 (Recorte de Prova).md](notas/NLM — Estatística FGV — PCPR 2026 (Recorte de Prova).md)
-- [NLM — Estratégias de Aprendizagem e Prática de Recuperação.md](notas/NLM — Estratégias de Aprendizagem e Prática de Recuperação.md)
-- [NLM — Exame de corpo de delito.md](notas/NLM — Exame de corpo de delito.md)
-- [NLM — o autor das videoaulas de exatas.md](notas/NLM — o autor das videoaulas de exatas.md)
-- [NLM — Guia do Palácio da Memória.md](notas/NLM — Guia do Palácio da Memória.md)
-- [NLM — Neurociência e Aprendizagem.md](notas/NLM — Neurociência e Aprendizagem.md)
-- [NLM — PC-PR Direito Administrativo.md](notas/NLM — PC-PR Direito Administrativo.md)
-- [NLM — PC-PR Direito Constitucional.md](notas/NLM — PC-PR Direito Constitucional.md)
-- [NLM — PC-PR Legislação Estadual e Institucional.md](notas/NLM — PC-PR Legislação Estadual e Institucional.md)
-- [NLM — PC-PR Português.md](notas/NLM — PC-PR Português.md)
-- [NLM — PC-PR Processo Penal.md](notas/NLM — PC-PR Processo Penal.md)
-- [NLM — PC-PR Tecnologia da Informação.md](notas/NLM — PC-PR Tecnologia da Informação.md)
-- [NLM — PCPR 2026 — Ciências Forenses.md](notas/NLM — PCPR 2026 — Ciências Forenses.md)
-- [NLM — PCPR 2026 — Contabilidade Geral.md](notas/NLM — PCPR 2026 — Contabilidade Geral.md)
-- [NLM — PCPR 2026 — Direito Penal (Apostilas).md](notas/NLM — PCPR 2026 — Direito Penal (Apostilas).md)
-- [NLM — PCPR 2026 — Língua Portuguesa (Apostilas).md](notas/NLM — PCPR 2026 — Língua Portuguesa (Apostilas).md)
-- [NLM — PCPR 2026 — Português.md](notas/NLM — PCPR 2026 — Português.md)
-- [NLM — PCPR 2026 — Realidade do Paraná.md](notas/NLM — PCPR 2026 — Realidade do Paraná.md)
-- [NLM — o autor das videoaulas de método.md](notas/NLM — o autor das videoaulas de método.md)
+- `00 — Hub dos NotebookLM.md`
+- `NLM — Chatbots e Prompt Engineering para Educadores.md`
+- `NLM — Ciência da Memória — Aprendizagem Ativa e Anki.md`
+- `NLM — Cognitive Toolkits for Deep Learning and Mastery.md`
+- `NLM — Edital 01 - 2026 — Concurso PC do Paraná.md`
+- `NLM — Estatística FGV — PCPR 2026 (Recorte de Prova).md`
+- `NLM — Estratégias de Aprendizagem e Prática de Recuperação.md`
+- `NLM — Exame de corpo de delito.md`
+- `NLM — o autor das videoaulas de exatas.md`
+- `NLM — Guia do Palácio da Memória.md`
+- `NLM — Neurociência e Aprendizagem.md`
+- `NLM — PC-PR Direito Administrativo.md`
+- `NLM — PC-PR Direito Constitucional.md`
+- `NLM — PC-PR Legislação Estadual e Institucional.md`
+- `NLM — PC-PR Português.md`
+- `NLM — PC-PR Processo Penal.md`
+- `NLM — PC-PR Tecnologia da Informação.md`
+- `NLM — PCPR 2026 — Ciências Forenses.md`
+- `NLM — PCPR 2026 — Contabilidade Geral.md`
+- `NLM — PCPR 2026 — Direito Penal (Apostilas).md`
+- `NLM — PCPR 2026 — Língua Portuguesa (Apostilas).md`
+- `NLM — PCPR 2026 — Português.md`
+- `NLM — PCPR 2026 — Realidade do Paraná.md`
+- `NLM — o autor das videoaulas de método.md`
 
 ### PROMPTS NOTEBOOKLM — prompts usados no NotebookLM
-- [00 — Hub dos Prompts.md](notas/00 — Hub dos Prompts.md)
-- [00 — MAPA DO VAULT.md](notas/00 — MAPA DO VAULT.md)
-- [PROMPT 5.0 PADRAO.md](notas/PROMPT 5.0 PADRAO.md)
-- [PROMPT 5.2.md](notas/PROMPT 5.2.md)
-- [PROMPT CLONAR QUESTOES — NUVEM (FGV).md](notas/PROMPT CLONAR QUESTOES — NUVEM (FGV).md)
-- [PROMPT DE QUIZ DA BANCA FGV.md](notas/PROMPT DE QUIZ DA BANCA FGV.md)
-- [PROMPT PROFESSOR.md](notas/PROMPT PROFESSOR.md)
-- [PROMPT RELATORIOS DE ERROS.md](notas/PROMPT RELATORIOS DE ERROS.md)
-- [PROMPT RESUMO.md](notas/PROMPT RESUMO.md)
-- [Personalização NotebookLM — Gerador de Questões FGV (A–E) para Treinamento Ativo.md](notas/Personalização NotebookLM — Gerador de Questões FGV (A–E) para Treinamento Ativo.md)
+- `00 — Hub dos Prompts.md`
+- `00 — MAPA DO VAULT.md`
+- `PROMPT 5.0 PADRAO.md`
+- `PROMPT 5.2.md`
+- `PROMPT CLONAR QUESTOES — NUVEM (FGV).md`
+- `PROMPT DE QUIZ DA BANCA FGV.md`
+- `PROMPT PROFESSOR.md`
+- `PROMPT RELATORIOS DE ERROS.md`
+- `PROMPT RESUMO.md`
+- `Personalização NotebookLM — Gerador de Questões FGV (A–E) para Treinamento Ativo.md`
 
 ### PCPR 2026 (raiz) — MOC, índice e mapa do vault
-- [00 — Índice PCPR 2026.md](notas/00 — Índice PCPR 2026.md)
-- [PCPR 2026 — Língua Portuguesa FGV.md](notas/PCPR 2026 — Língua Portuguesa FGV.md)
-- [PCPR 2026 — MOC.md](notas/PCPR 2026 — MOC.md)
-- [PCPR 2026 — TI, Direito Digital e Da Prova (CPP)_2.md](notas/PCPR 2026 — TI, Direito Digital e Da Prova (CPP)_2.md)
-- [REALIDADE DO PARÁNA.md](notas/REALIDADE DO PARÁNA.md)
-- [Relatório de Incidência — Língua Portuguesa FGV.md](notas/Relatório de Incidência — Língua Portuguesa FGV.md)
-- [_inventario-do-vault.md](notas/_inventario-do-vault.md)
+- `00 — Índice PCPR 2026.md`
+- `PCPR 2026 — Língua Portuguesa FGV.md`
+- `PCPR 2026 — MOC.md`
+- `PCPR 2026 — TI, Direito Digital e Da Prova (CPP)_2.md`
+- `REALIDADE DO PARÁNA.md`
+- `Relatório de Incidência — Língua Portuguesa FGV.md`
+- `_inventario-do-vault.md`
 
 ## Dumps de curso (só referência)
 

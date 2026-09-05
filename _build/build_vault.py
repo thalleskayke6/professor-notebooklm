@@ -1,6 +1,6 @@
 """Indexa o vault do Obsidian para o Professor.
 - Professor/vault/INDICE-VAULT.md : por matéria, hub + aulas (caminho, tamanho, versão R/S/A), cadernos, notas curadas
-- Professor/vault/notas/            : cópia das notas curadas pequenas do próprio usuário (método, plano, registro, hubs, Português FGV, Valter)
+- Professor/vault/notas/            : cópia das notas curadas pequenas do próprio usuário (método, plano, registro, hubs, Português FGV, método)
 Apostilas (Resumos MD) e dumps de curso (Baralhos/MD Estudo) ficam só referenciados por caminho.
 """
 import os, re, io, sys, shutil, glob, unicodedata
@@ -41,6 +41,8 @@ RAIZ = {'Direito Administrativo': ['questoes direito adm.md'], 'Ciências Forens
 L = ['# Índice do vault do Obsidian', '', f'Vault: `{VAULT}` (OneDrive; conferir se a pasta está baixada antes de concluir que algo não existe).',
      'Comece pelo hub de cada matéria. Apostilas têm até três versões: R = resumo, S = simplificada, A = apostila completa.',
      'Questões já extraídas e deduplicadas estão em `../questoes/` (ver `INDICE.md` lá).', '',
+     '> As notas listadas abaixo são copiadas para `vault/notas/` na máquina local, para o professor consultar.',
+     '> Essa pasta não faz parte do repositório público (conteúdo pessoal), por isso os nomes aparecem sem link.', '',
      '## Matérias', '']
 copied = []
 def copy_note(src):
@@ -53,8 +55,8 @@ for mat in sorted(PESO, key=lambda m: -PESO[m]):
     L.append(f'### {mat} — {PESO[mat]} questões')
     hub = os.path.join(d, f'00 — Hub {mat}.md')
     if os.path.exists(hub):
-        c = copy_note(hub)
-        L.append(f'- Hub: [{os.path.basename(hub)}]({c})  ·  vault: `{rel(hub)}`')
+        copy_note(hub)
+        L.append(f'- Hub: `{os.path.basename(hub)}`  ·  vault: `{rel(hub)}`')
     aulas = {}
     for f in sorted(glob.glob(os.path.join(d, 'Aula *.md'))):
         m = re.match(r'(Aula [^-]+?) - (.+) - (Resumo|Simplificada|Apostila completa)\.md', os.path.basename(f))
@@ -76,7 +78,7 @@ for mat in sorted(PESO, key=lambda m: -PESO[m]):
 L += ['## Notas curadas do usuário (copiadas em `notas/`)', '']
 for folder, desc in [('Plano', 'plano de estudo, pesos, rotina, ciclo de blocos'), ('Método', 'método FGV, catálogo de pegadinhas P1-P10/T1-T4, prompts mestres'),
                      ('Registro', 'autópsia de erros, simulado, decisões'), ('Português FGV', '18 notas por tema de Português no recorte FGV'),
-                     ('Valter', 'método Valter Rodrigues em 10 notas'), ('Leis e Doutrina', 'lei de carreira da PC-PR'), ('Baralhos', 'mapa de baralhos e workflow Anki'),
+                     ('Valter', 'método de estudo em 10 notas'), ('Leis e Doutrina', 'lei de carreira da PC-PR'), ('Baralhos', 'mapa de baralhos e workflow Anki'),
                      ('Cadernos de Questões', 'hub dos cadernos'), ('NotebookLM', 'uma nota por notebook do NotebookLM'), ('PROMPTS NOTEBOOKLM', 'prompts usados no NotebookLM'),
                      ('.', 'MOC, índice e mapa do vault')]:
     d = os.path.join(P, folder)
@@ -88,7 +90,7 @@ for folder, desc in [('Plano', 'plano de estudo, pesos, rotina, ciclo de blocos'
     for f in fs:
         if 'Sem título' in f: continue
         c = copy_note(f)
-        L.append(f'- [{os.path.basename(f)}]({c})' if c else f'- `{rel(f)}` ({kb(f)}KB, não copiada)')
+        L.append(f'- `{os.path.basename(f)}`' if c else f'- `{rel(f)}` ({kb(f)}KB, não copiada)')
     L.append('')
 L += ['## Dumps de curso (só referência)', '']
 for f in sorted(glob.glob(os.path.join(P, 'Baralhos', 'MD Estudo', '*.md'))):

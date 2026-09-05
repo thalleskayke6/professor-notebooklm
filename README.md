@@ -5,6 +5,9 @@
 >
 > Ele não decora a matéria. Ele decora **como a banca pergunta**.
 
+> [!CAUTION]
+> **Uso exclusivo para estudo. Venda proibida.** Todo o conteúdo aqui é para estudo pessoal e particular. É **expressamente proibida qualquer utilização comercial**, por qualquer pessoa, a qualquer tempo: venda, revenda, curso pago, mentoria, assinatura, grupo pago ou qualquer forma de monetização. A proibição vale para o autor e para quem receber o material. Detalhes em [AVISO-DE-USO.md](AVISO-DE-USO.md).
+
 > [!NOTE]
 > **De onde veio.** Construído para a prova de Agente de Polícia Judiciária da Polícia Civil do Paraná (Edital 01/2026, banca FGV). Por isso o exemplo é de carreira policial. A estrutura, porém, não sabe nada de polícia: ela aprende qualquer edital a partir de três coisas que todo concurseiro já tem, **notebooks com o material**, **cadernos de questões** e **as próprias anotações**. A seção "Ensinar outro edital" mostra como trocar.
 
@@ -482,10 +485,17 @@ mindmap
 
 ## 📄 Licença e uso do conteúdo
 
+> [!CAUTION]
+> **Proibida a venda.** Este material é para **estudo pessoal e particular**. Nenhuma pessoa pode vendê-lo, revendê-lo, incluí-lo em curso, mentoria, assinatura, grupo pago ou qualquer produto comercial, nem monetizá-lo de forma direta ou indireta. A proibição vale para o autor deste repositório e para qualquer pessoa que obtenha o material. Leia o [AVISO-DE-USO.md](AVISO-DE-USO.md).
+
 > [!NOTE]
-> Os **scripts, prompts e a skill** estão sob licença MIT: use, copie e adapte à vontade.
+> **Pode:** ler, copiar para uso próprio, adaptar ao seu concurso e compartilhar com outros estudantes, sempre sem cobrança.
 >
-> Os arquivos em `notebooks/`, `guias/` e `materiais/` são **sínteses geradas por modelo de linguagem** a partir do material de estudo do autor. Não reproduzem apostilas, aulas nem questões na íntegra; servem como exemplo de saída do pipeline e como material de revisão. As questões completas e as notas pessoais não estão no repositório.
+> **Scripts e skill** (`_build/`, `ferramenta/`) estão sob licença MIT: use à vontade para montar a sua própria base a partir do seu próprio material.
+>
+> **Origem:** os arquivos em `notebooks/`, `guias/`, `materias/` e `materiais/` são sínteses geradas por modelo de linguagem a partir do material de estudo do autor. Não reproduzem apostilas, aulas nem questões na íntegra. Apostilas de curso, enunciados completos e anotações pessoais não estão no repositório.
+>
+> **Sem garantia:** síntese gerada por modelo pode conter erro. Confira na fonte primária antes de decidir por ela.
 
 ## 🔎 Palavras-chave
 

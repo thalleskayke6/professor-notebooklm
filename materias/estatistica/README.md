@@ -1,5 +1,8 @@
 # Estatística
 
+> [!CAUTION]
+> **Uso exclusivo para estudo pessoal. Venda proibida.** Nenhuma pessoa pode vender, revender, incluir em curso, mentoria, assinatura ou grupo pago, nem monetizar este material de qualquer forma. Ver [AVISO-DE-USO.md](../../AVISO-DE-USO.md).
+
 **5 questões** na prova do Agente PC-PR 2026 (de 100).
 
 - 📘 [Guia completo: Estatística FGV — PCPR 2026 (Recorte de Prova)](guia-estatistica-fgv-pcpr-2026-recorte-de-prova.md)

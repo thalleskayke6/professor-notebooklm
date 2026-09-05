@@ -1,5 +1,8 @@
 # Materiais por matéria
 
+> [!CAUTION]
+> **Uso exclusivo para estudo pessoal. Venda proibida.** Nenhuma pessoa pode vender, revender, incluir em curso, mentoria, assinatura ou grupo pago, nem monetizar este material de qualquer forma. Ver [AVISO-DE-USO.md](../AVISO-DE-USO.md).
+
 Uma pasta por matéria da prova de Agente da PC-PR 2026 (banca FGV). Cada pasta tem um `README.md` com o que existe para aquela matéria.
 Todo o conteúdo aqui é síntese gerada a partir do material de estudo (guias por tema, conceitos, pegadinhas) ou nota de autoria própria. Apostilas de curso e questões na íntegra não estão aqui.
 

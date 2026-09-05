@@ -30,12 +30,16 @@ METODO_OK = {"Catálogo de pegadinhas.md", "Método FGV — instruções do proj
 bank = json.load(open(os.path.join(ROOT, 'questoes', 'banco.json'), encoding='utf-8')) if os.path.exists(os.path.join(ROOT, 'questoes', 'banco.json')) else []
 if os.path.isdir(OUT): shutil.rmtree(OUT)
 os.makedirs(OUT)
-idx = ["# Materiais por matéria", "", "Uma pasta por matéria da prova de Agente da PC-PR 2026 (banca FGV). Cada pasta tem um `README.md` com o que existe para aquela matéria.",
+AVISO_TXT = ("> [!CAUTION]" + chr(10) +
+             "> **Uso exclusivo para estudo pessoal. Venda proibida.** Nenhuma pessoa pode vender, revender, "
+             "incluir em curso, mentoria, assinatura ou grupo pago, nem monetizar este material de qualquer forma. "
+             "Ver [AVISO-DE-USO.md]({p}AVISO-DE-USO.md).")
+idx = ["# Materiais por matéria", "", AVISO_TXT.format(p="../"), "", "Uma pasta por matéria da prova de Agente da PC-PR 2026 (banca FGV). Cada pasta tem um `README.md` com o que existe para aquela matéria.",
        "Todo o conteúdo aqui é síntese gerada a partir do material de estudo (guias por tema, conceitos, pegadinhas) ou nota de autoria própria. Apostilas de curso e questões na íntegra não estão aqui.", "",
        "| Matéria | Questões na prova | Guias | Notas |", "|---|---:|---:|---:|"]
 for nome, peso, ids, qm, vdirs, extras in M:
     d = os.path.join(OUT, slug(nome)); os.makedirs(d)
-    L = [f"# {nome}", ""]
+    L = [f"# {nome}", "", AVISO_TXT.format(p="../../"), ""]
     if peso: L.append(f"**{peso} questões** na prova do Agente PC-PR 2026 (de 100).")
     L.append("")
     n_g = n_n = 0

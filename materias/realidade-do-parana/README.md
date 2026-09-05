@@ -1,5 +1,8 @@
 # Realidade do Paraná
 
+> [!CAUTION]
+> **Uso exclusivo para estudo pessoal. Venda proibida.** Nenhuma pessoa pode vender, revender, incluir em curso, mentoria, assinatura ou grupo pago, nem monetizar este material de qualquer forma. Ver [AVISO-DE-USO.md](../../AVISO-DE-USO.md).
+
 **5 questões** na prova do Agente PC-PR 2026 (de 100).
 
 - 📘 [Guia completo: PCPR 2026 — Realidade do Paraná](guia-pcpr-2026-realidade-do-parana.md)
