@@ -307,7 +307,7 @@ Guerreiro, agora que detalhamos de forma exaustiva as regras práticas e os par�
 
 ## Anki, IA e prompts
 
-Vamos destrinchar de forma exaustiva o ecossistema tecnológico de preparação do método o autor das videoaulas de método, conectando a ciência por trás do **Anki** à aplicação prática da **Inteligência Artificial** para esmagar bancas de concurso.
+Vamos destrinchar de forma exaustiva o ecossistema tecnológico de preparação do Método do autor das videoaulas, conectando a ciência por trás do **Anki** à aplicação prática da **Inteligência Artificial** para esmagar bancas de concurso.
 
 ---
 
@@ -363,7 +363,7 @@ Vamos destrinchar de forma exaustiva o ecossistema tecnológico de preparação 
 
 ### V. Estrutura e Inovações dos Prompts de Flashcards (v5.3, v5.4 e Comparação)
 
-O método o autor das videoaulas de método desenvolveu prompts ultra-calibrados para garantir que a IA produza questões de alta performance sem alucinações.
+O Método do autor das videoaulas desenvolveu prompts ultra-calibrados para garantir que a IA produza questões de alta performance sem alucinações.
 
 #### A. A Evolução Cognitiva: v5.3 vs. v5.4
 O prompt **v5.4 (Cognitive Ultra-Consolidation)** é definitivamente superior e padrão-ouro em relação ao v5.3 pelos seguintes avanços cognitivos:

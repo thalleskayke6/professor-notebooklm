@@ -493,6 +493,12 @@
     "tema": "Geometria Plana, Espacial e Analítica",
     "task_id": "c0553a3c-5695-4841-8720-bbded5cefc4d",
     "err": null
+   },
+   {
+    "n": 5,
+    "tema": "Estatística Descritiva, Medidas Estatísticas e Amostragem",
+    "task_id": null,
+    "err": "RROR\n12:23:46 ERROR [notebooklm._rpc_executor] [req=a1e5d669] RPC CREATE_ARTIFACT failed after 0.969s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR\n"
    }
   ]
  }
