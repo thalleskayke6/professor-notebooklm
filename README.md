@@ -478,4 +478,19 @@ mindmap
 | 🔁 **Outro edital** | Notebooks novos, cadernos da banca, lista de pesos, estilo na skill, rodar os scripts |
 | 🛠️ **Ferramentas** | NotebookLM por CLI, Obsidian, Claude Code, Anki, Python padrão |
 
+---
+
+## 📄 Licença e uso do conteúdo
+
+> [!NOTE]
+> Os **scripts, prompts e a skill** estão sob licença MIT: use, copie e adapte à vontade.
+>
+> Os arquivos em `notebooks/`, `guias/` e `materiais/` são **sínteses geradas por modelo de linguagem** a partir do material de estudo do autor. Não reproduzem apostilas, aulas nem questões na íntegra; servem como exemplo de saída do pipeline e como material de revisão. As questões completas e as notas pessoais não estão no repositório.
+
+## 🔎 Palavras-chave
+
+Para quem chegou aqui procurando: professor de concurso com inteligência artificial, tutor de concurso público, estudo por questões, engenharia reversa de banca, estudo reverso FGV, como a FGV cobra, pegadinhas da FGV, incidência de assuntos por banca, NotebookLM para concursos, NotebookLM CLI, Claude Code skill, Obsidian para concurso, Anki para concurso, flashcards certo ou errado, carreiras policiais, Polícia Civil do Paraná, PC-PR 2026, agente de polícia judiciária, banco de questões em markdown, plano de estudo por incidência.
+
+`#concurso` `#concursopublico` `#professordeconcurso` `#estudoporquestoes` `#engenhariareversa` `#estudoreverso` `#FGV` `#pegadinhasFGV` `#NotebookLM` `#ClaudeCode` `#Obsidian` `#Anki` `#carreiraspoliciais` `#PCPR2026` `#policiacivil` `#bancodequestoes` `#incidencia` `#tutorIA`
+
 Extração e montagem feitas em 05/09/2026.

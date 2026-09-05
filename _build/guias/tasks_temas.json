@@ -446,6 +446,53 @@
     "tema": "Teoria Geral da Prova e Cadeia de Custódia",
     "task_id": "d80cfd98-8e5d-49bb-883c-ad56a57af98c",
     "err": null
+   },
+   {
+    "n": 8,
+    "tema": "Provas em Espécie",
+    "task_id": "de5540f6-32d7-42e4-916b-2fa446e1e536",
+    "err": null
+   },
+   {
+    "n": 9,
+    "tema": "Prisão e Liberdade Provisória",
+    "task_id": "b4003efc-c600-4fcb-a525-98cea22b5284",
+    "err": null
+   },
+   {
+    "n": 10,
+    "tema": "Legislação Penal e Processual Penal Extravagante",
+    "task_id": "df303999-7786-4935-a5c6-d197859cbfb1",
+    "err": null
+   }
+  ]
+ },
+ "185c9e3e-c37f-4324-9856-9dd96ac71661": {
+  "slug": "estatistica-fgv-pcpr-2026-recorte-de-prova",
+  "temas": [
+   {
+    "n": 1,
+    "tema": "Lógica Proposicional, Argumentação e Teoria dos Conjuntos",
+    "task_id": "1de1ab12-6e90-4380-a0ab-21d3254afc49",
+    "err": null
+   },
+   {
+    "n": 2,
+    "tema": "Matemática Básica, Razão, Proporção e Porcentagem",
+    "task_id": "bfa851f9-aa3b-4506-920a-737a06fa1501",
+    "err": null
+   },
+   {
+    "n": 3,
+    "tema": "Álgebra Linear, Matrizes, Determinantes e Sistemas",
+    "task_id": "d58f944a-7da1-4ab7-b8cf-79c3cc30e274",
+    "err": null
+   },
+   {
+    "n": 4,
+    "tema": "Geometria Plana, Espacial e Analítica",
+    "task_id": "c0553a3c-5695-4841-8720-bbded5cefc4d",
+    "err": null
    }
   ]
  }
