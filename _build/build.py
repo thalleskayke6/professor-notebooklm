@@ -38,6 +38,15 @@ for r in rows:
             a=ans(f'ask2/{i}_{p}.json')
             if a: parts.append(f"\n## {h}\n\n{a}\n")
             else: missing.append((title,h))
+    gd=os.path.join(OUT,'guias',slug)
+    if os.path.isdir(gd):
+        tf=sorted(f for f in os.listdir(gd) if f.endswith('.md'))
+        if tf:
+            parts.append(f"
+### Guias por tema ({len(tf)})
+")
+            for f in tf: parts.append(f"- [{f[3:-3].replace('-',' ')}](../guias/{slug}/{f})")
+            parts.append('')
     # materials
     mats=sorted(glob.glob(f'dl/{i[:8]}_*'))
     if mats:
