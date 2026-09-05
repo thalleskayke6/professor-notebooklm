@@ -16,7 +16,7 @@ SUBS = [
     (r'\bQConcursos\b', 'plataforma de questões'),
 ]
 files = glob.glob(os.path.join(ROOT, 'notebooks', '*.md')) + [os.path.join(ROOT, 'MAPA-GERAL.md'),
-        os.path.join(ROOT, 'vault', 'INDICE-VAULT.md'), os.path.join(ROOT, 'questoes', 'INDICE.md')] + glob.glob(os.path.join(ROOT, 'materiais', '*.md'))
+        os.path.join(ROOT, 'vault', 'INDICE-VAULT.md'), os.path.join(ROOT, 'questoes', 'INDICE.md')] + glob.glob(os.path.join(ROOT, 'materiais', '*'))
 n = 0
 for f in files:
     if not os.path.exists(f): continue
@@ -24,7 +24,7 @@ for f in files:
     # protege URLs
     urls = re.findall(r'https?://\S+', t)
     for i, u in enumerate(urls): t = t.replace(u, f'@@URL{i}@@')
-    for rx, rep in SUBS: t = re.sub(rx, rep, t)
+    for rx, rep in SUBS: t = re.sub(rx, rep, t, flags=re.I)
     for i, u in enumerate(urls): t = t.replace(f'@@URL{i}@@', u)
     if t != o:
         open(f, 'w', encoding='utf-8').write(t); n += 1

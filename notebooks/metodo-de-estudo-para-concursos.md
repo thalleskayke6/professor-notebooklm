@@ -91,9 +91,9 @@ As fontes apresentam a metodologia de estudo de **o autor das videoaulas de mét
 
 *   **A Evolução de Prompts para Criação de Flashcards (v3.4 -> v5.0 -> v5.3 -> v5.4)**
     *   A IA como processadora técnica de dados sem atuação como coach *(Fonte: "# PROMPT GERADOR DE QUESTÕES E FLASHCARDS PCPR (v…", "PROMPT DEFINITIVO")*
-    *   O princípio "O Excerto é a Verdade Absoluta" (fidelidade factual cega ao texto) *(Fonte: "# PROMPT GERADOR DE QUESTÕES E FLASHCARDS PCPR (v…", "PROMPT DO VALTER")*
+    *   O princípio "O Excerto é a Verdade Absoluta" (fidelidade factual cega ao texto) *(Fonte: "# PROMPT GERADOR DE QUESTÕES E FLASHCARDS PCPR (v…", "PROMPT DO o autor das videoaulas")*
     *   O Poder de Veto de baixa incidência em provas *(Fonte: "# PROMPT GERADOR DE QUESTÕES E FLASHCARDS PCPR (v…", "Comparação dos Prompts v5.3 e v5.4")*
-    *   A blindagem contra metalinguagem nas assertivas *(Fonte: "# PROMPT GERADOR DE QUESTÕES E FLASHCARDS PCPR (v…", "PROMPT DO VALTER")*
+    *   A blindagem contra metalinguagem nas assertivas *(Fonte: "# PROMPT GERADOR DE QUESTÕES E FLASHCARDS PCPR (v…", "PROMPT DO o autor das videoaulas")*
     *   Distorções sutis para assertivas erradas de alta verossimilhança *(Fonte: "Comparação dos Prompts v5.3 e v5.4")*
     *   Criação de cartões no modelo Contraste Discriminativo *(Fonte: "Comparação dos Prompts v5.3 e v5.4")*
     *   Gatilho de interrogação elaborativa cognitiva e explicação causal no verso *(Fonte: "Comparação dos Prompts v5.3 e v5.4")*
@@ -173,7 +173,7 @@ Guerreiro, o que acha de usarmos o nosso ambiente de computação para **constru
 
 ### 3. Como Montar Cadernos de Questões
 
-*   **Regra prática:** O candidato deve estruturar filtros profissionais com bom senso. Ele deve abandonar cadernos fragmentados por tópicos e adotar um **único cadernão gigante por matéria**, ativando o modo de **questões aleatórias não resolvidas** (tecla **L** no TEC Concursos). Isso simula a prova real, exigindo que o cérebro realize saltos rápidos de contexto e recupere ativamente as informações.
+*   **Regra prática:** O candidato deve estruturar filtros profissionais com bom senso. Ele deve abandonar cadernos fragmentados por tópicos e adotar um **único cadernão gigante por matéria**, ativando o modo de **questões aleatórias não resolvidas** (tecla **L** no plataforma de questões). Isso simula a prova real, exigindo que o cérebro realize saltos rápidos de contexto e recupere ativamente as informações.
 *   **Números/parâmetros citados:** 
     *   Filtrar questões dos últimos **3 a 5 anos** para capturar a tendência recente da banca.
     *   Excluir obrigatoriamente questões desatualizadas, anuladas e sem comentários de professores.
@@ -410,7 +410,7 @@ Estes prompts definem a parte gerencial, estratégica e comportamental do métod
 *   **A Rotação do Dual-Cycle (PC PR 2026):** Divide o edital de 100 questões em dois eixos, combatendo a divisão homogênea e ineficiente de tempo:
     1.  **Ciclo de Elite (60% da Prova):** Língua Portuguesa (25q), Tecnologia e Crimes Digitais (25q) e Ciências Forenses (10q). Matérias que decidem a vida e rodam de forma acelerada no ciclo de estudos.
     2.  **Ciclo de Rodízio (40% da Prova):** RLM (5q), Estatística (5q), Contabilidade (5q), Realidade do PR (5q), Legislação Estadual (5q) e as 5 disciplinas de Direito integradas por questões (que valem apenas 15 questões somadas). Anda de forma lenta e sequencial.
-*   **Conceito do Cadernão Aleatório:** Proíbe cadernos fatiados por microtemas. Manda criar cadernos gigantes abrangendo o edital inteiro de uma matéria e jogar no aleatório (tecla **L** do TEC Concursos), forçando o esforço saudável de salto de contexto.
+*   **Conceito do Cadernão Aleatório:** Proíbe cadernos fatiados por microtemas. Manda criar cadernos gigantes abrangendo o edital inteiro de uma matéria e jogar no aleatório (tecla **L** do plataforma de questões), forçando o esforço saudável de salto de contexto.
 *   **O Gatilho Psicológico e Encerramento:** Cobra os dados de acerto do candidato de forma enérgica, alinha as expectativas para combater a ansiedade do pós-edital focando apenas no dia de hoje ("Cavalo de Carroça") e encerra obrigatoriamente com um comando de ação claro: *"Vai fazer questões!"*.
 
 #### B. Prompt Criador de Planilha (Excel Python openpyxl)
@@ -570,7 +570,7 @@ Guerreiro, o que acha de usarmos o nosso ambiente de computação para **constru
 - PCPR_2026_Agente_Priorizacao_FGV.pdf `(pdf)`
 - PMDF: Estratégia matadora para a reta final `(youtube)`
 - PROMPT DEFINITIVO `(markdown)`
-- PROMPT DO VALTER `(markdown)`
+- PROMPT DO o autor das videoaulas `(markdown)`
 - Pare de pular de galho em galho! Mudar de método não é a solução. `(youtube)`
 - Pare de tentar fazer tudo. Comece a fazer o que importa! `(youtube)`
 - Polícia Legislativa da Câmara: Não tenha medo do Edital!! `(youtube)`
