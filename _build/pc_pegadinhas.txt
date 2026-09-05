@@ -1,0 +1,3 @@
+Liste as PEGADINHAS, confusões frequentes e pontos de atenção que as fontes deste notebook destacam (o que se confunde com o quê, erros comuns, o que a banca FGV costuma cobrar). Depois liste as relações de dependência entre temas e, por fim, o que este notebook NÃO cobre. Markdown, frases curtas.
+
+IMPORTANTE: responda de forma compacta, no máximo 90 linhas, sem citar fontes e sem repetir itens.

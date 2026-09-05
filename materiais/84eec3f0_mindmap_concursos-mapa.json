@@ -1,0 +1,180 @@
+{
+  "name": "Método Valter Rodrigues: Aprovação em Concursos",
+  "children": [
+    {
+      "name": "Mentalidade e Comportamento",
+      "children": [
+        {
+          "name": "Consistência Diária"
+        },
+        {
+          "name": "Foco no Hoje (Vencer o Dia)"
+        },
+        {
+          "name": "Sair da Inércia Inicial"
+        },
+        {
+          "name": "Evitar Comparações em Redes Sociais"
+        },
+        {
+          "name": "Paciência do Iniciante"
+        },
+        {
+          "name": "Fim do Sofrimento Desnecessário"
+        },
+        {
+          "name": "Concurso como Mudança Concreta de Vida"
+        }
+      ]
+    },
+    {
+      "name": "Técnicas de Estudo Ativo",
+      "children": [
+        {
+          "name": "Estudo por Questões",
+          "children": [
+            {
+              "name": "Resolução em Volume"
+            },
+            {
+              "name": "Técnica da Roubadinha (Consulta)"
+            },
+            {
+              "name": "Análise de Erros e Comentários"
+            },
+            {
+              "name": "Caderno de Erros Fluido"
+            }
+          ]
+        },
+        {
+          "name": "Legislação e Fatos",
+          "children": [
+            {
+              "name": "Decorar a Lei Seca"
+            },
+            {
+              "name": "Fatos vs Conceitos"
+            },
+            {
+              "name": "Material de Lei Seca com Questões"
+            }
+          ]
+        },
+        {
+          "name": "Jurisprudência",
+          "children": [
+            {
+              "name": "Buscador Dizer o Direito"
+            },
+            {
+              "name": "Identificar Cheiro de Prova"
+            },
+            {
+              "name": "Flashcards de Omissão de Palavras"
+            }
+          ]
+        },
+        {
+          "name": "Metodologia Organizacional",
+          "children": [
+            {
+              "name": "Princípio da Especificidade"
+            },
+            {
+              "name": "Ciclo de Estudos Intervalado"
+            },
+            {
+              "name": "Prática Deliberada"
+            },
+            {
+              "name": "Simulados na Reta Final"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Uso de Inteligência Artificial",
+      "children": [
+        {
+          "name": "Atuação como Examinador (CESP/FGV)"
+        },
+        {
+          "name": "Criação de Questões de Certo/Errado"
+        },
+        {
+          "name": "Análise Granular de Incidência por Inciso"
+        },
+        {
+          "name": "Transformação de Doutrina em Questões"
+        },
+        {
+          "name": "Relatório de Equilíbrio Dinâmico"
+        }
+      ]
+    },
+    {
+      "name": "Priorização de Matérias",
+      "children": [
+        {
+          "name": "Português (Base Principal)"
+        },
+        {
+          "name": "Informática e Raciocínio Lógico"
+        },
+        {
+          "name": "Direito Constitucional (Garantias Fundamentais)"
+        },
+        {
+          "name": "Direito Administrativo (Doutrina e Lei)"
+        },
+        {
+          "name": "Direito Penal e Processo (Prisões/Inquérito)"
+        },
+        {
+          "name": "Legislação Extravagante (LEP)"
+        }
+      ]
+    },
+    {
+      "name": "Saúde e Biohacking",
+      "children": [
+        {
+          "name": "Importância Vital do Sono"
+        },
+        {
+          "name": "Suplementação",
+          "children": [
+            {
+              "name": "Cafeína (Bloqueio de Adenosina)"
+            },
+            {
+              "name": "Alfa GPC e L-Tirosina"
+            },
+            {
+              "name": "Nicotina (Uso Nootrópico com Cuidado)"
+            }
+          ]
+        },
+        {
+          "name": "Medicamentos e Riscos",
+          "children": [
+            {
+              "name": "Ritalina e Metilfenidato"
+            },
+            {
+              "name": "Venvance (Foco e Saliência)"
+            },
+            {
+              "name": "Modafinil (Vigília Extrema)"
+            },
+            {
+              "name": "Perigo da Toxicidade da Dopamina"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

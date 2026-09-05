@@ -1,0 +1,261 @@
+{
+  "name": "Português Banca FGV",
+  "children": [
+    {
+      "name": "Gramática Estrutural",
+      "children": [
+        {
+          "name": "Morfologia",
+          "children": [
+            {
+              "name": "Classes no Contexto: Substantivação por artigo; trap: palavra muda classe pela função"
+            },
+            {
+              "name": "Formação de Palavras: Valor de prefixos/sufixos; trap: parassíntese vs prefixação+sufixação"
+            }
+          ]
+        },
+        {
+          "name": "Sintaxe",
+          "children": [
+            {
+              "name": "Termos da Oração: Identificação do sujeito; trap: sujeito paciente com partícula SE"
+            },
+            {
+              "name": "Complemento vs Adjunto: Paciente (CN) vs Agente (AA); trap: termos preposicionados ambíguos"
+            }
+          ]
+        },
+        {
+          "name": "Regência e Crase",
+          "children": [
+            {
+              "name": "Regência Verbal: Assistir, visar, aspirar; trap: verbo implicar sem preposição EM"
+            },
+            {
+              "name": "Crase: Regência + Artigo; trap: proibida antes de verbo e palavra masculina"
+            }
+          ]
+        },
+        {
+          "name": "Concordância",
+          "children": [
+            {
+              "name": "Verbal: Sujeito composto posposto; trap: verbos impessoais haver e fazer no plural"
+            },
+            {
+              "name": "Nominal: Adjetivo anteposto a vários nomes; trap: invariáveis menos e alerta"
+            }
+          ]
+        },
+        {
+          "name": "Colocação Pronominal",
+          "children": [
+            {
+              "name": "Próclise Obrigatória: Palavras negativas, advérbios e relativos; trap: ênclise ao particípio"
+            },
+            {
+              "name": "Mesóclise: Verbos no futuro sem atrator; trap: início de frase com pronome átono"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Texto e Sentido",
+      "children": [
+        {
+          "name": "Coerência e Coesão",
+          "children": [
+            {
+              "name": "Mecanismos Referenciais: Anáfora (retoma) vs Catáfora (antecipa); trap: este/isto vs esse/isso"
+            },
+            {
+              "name": "Elipse: Omissão de termo recuperável; trap: identificação de sujeito elíptico"
+            }
+          ]
+        },
+        {
+          "name": "Conectores",
+          "children": [
+            {
+              "name": "Valores Lógicos: Adversidade vs Concessão; trap: troca de causa por consequência"
+            },
+            {
+              "name": "Conectivo POIS: Causal (antes do verbo) vs Conclusivo (após o verbo entre vírgulas)"
+            }
+          ]
+        },
+        {
+          "name": "Pronomes Relativos",
+          "children": [
+            {
+              "name": "Cujo e Onde: Cujo indica posse; trap: uso de onde para noções abstratas"
+            },
+            {
+              "name": "Regência do Relativo: Verbo exige preposição; trap: omissão da preposição antes do que"
+            }
+          ]
+        },
+        {
+          "name": "Semântica",
+          "children": [
+            {
+              "name": "Linguagem Figurada: Metáfora e metonímia; trap: ironia em crônicas"
+            },
+            {
+              "name": "Relações de Sentido: Sinonímia e homonímia; trap: polissemia em tirinhas"
+            }
+          ]
+        },
+        {
+          "name": "Modalização e Pressupostos",
+          "children": [
+            {
+              "name": "Modalização: Marcas de certeza ou dúvida; trap: futuro do pretérito indicando boato"
+            },
+            {
+              "name": "Pressupostos: Marcas linguísticas explícitas; trap: pressuposto vs subentendido situacional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Forma e Estilo",
+      "children": [
+        {
+          "name": "Pontuação",
+          "children": [
+            {
+              "name": "Vírgula: Isolar elementos deslocados; trap: vírgula entre sujeito longo e verbo"
+            },
+            {
+              "name": "Outros Sinais: Dois-pontos e travessão; trap: parênteses para informação acessória"
+            }
+          ]
+        },
+        {
+          "name": "Ortografia e Acentuação",
+          "children": [
+            {
+              "name": "Acentuação Gráfica: Regras pós-acordo; trap: ditongos abertos em paroxítonas (ideia)"
+            },
+            {
+              "name": "Homônimos e Parônimos: Ratificar vs Retificar; trap: viagem (nome) vs viajem (verbo)"
+            }
+          ]
+        },
+        {
+          "name": "Paralelismo",
+          "children": [
+            {
+              "name": "Paralelismo Sintático: Estruturas equivalentes; trap: mistura de substantivo com oração"
+            },
+            {
+              "name": "Paralelismo Semântico: Lógica de campo; trap: quebra de correlação temporal"
+            }
+          ]
+        },
+        {
+          "name": "Clareza e Correção",
+          "children": [
+            {
+              "name": "Qualidade da Frase: Atributos de precisão e concisão; trap: ambiguidade por possessivo seu"
+            },
+            {
+              "name": "Vícios de Linguagem: Cacofonia e pleonasmo; trap: obscuridade em períodos longos"
+            }
+          ]
+        },
+        {
+          "name": "Linguagem e Registro",
+          "children": [
+            {
+              "name": "Variação Linguística: Diastrática e diafásica; trap: tratar variação popular como erro"
+            },
+            {
+              "name": "Redação Oficial: Impessoalidade e clareza; trap: uso de vossa excelência com 2ª pessoa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Leitura",
+      "children": [
+        {
+          "name": "Tipologia e Gênero",
+          "children": [
+            {
+              "name": "Tipos Textuais: Narração, descrição e dissertação; trap: exposição vs argumentação"
+            },
+            {
+              "name": "Gêneros Textuais: Crônica, editorial e artigo; trap: finalidade predominante do texto"
+            }
+          ]
+        },
+        {
+          "name": "Tipos de Discurso",
+          "children": [
+            {
+              "name": "Direto e Indireto: Fala literal vs narrada; trap: conversão de tempos verbais e advérbios"
+            },
+            {
+              "name": "Discurso Indireto Livre: Fusão de vozes; trap: ausência de verbos dicendi"
+            }
+          ]
+        },
+        {
+          "name": "Interpretação de Texto",
+          "children": [
+            {
+              "name": "Tese e Argumento: Posição do autor; trap: confundir opinião com fato"
+            },
+            {
+              "name": "Estratégias de Leitura: Inferência autorizada; trap: extrapolação e verdade externa"
+            }
+          ]
+        },
+        {
+          "name": "Questões Mescladas",
+          "children": [
+            {
+              "name": "Reescrita: Manutenção de sentido e gramática; trap: inversão de causa e consequência"
+            },
+            {
+              "name": "Sentido Contextual: Substituição lexical; trap: mudança sutil de carga valorativa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Estratégia de Prova",
+      "children": [
+        {
+          "name": "Armadilhas Típicas",
+          "children": [
+            {
+              "name": "Generalização Indevida: Troca de 'alguns' por 'todos'; trap: termos absolutos (sempre, nunca)"
+            },
+            {
+              "name": "Modalizadores Sutis: Troca de 'pode' por 'deve'; trap: inserção de dúvida onde há certeza"
+            }
+          ]
+        },
+        {
+          "name": "Checklists de Resolução",
+          "children": [
+            {
+              "name": "Análise Estrutural: Sujeito, verbo e complementos; trap: decidir por impressão subjetiva"
+            },
+            {
+              "name": "Comando do Enunciado: Sublinhar negativos (exceto, incorreta); trap: ignorar o foco da pergunta"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

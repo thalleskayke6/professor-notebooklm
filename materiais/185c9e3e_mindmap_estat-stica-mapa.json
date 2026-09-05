@@ -1,0 +1,286 @@
+{
+  "name": "Estatística FGV: Resumo de Guerra (Agente PC-PR)",
+  "children": [
+    {
+      "name": "Medidas de Posição",
+      "children": [
+        {
+          "name": "Média",
+          "children": [
+            {
+              "name": "Aritmética e Ponderada"
+            },
+            {
+              "name": "Atalho: Focar na SOMA (Soma = Média × n)"
+            },
+            {
+              "name": "Média Combinada: (n1.M1 + n2.M2) / (n1 + n2)"
+            },
+            {
+              "name": "Agrupada: Usar Ponto Médio da classe"
+            }
+          ]
+        },
+        {
+          "name": "Mediana e Quantis",
+          "children": [
+            {
+              "name": "Passo 0: Ordenar a lista (Rol)"
+            },
+            {
+              "name": "Interpolação linear em Ogiva"
+            },
+            {
+              "name": "Separatrizes: Quartis (Q1, Q2, Q3) e Percentis"
+            },
+            {
+              "name": "Posição: (n + 1) / 2"
+            }
+          ]
+        },
+        {
+          "name": "Moda",
+          "children": [
+            {
+              "name": "Valor mais frequente"
+            },
+            {
+              "name": "Fórmulas de King e Czuber"
+            },
+            {
+              "name": "Única que serve para variáveis nominais"
+            }
+          ]
+        },
+        {
+          "name": "Assimetria e Pegadinhas",
+          "children": [
+            {
+              "name": "Simétrica: Média = Mediana = Moda"
+            },
+            {
+              "name": "À Direita: Moda < Mediana < Média"
+            },
+            {
+              "name": "Pegadinha: Média > Mediana implica maioria dos valores ABAIXO da média"
+            },
+            {
+              "name": "Mnemônico: Média corre atrás da cauda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Medidas de Dispersão",
+      "children": [
+        {
+          "name": "Variância e Desvio-Padrão",
+          "children": [
+            {
+              "name": "Atalho: Média dos Quadrados - Quadrado da Média"
+            },
+            {
+              "name": "Desvio-Padrão: Raiz da variância"
+            },
+            {
+              "name": "Populacional (n) vs Amostral (n-1)"
+            },
+            {
+              "name": "Pegadinha: DP tem a mesma unidade dos dados"
+            },
+            {
+              "name": "Pegadinha: Variância é unidade ao quadrado"
+            }
+          ]
+        },
+        {
+          "name": "Coeficiente de Variação (CV)",
+          "children": [
+            {
+              "name": "Fórmula: DP / Média"
+            },
+            {
+              "name": "Adimensional (sem unidade)"
+            },
+            {
+              "name": "Mede dispersão relativa"
+            }
+          ]
+        },
+        {
+          "name": "Amplitudes",
+          "children": [
+            {
+              "name": "Total: Máximo - Mínimo"
+            },
+            {
+              "name": "Interquartílica: Q3 - Q1 (Robusta a outliers)"
+            },
+            {
+              "name": "Desvio Médio: Média dos módulos dos desvios"
+            }
+          ]
+        },
+        {
+          "name": "Pegadinhas Conceituais",
+          "children": [
+            {
+              "name": "DP = 0 significa todos os valores iguais"
+            },
+            {
+              "name": "DP nunca é negativo"
+            },
+            {
+              "name": "Incluir valor igual à média REDUZ o DP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Propriedades (Y = aX + b)",
+      "children": [
+        {
+          "name": "Somar constante (b)",
+          "children": [
+            {
+              "name": "Média, Mediana, Moda: Somam b"
+            },
+            {
+              "name": "Variância e DP: NÃO MUDAM"
+            },
+            {
+              "name": "CV: MUDA (pois a média muda)"
+            }
+          ]
+        },
+        {
+          "name": "Multiplicar constante (a)",
+          "children": [
+            {
+              "name": "Média, Mediana, Moda: Multiplicam por a"
+            },
+            {
+              "name": "Desvio-Padrão: Multiplica por |a|"
+            },
+            {
+              "name": "Variância: Multiplica por a²"
+            },
+            {
+              "name": "CV: NÃO MUDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Probabilidade",
+      "children": [
+        {
+          "name": "Cálculos Básicos",
+          "children": [
+            {
+              "name": "Favoráveis / Possíveis"
+            },
+            {
+              "name": "Atalho: 'Pelo menos um' = 1 - P(Nenhum)"
+            },
+            {
+              "name": "Eventos Complementares: P(A) + P(A') = 1"
+            }
+          ]
+        },
+        {
+          "name": "Regras de Ouro",
+          "children": [
+            {
+              "name": "União: P(A ou B) = P(A) + P(B) - P(A e B)"
+            },
+            {
+              "name": "Interseção: P(A e B) = P(A) . P(B|A)"
+            },
+            {
+              "name": "Independência: P(A e B) = P(A) . P(B)"
+            }
+          ]
+        },
+        {
+          "name": "Bayes e Teorema Total",
+          "children": [
+            {
+              "name": "Ramificações: Probabilidade Total"
+            },
+            {
+              "name": "Bayes: Inverter condicional (Efeito para Causa)"
+            }
+          ]
+        },
+        {
+          "name": "Pegadinhas",
+          "children": [
+            {
+              "name": "Independente vs Mutuamente Exclusivo"
+            },
+            {
+              "name": "Sem Reposição: Muda numerador e denominador"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Análise Combinatória",
+      "children": [
+        {
+          "name": "Arranjo: Ordem IMPORTA (senhas, pódios)"
+        },
+        {
+          "name": "Combinação: Ordem NÃO importa (comissões, grupos)"
+        },
+        {
+          "name": "Permutação com Repetição: Anagramas"
+        },
+        {
+          "name": "Combinação Completa: Escolha com repetição permitida"
+        }
+      ]
+    },
+    {
+      "name": "Amostragem",
+      "children": [
+        {
+          "name": "Probabilística",
+          "children": [
+            {
+              "name": "Aleatória Simples: Sorteio puro"
+            },
+            {
+              "name": "Sistemática: Pular de k em k"
+            },
+            {
+              "name": "Estratificada: Estratos homogêneos internamente"
+            },
+            {
+              "name": "Conglomerado: Grupos heterogêneos internamente"
+            }
+          ]
+        },
+        {
+          "name": "Pegadinhas de Amostragem",
+          "children": [
+            {
+              "name": "Trocar Homogêneo/Heterogêneo em Estrato/Conglomerado"
+            },
+            {
+              "name": "Amostragem Não Probabilística: Conveniência, Cota"
+            },
+            {
+              "name": "Tamanho da Amostra: Erro padrão diminui com raiz de n"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

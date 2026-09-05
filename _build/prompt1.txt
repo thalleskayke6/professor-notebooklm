@@ -1,0 +1,18 @@
+Você é um professor que precisa dominar TODO o conteúdo deste notebook para ensiná-lo depois. Produza um MAPA DE CONTEÚDO EXAUSTIVO em markdown, cobrindo todas as fontes (não só as primeiras). Estrutura obrigatória:
+
+## 1. Visão geral
+2 a 4 frases sobre o que este notebook ensina e para que serve.
+
+## 2. Índice hierárquico completo
+Lista de tópicos e subtópicos (níveis ###, - e   -), o mais completa possível. Cada fonte relevante deve estar representada em algum tópico. Não resuma: enumere.
+
+## 3. Conceitos-chave por tópico
+Para cada tópico principal do índice: definições, regras, classificações, prazos, números, exceções, fórmulas, distinções que caem em prova e pegadinhas. Use frases curtas e diretas.
+
+## 4. Relações entre tópicos
+Quais tópicos dependem de quais, o que se confunde com o quê.
+
+## 5. O que este notebook NÃO cobre
+Lacunas evidentes em relação ao tema.
+
+Seja o mais longo e detalhado que conseguir. Não peça permissão para continuar, escreva tudo.

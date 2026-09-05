@@ -1,0 +1,3 @@
+Produza um ÍNDICE HIERÁRQUICO COMPLETO em markdown (### tema, - subtema, sub-itens com dois espaços) de TODOS os temas e subtemas tratados nas fontes deste notebook, cobrindo todas as fontes e não só as primeiras. Não explique, só enumere. Comece com 2 frases de visão geral do que o notebook ensina.
+
+IMPORTANTE: responda de forma compacta, no máximo 90 linhas, sem citar fontes e sem repetir itens.

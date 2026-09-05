@@ -1,0 +1,3 @@
+Para cada tema principal deste notebook, liste os CONCEITOS-CHAVE que um professor precisa dominar: definições, regras, classificações, prazos, números, fórmulas, exceções e distinções que caem em prova. Frases curtas e diretas, formato markdown com ### por tema e - por conceito. Cubra todos os temas, não só os primeiros.
+
+IMPORTANTE: responda de forma compacta, no máximo 90 linhas, sem citar fontes e sem repetir itens.
