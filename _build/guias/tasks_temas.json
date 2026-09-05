@@ -1,0 +1,328 @@
+{
+ "66410a65-3c39-4c6e-b49f-9b2ddcafa4a7": {
+  "slug": "pcpr-2026-direito-penal-apostilas",
+  "temas": [
+   {
+    "n": 1,
+    "tema": "Princípios do Direito Penal",
+    "task_id": "bbd1ee96-4b53-4a06-b81c-dc8dd59f5651",
+    "err": null
+   },
+   {
+    "n": 2,
+    "tema": "Aplicação da Lei Penal no Tempo e Espaço",
+    "task_id": "eab65168-3c8a-4854-883d-16966a780746",
+    "err": null
+   },
+   {
+    "n": 3,
+    "tema": "Conflito de Normas e Interpretação",
+    "task_id": "bbf82a86-9e21-4bad-8695-3268b77112ba",
+    "err": null
+   },
+   {
+    "n": 4,
+    "tema": "Teoria Geral da Infração Penal e Fato Típico",
+    "task_id": "940f45da-61ed-4a1c-86cd-4b127866849b",
+    "err": null
+   },
+   {
+    "n": 5,
+    "tema": "Elemento Subjetivo do Tipo",
+    "task_id": "61b88a5d-67a5-438b-94bb-8261f547a0da",
+    "err": null
+   },
+   {
+    "n": 6,
+    "tema": "ter Criminis e Graus de Desenvolvimento",
+    "task_id": "07969c60-6a48-4a58-aefc-e2ccfe15c2af",
+    "err": null
+   },
+   {
+    "n": 7,
+    "tema": "Teoria da Ilicitude",
+    "task_id": "93f54954-f624-4621-b72f-0aa9eb0b5604",
+    "err": null
+   }
+  ]
+ },
+ "5beaebcc-a76f-426c-9551-c4bd3e527600": {
+  "slug": "pcpr-2026-lingua-portuguesa-apostilas",
+  "temas": [
+   {
+    "n": 1,
+    "tema": "Aula 00 - Nivelamento da Língua",
+    "task_id": "4e8444ad-63e1-4d2b-bd17-4d81fdaabd14",
+    "err": null
+   },
+   {
+    "n": 2,
+    "tema": "Aula 01 - Ortografia e Acentuação Gráfica",
+    "task_id": "ab4bdfcb-fa0c-4306-8e4a-a8c30e1e0970",
+    "err": null
+   },
+   {
+    "n": 3,
+    "tema": "Aula 02 - Classes de Palavras I",
+    "task_id": "36220376-5761-4a15-bc77-7faa66c04c3b",
+    "err": null
+   },
+   {
+    "n": 4,
+    "tema": "Aula 03 - Classes de Palavras II",
+    "task_id": "5de7b58a-cef6-4b39-a7f5-35555643d3b2",
+    "err": null
+   },
+   {
+    "n": 5,
+    "tema": "Aula 04 - Classes de Palavras III",
+    "task_id": "168ba800-cff0-4949-88dd-f1d27acd3967",
+    "err": null
+   },
+   {
+    "n": 6,
+    "tema": "Aula 05 - Estrutura e Formação de Palavras",
+    "task_id": "a0fe8dd8-1082-4f61-9419-37d22678b9a0",
+    "err": null
+   },
+   {
+    "n": 7,
+    "tema": "Aula 06 - Organização Sintática das Frases",
+    "task_id": "fecf7345-c5c0-40aa-8514-8595642ec8d1",
+    "err": null
+   },
+   {
+    "n": 8,
+    "tema": "Aula 07 - Tipologia da Frase e Pontuação",
+    "task_id": "b8e34c84-7c24-464e-8a19-7744c58ea083",
+    "err": null
+   },
+   {
+    "n": 9,
+    "tema": "Aula 08 - Concordância Verbal e Nominal",
+    "task_id": "cfc4fb9d-7c23-456f-9135-739ff6e4dbfd",
+    "err": null
+   },
+   {
+    "n": 10,
+    "tema": "Aula 09 - Regência Verbal e Nominal e Crase",
+    "task_id": "ca2c9fb6-b262-4e59-a77f-d1f41940500f",
+    "err": null
+   },
+   {
+    "n": 11,
+    "tema": "Aula 10 - Coesão e Coerência",
+    "task_id": "09152845-6070-47c8-b3dd-fa0295080e1c",
+    "err": null
+   },
+   {
+    "n": 12,
+    "tema": "Aula 11 - Semântica: Sinônimos, Antônimos e Parônimos",
+    "task_id": "5192f567-02e0-46e6-b3ec-972256e9caba",
+    "err": null
+   },
+   {
+    "n": 13,
+    "tema": "Aula 12 - Interpretação e Compreensão de Texto",
+    "task_id": "564967c8-342a-40d0-95fe-578a2602205a",
+    "err": null
+   },
+   {
+    "n": 14,
+    "tema": "Aula 13 - Gêneros Textuais e Domínios Discursivos",
+    "task_id": "2a4d4221-2aa0-4198-a0d4-40f81fe89991",
+    "err": null
+   },
+   {
+    "n": 15,
+    "tema": "Aula 14 - Norma Culta e Registros de Linguagem",
+    "task_id": "de1fc560-0f33-4d80-a461-c4d320941c2e",
+    "err": null
+   },
+   {
+    "n": 16,
+    "tema": "Aula 15 - Atos de Comunicação e Dicionários",
+    "task_id": "13ae552a-0812-4e78-bc91-94a1d90b9fa1",
+    "err": null
+   },
+   {
+    "n": 17,
+    "tema": "Aula 16 - Aula Extra",
+    "task_id": "569f019f-3c7d-4201-9b84-ef6c4d63b717",
+    "err": null
+   }
+  ]
+ },
+ "e5690053-99e5-4d7e-87e8-98e697a3d047": {
+  "slug": "pcpr-2026-portugues",
+  "temas": [
+   {
+    "n": 1,
+    "tema": "Guia-Mestre e Estratégia de Prova (O Jeito FGV)",
+    "task_id": "ccd6a48f-c50e-4723-a207-2a5facc65a44",
+    "err": null
+   },
+   {
+    "n": 2,
+    "tema": "Morfologia Contextual e Formação de Palavras",
+    "task_id": "3d5d934d-fe0f-4eb2-b6f1-99e9a55b362b",
+    "err": null
+   },
+   {
+    "n": 3,
+    "tema": "Sintaxe do Período Simples e Composto",
+    "task_id": "56d9d56a-7a9a-44c9-bb6e-fb4dafb24aba",
+    "err": null
+   },
+   {
+    "n": 4,
+    "tema": "Sintaxe das Orações Reduzidas",
+    "task_id": "420efc00-2b58-4382-81a8-7bf17a8db09c",
+    "err": null
+   },
+   {
+    "n": 5,
+    "tema": "Regência Verbal, Nominal e Emprego da Crase",
+    "task_id": "27f86d5b-9c38-4357-a8c2-b09b20a6ee92",
+    "err": null
+   },
+   {
+    "n": 6,
+    "tema": "Concordância Verbal e Nominal",
+    "task_id": "da25e9cd-ffa3-479a-829c-b5e563c959ae",
+    "err": null
+   },
+   {
+    "n": 7,
+    "tema": "Colocação Pronominal",
+    "task_id": "b88d8b87-0115-4d1e-a57d-0d9d44f0e5b7",
+    "err": null
+   },
+   {
+    "n": 8,
+    "tema": "Paralelismo Sintático e Semântico",
+    "task_id": "9764cb8b-ae4d-4294-808e-1d1e436b5bd7",
+    "err": null
+   },
+   {
+    "n": 9,
+    "tema": "Pontuação como Sintaxe Aplicada",
+    "task_id": "e1f0bcb6-c2b8-4459-8b33-a802a5ece59a",
+    "err": null
+   },
+   {
+    "n": 10,
+    "tema": "Coerência e Coesão Textual (Anáfora, Catáfora e Conectores)",
+    "task_id": "7ebc81bc-b24b-43f2-bd96-0c47919b338a",
+    "err": null
+   },
+   {
+    "n": 11,
+    "tema": "Semântica, Relações Lexicais e Modalização Discursiva",
+    "task_id": "2cf8c53c-7035-4832-bcb5-282e7e0bbca5",
+    "err": null
+   },
+   {
+    "n": 12,
+    "tema": "Reescrita de Frases e Técnicas de Substituição de Trechos",
+    "task_id": "f7444eb2-e02f-492e-bac9-744b0f93e3ae",
+    "err": null
+   },
+   {
+    "n": 13,
+    "tema": "Clareza, Correção e Propriedades de Estilo do Período",
+    "task_id": "dbf4686f-ed33-4f17-a796-e37494bc9714",
+    "err": null
+   },
+   {
+    "n": 14,
+    "tema": "Tipologia, Gênero Textual e Intertextualidade",
+    "task_id": "dbc8cfa0-d1b6-477e-8aba-c7019c8c6488",
+    "err": null
+   },
+   {
+    "n": 15,
+    "tema": "Tipos de Discurso (Direto, Indireto e Indireto Livre)",
+    "task_id": "7700f348-c3d8-4c4f-8757-04b9bc6193d6",
+    "err": null
+   },
+   {
+    "n": 16,
+    "tema": "Linguagem: Variação, Registro e Redação Oficial",
+    "task_id": "3f86818f-538f-4f21-83cc-9752bcc66882",
+    "err": null
+   },
+   {
+    "n": 17,
+    "tema": "Ortografia, Acentuação e Convenções Gráficas",
+    "task_id": "ed0e336c-364f-4407-9b5a-bb0f60449cef",
+    "err": null
+   },
+   {
+    "n": 18,
+    "tema": "Interpretação de Texto, Argumentação e Questões Mescladas",
+    "task_id": "9fc6bbf1-1af5-4e26-a187-48f09fa74471",
+    "err": null
+   }
+  ]
+ },
+ "bee037d5-0f9b-4125-ac6e-691b183e57fa": {
+  "slug": "pc-pr-legislacao-estadual-e-institucional",
+  "temas": [
+   {
+    "n": 1,
+    "tema": "Regulação Constitucional e Administrativa Geral (CE/PR)",
+    "task_id": "2da86c81-6a0f-4de0-959a-322dac0ab76d",
+    "err": null
+   },
+   {
+    "n": 2,
+    "tema": "Estatuto dos Servidores Públicos Civis do Paraná (Lei Estadual nº 6.174/1970)",
+    "task_id": "d5d0b2fe-123e-4c85-bf3c-3d2ff3b97d0b",
+    "err": null
+   },
+   {
+    "n": 3,
+    "tema": "Sindicância e Processo Administrativo Disciplinar (Lei Estadual nº 20.655/2021)",
+    "task_id": "860f88a1-0566-4985-a7d7-66c9f448dd84",
+    "err": null
+   },
+   {
+    "n": 4,
+    "tema": "Ética e Sigilo no Serviço Público",
+    "task_id": "effdcec6-998c-4590-b300-100af21f0055",
+    "err": null
+   },
+   {
+    "n": 5,
+    "tema": "Lei Geral de Proteção de Dados Pessoais (Lei Federal nº 13.709/2018 - LGPD)",
+    "task_id": "7f8140b1-98c3-45c9-b0a1-b4b3181d7951",
+    "err": null
+   },
+   {
+    "n": 6,
+    "tema": "Lei de Acesso à Informação (Lei Federal nº 12.527/2011 - LAI)",
+    "task_id": "b399f2ce-3d8f-413e-97a4-26b0b18da128",
+    "err": null
+   },
+   {
+    "n": 7,
+    "tema": "Lei de Abuso de Autoridade (Lei Federal nº 13.869/2019)",
+    "task_id": "f0128804-f307-4892-97bd-7c04e9d66879",
+    "err": null
+   },
+   {
+    "n": 8,
+    "tema": "Identificação Criminal (Lei Federal nº 12.037/2009)",
+    "task_id": "cad483b5-2987-4bb7-8001-89dd6db12226",
+    "err": null
+   },
+   {
+    "n": 9,
+    "tema": "Lei Orgânica Nacional das Polícias Civis (Lei Federal nº 14.735/2023)",
+    "task_id": "469629dd-1f65-4471-a359-5b049becc54f",
+    "err": null
+   }
+  ]
+ }
+}

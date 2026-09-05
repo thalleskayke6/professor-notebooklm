@@ -15,7 +15,7 @@ SUBS = [
     (r'\bTec ?Concursos\b(?![^\[]*\]\()', 'plataforma de questões'),
     (r'\bQConcursos\b', 'plataforma de questões'),
 ]
-files = glob.glob(os.path.join(ROOT, 'notebooks', '*.md')) + [os.path.join(ROOT, 'MAPA-GERAL.md'),
+files = glob.glob(os.path.join(ROOT, 'notebooks', '*.md')) + glob.glob(os.path.join(ROOT, 'guias', '*.md')) + [os.path.join(ROOT, 'MAPA-GERAL.md'),
         os.path.join(ROOT, 'vault', 'INDICE-VAULT.md'), os.path.join(ROOT, 'questoes', 'INDICE.md')] + glob.glob(os.path.join(ROOT, 'materiais', '*'))
 n = 0
 for f in files:

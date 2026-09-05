@@ -1,58 +1,210 @@
-# Professor: um tutor de concurso construído sobre NotebookLM, Obsidian e um banco de questões reais
+# Professor: um tutor de concurso que aprende com o seu material
 
-## Resumo
+> Um professor particular para o Claude Code que lê tudo o que você juntou para um concurso, entende o peso de cada matéria na prova, sabe o que a banca mais cobra e responde com questões reais como referência.
 
-Este repositório documenta a construção de um tutor automatizado para a prova de Agente de Polícia Judiciária da Polícia Civil do Paraná (Edital 01/2026, banca FGV). O tutor combina três bases: 23 notebooks do Google NotebookLM com 819 fontes, um cofre do Obsidian com 205 aulas em formato markdown distribuídas por 13 matérias, e um banco de 4482 questões reais de concurso, deduplicadas e com gabarito, classificadas em 445 assuntos. Um conjunto de scripts em Python extrai, normaliza e indexa esse material; uma skill do Claude Code o consulta na hora de responder. O texto descreve as fontes, o pipeline, a cobertura por matéria e assunto, o modo de uso e o que é preciso mudar para reaproveitar a estrutura em outro edital.
+Foi construído para a prova de Agente de Polícia Judiciária da Polícia Civil do Paraná (Edital 01/2026, banca FGV) e por isso o exemplo aqui é de carreira policial. A estrutura, porém, não sabe nada de polícia: ela aprende qualquer edital a partir de três coisas que todo concurseiro já tem, notebooks com o material, cadernos de questões resolvidas e as próprias anotações. A seção 9 explica como trocar de concurso.
 
-## 1. O problema
+**Sumário**
 
-Quem estuda para concurso acumula material em três lugares que não conversam entre si. As apostilas e videoaulas ficam em um serviço de anotações. Os cadernos de questões ficam na plataforma onde foram resolvidos. As anotações de método, o plano de estudo e o registro de erros ficam em um terceiro lugar. Cada ferramenta responde bem a uma pergunta de cada vez sobre o próprio acervo, mas nenhuma sabe cruzar as três coisas: o que a apostila ensina, como a banca cobra isso na prática e onde o aluno está errando.
+1. [Para quem é](#1-para-quem-é)
+2. [O que ele sabe](#2-o-que-ele-sabe)
+3. [Como funciona por dentro](#3-como-funciona-por-dentro)
+4. [Como as questões foram lidas, passo a passo](#4-como-as-questões-foram-lidas-passo-a-passo)
+5. [Como a FGV derruba candidatos](#5-como-a-fgv-derruba-candidatos)
+6. [Como a incidência decide o que importa](#6-como-a-incidência-decide-o-que-importa)
+7. [Cobertura atual](#7-cobertura-atual)
+8. [Como usar no dia a dia](#8-como-usar-no-dia-a-dia)
+9. [Ensinar o professor um edital novo](#9-ensinar-o-professor-um-edital-novo)
+10. [Instalação e reconstrução](#10-instalação-e-reconstrução)
+11. [Limitações](#11-limitações)
+12. [Ferramentas](#12-ferramentas)
 
-O objetivo aqui foi montar um único "professor" que tivesse lido tudo, soubesse o peso de cada matéria na prova e respondesse no recorte da banca, com questões reais como referência.
+## 1. Para quem é
 
-## 2. Materiais
+Para quem estuda por questões e cansou de ter o material espalhado. As apostilas ficam em um lugar, as questões em outro, o plano e os erros em um terceiro, e nenhuma ferramenta cruza as três coisas.
 
-A base foi montada a partir de três origens. Nomes de autores, cursos e plataformas foram omitidos de propósito; o que importa para reprodução é o tipo de material e o formato.
+O caso de uso original é concurso de carreira policial (agente, investigador, escrivão, papiloscopista, perito, delegado), onde a prova mistura Direito, tecnologia, ciências forenses e legislação estadual e a banca cobra literalidade de lei aplicada a caso concreto. Mas o mesmo esqueleto serve para qualquer certame com edital, matérias com peso e histórico de questões: tribunais, fiscal, administrativo, bancário, militar.
 
-**Notebooks do NotebookLM.** 23 notebooks com 819 fontes no total: apostilas em PDF, videoaulas, artigos, textos de lei, planilhas e prompts. Treze deles cobrem matérias do edital; seis tratam de método de estudo, memória e mentalidade; um trata de engenharia de prompts; um contém o edital.
+## 2. O que ele sabe
 
-**Cofre do Obsidian.** Cerca de 440 notas em markdown. As principais são as apostilas convertidas de PDF, uma por aula, em até três versões (resumo, simplificada e completa), organizadas em 13 matérias com uma nota-hub por matéria. Além delas, notas curadas de método (um catálogo de pegadinhas da banca com códigos fixos, instruções para geração de flashcards), plano de estudo (pesos, ciclo de blocos, reta final) e registro (análise de erros, assuntos a treinar após simulado).
+O professor combina quatro camadas de conhecimento, todas geradas por script a partir do material do aluno:
 
-**Cadernos de questões.** Exportações em markdown de uma plataforma de questões, filtradas por banca. Havia 44 arquivos com forte sobreposição (o mesmo caderno exportado mais de uma vez). Após deduplicação pelo identificador da questão na fonte, restaram 4482 questões únicas, 4323 delas com gabarito.
+| Camada | O que é | De onde vem |
+|---|---|---|
+| Mapa | Uma página por concurso com matérias, peso na prova, notebooks e contagens | Gerado pelos scripts |
+| Notebooks | Um arquivo por notebook com índice hierárquico, conceitos-chave e pegadinhas, mais um guia completo por notebook e um guia por tema | 23 notebooks do NotebookLM, 819 fontes |
+| Questões reais | 4482 questões únicas com gabarito, por matéria e assunto | Cadernos exportados de uma plataforma de questões |
+| Cofre | 205 aulas em markdown, notas de método, plano e registro de erros | Cofre do Obsidian |
 
-## 3. Método
+Nomes de autores, cursos e plataformas foram omitidos de propósito. O que importa para reproduzir é o tipo de material e o formato.
+
+## 3. Como funciona por dentro
+
+```mermaid
+flowchart LR
+    A[NotebookLM<br>notebooks por matéria] -->|CLI: ask, report, download| B[notebooks/ e guias/]
+    C[Cofre Obsidian<br>apostilas, método, erros] -->|build_vault.py| D[vault/]
+    E[Cadernos de questões<br>exportados em markdown] -->|build_questoes.py| F[questoes/]
+    B --> G[MAPA-GERAL.md]
+    D --> G
+    F --> G
+    G --> H[Skill /professor<br>no Claude Code]
+    H -->|pergunta pontual| A
+```
 
 ### 3.1 Extração dos notebooks
 
-O NotebookLM não expõe o texto consolidado de um notebook. A solução foi perguntar ao próprio NotebookLM, por linha de comando, três coisas sobre cada notebook, com prompts fixos:
+O NotebookLM não entrega o texto consolidado de um notebook. Duas estratégias foram combinadas, ambas por linha de comando:
 
-| Prompt | Pergunta | Seção gerada |
-|---|---|---|
-| `p_indice.txt` | Índice hierárquico de todos os temas e subtemas, cobrindo todas as fontes | Índice hierárquico |
-| `p_conceitos.txt` | Definições, regras, classificações, prazos, números, fórmulas e exceções por tema | Conceitos-chave por tema |
-| `p_pegadinhas.txt` | O que se confunde com o quê, o que a banca cobra, dependências entre temas, lacunas | Pegadinhas, relações e lacunas |
+**Três perguntas fixas no chat.** Para cada notebook, três prompts (em `_build/`) pedem o índice hierárquico completo, os conceitos-chave por tema e as pegadinhas. As respostas viram as seções do arquivo `notebooks/<notebook>.md`.
 
-O script também baixa o resumo automático de cada notebook, a lista de fontes, as notas salvas e os artefatos já gerados (relatórios, quizzes, flashcards, mapas mentais, tabelas). O notebook de videoaulas de método, com 63 vídeos, precisou ser extraído em cinco partes temáticas porque um pedido único estourava o limite de resposta da ferramenta.
+**Relatórios no Studio.** O chat tem teto de tamanho por resposta. O painel Studio gera relatórios em formato livre, que saem inteiros em markdown. O script pede um guia completo por notebook (`guias/<notebook>.md`, 11 KB em média) e, nos notebooks de matéria, um guia por tema do índice (`guias/<notebook>/NN-tema.md`). É o caminho com mais conteúdo por pedido.
+
+Além disso o script baixa o resumo automático, a lista de fontes, as notas salvas e os artefatos já existentes (quizzes, flashcards, mapas mentais).
 
 ### 3.2 Extração das questões
 
-Os cadernos vieram em quatro formatos diferentes de markdown, conforme a época e a ferramenta de exportação. O parser reconhece os quatro: cabeçalho com link para a fonte e gabarito em tabela no fim do bloco; cabeçalho com link em rodapé; exportação bruta com linha de banca, linha de matéria e assunto e gabarito inline; e exportação achatada em uma linha por questão. Cada questão é registrada com identificador, banca e órgão, matéria, assunto, enunciado, alternativas, gabarito e arquivo de origem. As 91 rotulagens de matéria encontradas nas fontes foram normalizadas para as 13 matérias do edital mais Legislação Penal Extravagante.
+Os cadernos viram um banco estruturado por um parser próprio. O processo inteiro está na seção 4.
 
 ### 3.3 Índice do cofre
 
-Um terceiro script percorre o cofre, lista cada aula com versão e tamanho, associa os cadernos de questões e as notas soltas à matéria correspondente e copia as notas curadas pequenas (hubs, método, plano, registro) para consulta direta. Apostilas e despejos de curso ficam apenas referenciados por caminho, por tamanho e por direitos autorais.
+Um script percorre o cofre, lista cada aula com versão (resumo, simplificada, completa) e tamanho, associa cadernos e notas soltas à matéria e copia as notas curadas pequenas para consulta direta. Apostilas inteiras ficam só referenciadas por caminho.
 
-### 3.4 Montagem
+### 3.4 A skill
 
-Um arquivo por notebook junta resumo, as três respostas, materiais e fontes. Um mapa geral agrupa tudo por matéria da prova, com o peso de cada uma e a contagem de questões reais disponíveis. Todos os passos são idempotentes: rodar de novo só refaz o que falta.
+A skill é um arquivo de instruções que o Claude Code carrega quando o usuário chama `/professor` ou faz uma pergunta de matéria. Ela fixa a ordem de consulta:
 
-### 3.5 O tutor
+1. Ler o mapa e escolher a matéria.
+2. Buscar o tema no guia completo e no arquivo do notebook.
+3. Buscar o assunto no arquivo de questões e pegar duas ou três questões reais como molde.
+4. Se faltar teoria, abrir a aula certa do cofre.
+5. Se ainda faltar, perguntar ao notebook ao vivo.
 
-A skill (`ferramenta/SKILL.md`) descreve como o assistente deve responder. A ordem é fixa: ler o mapa e escolher a matéria; buscar o tema no arquivo do notebook; buscar o assunto no arquivo de questões e usar duas ou três questões reais como molde; se faltar teoria, abrir a aula certa do cofre; se ainda faltar, perguntar ao notebook ao vivo. A profundidade é proporcional ao peso da matéria. Toda explicação termina com as pegadinhas do tema, codificadas pelo catálogo do usuário (P1 a P10 para pegadinhas jurídicas, T1 a T4 para técnicas). O registro de erros do aluno entra na priorização.
+E fixa o jeito de responder: profundidade proporcional ao peso da matéria, estilo da banca, pegadinhas codificadas, e sempre dizer de onde veio cada ponto.
 
-## 4. Cobertura
+## 4. Como as questões foram lidas, passo a passo
 
-A prova tem 100 questões de peso igual. A tabela abaixo cruza cada matéria com o que existe na base.
+O banco de questões é a parte mais valiosa da base e a mais trabalhosa de montar, porque cada exportação veio de um jeito. O script `_build/build_questoes.py` faz o seguinte, nesta ordem:
+
+**1. Localizar os arquivos.** Todos os `.md` da pasta de cadernos, da pasta de arquivo legado e da raiz do cofre, exceto hubs, inventários e prompts. Foram 44 arquivos.
+
+**2. Detectar o formato.** Cada arquivo é classificado por marcadores no texto:
+
+| Formato | Como reconhecer | Onde estão banca, matéria e gabarito |
+|---|---|---|
+| Curado v1 | `**Q123** · banca · [ver na fonte](url)` | Banca no cabeçalho; matéria no `##` e assunto no `###` acima; gabarito em tabela `Q123 / C` no fim do bloco da matéria |
+| Curado v2 | `**Q001** · banca` e rodapé `<sub>[.../questoes/ID] · assunto</sub>` | Igual ao v1, mas o link e o assunto ficam no rodapé de cada questão |
+| Exportação bruta | Link `www.../questoes/ID`, linha da banca terminando em `/ano`, linha `Matéria - Assunto`, `N)` | Tudo em linhas próprias; gabarito inline `Gabarito: X` logo após as alternativas |
+| Exportação achatada | Tudo da questão em uma linha só | Banca, matéria, enunciado e alternativas separados por expressão regular na mesma linha |
+
+**3. Segmentar.** O texto é cortado no link da questão na fonte (`questoes/<ID>`). Cada pedaço é uma questão; o ID vira a chave.
+
+**4. Ler o cabeçalho.** A linha da banca traz banca, órgão, cargo e ano no padrão `FGV - Cargo (Órgão)/Órgão/Área/2025`. Ela é reconhecida por terminar em barra e quatro dígitos. Rodapés de página das exportações em PDF (`19/49`, data e hora, título do caderno) são descartados por padrão próprio.
+
+**5. Achar matéria e assunto.** Conforme o formato: a linha `Matéria - Assunto` após a banca, ou os títulos `##` e `###` mais próximos acima, ou o rodapé `<sub>`. Quando uma questão não tem a linha, herda a da anterior.
+
+**6. Separar enunciado de alternativas.** Uma expressão regular reconhece o início de alternativa (`a)`, `(A)`, `- **(A)**`, com ou sem negrito). Tudo antes da primeira alternativa é enunciado; linhas seguintes sem marcador são continuação da alternativa anterior. Imagens e rodapés são limpos.
+
+**7. Achar o gabarito.** Inline (`Gabarito: B`) nas exportações brutas, ou na tabela de gabaritos do bloco da matéria nos cadernos curados, casada pelo número local da questão (`Q271`).
+
+**8. Deduplicar.** O mesmo ID que aparece em dois arquivos vira um registro só. Quando as versões diferem, fica a que tem gabarito; em empate, a que tem mais alternativas legíveis. Dos 7870 registros lidos sobraram 4482 únicos.
+
+**9. Normalizar a matéria.** As fontes usavam 91 rótulos ("Direito Administrativo (Doutrina e Leis Federais)", "Direito Digital", "TI", "Análise das Demonstrações Contábeis"). Uma tabela de expressões regulares os leva para as matérias do edital; o rótulo original fica guardado no campo `materia_original`. Arquivos soltos sem rótulo recebem a matéria pelo nome do arquivo.
+
+**10. Gravar.** Um `banco.json` com todos os campos, um `.md` por matéria com as questões agrupadas por assunto e gabarito logo abaixo de cada uma, e um `INDICE.md` com as contagens. O professor consulta os `.md` por Grep, pelo assunto ou por palavra-chave.
+
+O que não deu certo: 109 questões de uma exportação achatada ficaram sem alternativas legíveis, porque as alternativas foram coladas em linhas fora de ordem. Estão no banco com enunciado e gabarito, marcadas.
+
+## 5. Como a FGV derruba candidatos
+
+Esta seção junta duas coisas: o que os números do banco mostram sobre a forma das questões, e o catálogo de mecanismos de erro que o aluno montou a partir das próprias questões erradas e que o professor usa para codificar cada pegadinha.
+
+### 5.1 A forma da questão, em números
+
+Das 4482 questões do banco, 3967 são da FGV, a maioria de 2024 a 2026. Medidas sobre essas:
+
+| Medida | Valor |
+|---|---|
+| Cinco alternativas (A a E) | 93% |
+| Pede a alternativa correta | 20% |
+| Pede a incorreta ou 'exceto' | 4% |
+| Certo/errado ou V/F | 1% |
+| Afirmativas I, II, III | 8% |
+| Enunciado com caso concreto (nomes, 'nesse cenário') | 18% |
+| Enunciado cita lei, artigo, súmula ou Constituição | 22% |
+| Enunciado com mais de 600 caracteres | 25% |
+| Tamanho mediano do enunciado | 372 caracteres |
+| Tamanho médio de cada alternativa | 71 caracteres |
+| Distribuição do gabarito | A 19%, B 22%, C 20%, D 20%, E 18% |
+
+O que isso diz: a FGV quase não usa certo/errado nem "assinale a incorreta". Ela prefere cinco alternativas com um enunciado de tamanho médio e uma história antes da pergunta. O gabarito é distribuído de forma quase uniforme entre A e E, então chute por letra não existe. E a proporção de caso concreto muda muito por matéria:
+
+| Matéria | Questões FGV | Com caso concreto | Cita lei ou artigo | Enunciado mediano |
+|---|---:|---:|---:|---:|
+| Língua Portuguesa | 722 | 11% | 1% | 237 car. |
+| Tecnologia, Segurança Cibernética e Crimes Digitais | 392 | 17% | 34% | 413 car. |
+| Ciências Forenses | 41 | 5% | 0% | 188 car. |
+| Raciocínio Lógico-Matemático | 245 | 14% | 0% | 274 car. |
+| Contabilidade Geral | 809 | 2% | 12% | 428 car. |
+| Estatística | 409 | 6% | 0% | 289 car. |
+| Legislação Estadual e Institucional | 19 | 47% | 63% | 423 car. |
+| Direito Penal (com Legislação Penal Extravagante) | 224 | 56% | 32% | 438 car. |
+| Direito Processual Penal | 88 | 32% | 19% | 394 car. |
+| Direito Constitucional | 214 | 40% | 45% | 488 car. |
+| Direito Administrativo | 601 | 33% | 63% | 449 car. |
+| Direitos Humanos | 203 | 18% | 29% | 418 car. |
+
+Em Direito Penal, seis em cada dez questões começam com uma narrativa ("João, policial civil, ...") e a pergunta só vem no fim. Em Português, o texto-base é o próprio caso. Em Ciências Forenses, a pergunta é direta e curta, e o erro mora na classificação.
+
+### 5.2 Os mecanismos
+
+A banca raramente pergunta algo que o candidato não sabe. Ela pergunta algo que ele sabe, de um jeito que faz a memória entregar a resposta errada. Os mecanismos abaixo foram catalogados pelo aluno a partir das próprias questões erradas e recebem um código, usado no verso de cada flashcard e nas respostas do professor.
+
+| Código | Mecanismo | Como aparece na alternativa |
+|---|---|---|
+| P1 | Modal deôntico | "pode" vira "deve": a faculdade vira obrigação, ou o contrário |
+| P2 | Restritivo enxertado | "somente", "sempre", "em qualquer hipótese" enfiados numa regra que tem exceção |
+| P3 | Requisito cumulativo | Some um requisito, ou troca o "e" cumulativo por "ou" |
+| P4 | Sujeito ou competência | Troca quem decreta, requisita, investiga ou julga (juiz por delegado, MP por juiz) |
+| P5 | Prazo ou número | Muda dias, frações, percentuais, idades (24 horas por 48, 1/6 por 1/3) |
+| P7 | Inversão regra e exceção | Apresenta a exceção como se fosse a regra geral |
+| P8 | Conector condicional | "salvo se" vira "mesmo que"; "desde que" vira "independentemente de" |
+| P9 | Deslocamento de instituto | Atribui a um conceito o regime jurídico de outro parecido (prisão temporária com prazo da preventiva) |
+| P10 | Enxerto elegante | Acrescenta uma exigência plausível que a lei não faz |
+| T1 | Sigla ou protocolo | Troca protocolo, algoritmo ou ferramenta (TCP por UDP, hash por criptografia) |
+| T2 | Pilar ou princípio | Troca confidencialidade, integridade, disponibilidade, autenticidade |
+| T3 | Sequência | Inverte a ordem de etapas (cadeia de custódia, fases da perícia) |
+| T4 | Classificação técnica | Troca classes de lesão, fenômenos cadavéricos, tipos de variável estatística |
+
+Nas alternativas do banco, 8% contêm um restritivo do tipo P2 ("somente", "apenas", "exclusivamente") e 7% contêm um modal do tipo P1. Parece pouco, mas é onde a diferença entre a alternativa certa e a "quase certa" costuma estar.
+
+### 5.3 As regras de leitura que o professor aplica
+
+Além dos códigos, três regras da banca governam como o professor explica e como monta questão inédita:
+
+**Item incompleto não é item errado.** Uma afirmação que não esgota as hipóteses continua correta, a não ser que enxerte uma restrição ("exclusivamente"). O candidato que marca errado porque "faltou coisa" cai.
+
+**A alternativa quase certa.** Toda questão tem uma alternativa distratora que repete a regra quase inteira e troca uma palavra. Por isso o professor sempre fecha um tema com "parece / é": a frase da distratora ao lado da frase correta.
+
+**Literalidade dentro do caso.** A banca cobra a letra da lei, mas dentro de uma história. O candidato precisa primeiro achar qual instituto a história descreve (isso é P9) e só depois lembrar a regra. O parágrafo ou inciso menos lido é alvo preferido, e lei alterada recentemente é cobrada na redação nova.
+
+Em Português, o mecanismo é outro: reescrita mantendo o sentido, valor semântico dos conectivos, pronome que retoma o termo errado, e vírgula que muda a função sintática. Nas questões de interpretação, a alternativa errada costuma extrapolar o texto ou inverter causa e consequência.
+
+## 6. Como a incidência decide o que importa
+
+Três números entram na priorização, e os três vêm do material, não de opinião:
+
+**Peso no edital.** Quantas questões a matéria tem na prova. Na PC-PR, Português e Tecnologia têm 25 cada; cada ramo de Direito tem 3. Isso está na lista de matérias dos scripts e no mapa.
+
+**Incidência observada.** Quantas questões de cada assunto existem no banco. Como os cadernos foram filtrados por banca, o volume por assunto é a incidência real daquela banca no recorte coletado. `questoes/INDICE.md` lista os assuntos de cada matéria nessa ordem. Um assunto com 253 questões (Interpretação de Textos) pesa mais que um com 4 (Pronomes Demonstrativos), e o professor trata os dois de acordo.
+
+**Erros do aluno.** As notas de registro do cofre (autópsia de erros, assuntos a treinar após simulado) dizem onde a pessoa erra. Quando o tema pedido está lá, a explicação começa por esse ponto.
+
+Na prática: um pedido de "revisão de Português" volta com os conceitos em ordem de incidência; um pedido de "plano" cruza peso, incidência e erros; uma explicação de tema com peso 3 é curta e vai direto na literalidade que a banca cobra.
+
+Para alimentar o professor com os assuntos mais importantes de um edital novo, basta exportar os cadernos daquela banca e rodar o parser. A incidência se recalcula sozinha.
+
+## 7. Cobertura atual
 
 | Matéria | Questões na prova | Notebooks | Aulas no cofre | Questões reais no banco |
 |---|---:|---|---:|---:|
@@ -73,11 +225,9 @@ A prova tem 100 questões de peso igual. A tabela abaixo cruza cada matéria com
 | IA e engenharia de prompts | — | [Guia Completo de Chatbots e Prompt Engineering para Educadores](notebooks/guia-completo-de-chatbots-e-prompt-engineerin.md) | — | — |
 | Edital | — | [Edital 01/2026 Concurso Público Polícia Civil do Paraná](notebooks/edital-01-2026-concurso-publico-policia-civil.md) | — | — |
 
-Direitos Humanos não tem notebook no NotebookLM. A cobertura dessa matéria vem das apostilas do cofre e das questões do banco.
+Direitos Humanos não tem notebook. A cobertura vem das apostilas do cofre e das questões do banco.
 
-### 4.1 Assuntos por matéria
-
-Os assuntos abaixo são os rótulos usados pela própria plataforma de questões, ordenados pelo número de questões no banco. Essa ordem é, na prática, a incidência observada da banca no recorte coletado.
+### 7.1 Assuntos por matéria, em ordem de incidência
 
 **Língua Portuguesa** (722 questões, 56 assuntos): Interpretação de Textos (Compreensão) (254); (sem assunto) (71); Tipologia e Gênero Textual (49); Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc) (40); Reescrita de Frases. Substituição de Palavras ou Trechos de Texto. (37); Adjetivo (19); Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc) (15); Figuras de Linguagem (14); Acentuação (11); Sinônimos e Antônimos (11); Fatos da Língua Portuguesa (Porque, Por Que, Porquê e Por Quê; Onde, Aonde e Donde; Há e A, etc) (10); Formação e Estrutura das Palavras (10); e mais 44 assuntos.
 
@@ -104,7 +254,7 @@ Os assuntos abaixo são os rótulos usados pela própria plataforma de questões
 **Direitos Humanos** (363 questões, 61 assuntos): Disposições Gerais (arts. 1º ao 3º da Lei nº 13.146/2015) (30); Sistema Interamericano de Direitos Humanos (22); Direitos Humanos na Constituição Federal (20); Conceitos, Histórico e Gerações dos Direitos Humanos (16); Da Igualdade e da Não Discriminação (arts. 4º ao 9º da Lei nº 13.146/2015) (16); Do Direito à Saúde (arts. 15 ao 19 da Lei nº 10.741/2003) (16); Incorporação dos Tratados Internacionais de DH ao Direito Brasileiro. Posição Hierárquica. (14); Outros Temas e Tópicos Mesclados de Proteção dos Direitos Humanos (14); Do Direito à Educação (arts. 27 a 30 da Lei nº 13.146/2015) (13); Deveres dos Estados e Direitos Protegidos (arts. 1º a 32 da CADH-OAS) (12); Lei nº 8.842/1994 - Política Nacional do Idoso (12); Agenda 2030 - Desenvolvimento Sustentável (11); e mais 49 assuntos.
 
 
-### 4.2 Aulas disponíveis no cofre
+### 7.2 Aulas disponíveis no cofre
 
 **Língua Portuguesa** (17 aulas): Nivelamento; Ortografia e acentuação gráfica; Classes de palavras I; Classes de palavras II; Classes de palavras III; Estrutura e formação de palavras; Organização sintática das frases; Tipologia da frase e pontuação; Concordância verbal e nominal; Regência verbal e nominal e crase; Coesão e coerência; Semântica: sinônimos, antônimos e parônimos; Interpretação e compreensão de texto; Tipos textuais; Norma culta e registros de linguagem; Atos de comunicação e dicionários; Aula extra.
 
@@ -133,9 +283,51 @@ Os assuntos abaixo são os rótulos usados pela própria plataforma de questões
 **Direitos Humanos** (11 aulas): Teoria Geral dos Direitos Humanos; Características e evolução histórica dos Direitos Humanos; Sistemas de proteção I; Sistemas de proteção II; Tratados internacionais de proteção; Democracia, cidadania e Direitos Humanos; Grupos vulneráveis; Segurança pública e Direitos Humanos; Política Nacional de Direitos Humanos; Agenda 2030 e ODS; CF-88 e Direitos Humanos.
 
 
-## 5. Como usar
+## 8. Como usar no dia a dia
 
-### 5.1 Instalação
+No Claude Code, `/professor` seguido do pedido, ou só a pergunta de matéria. A skill trata cada tipo de pedido de um jeito:
+
+| Pedido | O que o professor entrega |
+|---|---|
+| "me explica X" | Definição curta, regra, exceção, uma questão real resolvida, pegadinhas codificadas |
+| "revisão de X" | Conceitos-chave em ordem de incidência |
+| "questões de X" | Duas reais do banco e três inéditas no mesmo molde, com gabarito comentado |
+| "pegadinhas de X" | Pares "parece / é", cada um com código do catálogo |
+| "plano" ou "o que estudar" | Cruzamento de peso, incidência e erros registrados |
+| "cards de X" | Itens certo/errado atômicos, prontos para importar no Anki |
+
+O catálogo de pegadinhas é do próprio aluno e tem códigos fixos: P1 a P10 para pegadinhas jurídicas (troca de "pode" por "deve", restritivo enxertado, requisito cumulativo, sujeito ou competência, prazo ou número, inversão de regra e exceção, conector condicional, deslocamento de instituto, enxerto elegante) e T1 a T4 para técnicas (sigla ou protocolo, pilar, sequência, classificação). Depois de algumas centenas de cards, o código sozinho já avisa o tipo de erro.
+
+## 9. Ensinar o professor um edital novo
+
+O que é específico do concurso está em poucos lugares. O roteiro completo:
+
+**Passo 1. Notebooks.** Crie um notebook no NotebookLM por matéria do novo edital e suba o material (apostilas, aulas, leis). Notebooks de método e de edital são opcionais. Rode `notebooklm list` para confirmar que aparecem.
+
+**Passo 2. Cadernos.** Na plataforma de questões, monte um caderno por matéria filtrado pela banca do concurso e exporte em markdown. Coloque os arquivos na pasta de cadernos do cofre (ou ajuste o caminho no topo de `_build/build_questoes.py`). Se a exportação vier em outro formato, o parser precisa de um quinto ramo; os quatro atuais estão comentados no início do script.
+
+**Passo 3. Matérias e pesos.** Edite a lista `G` em `_build/build_mapa.py` e em `_build/make_readme.py`: nome da matéria como está no edital, número de questões, IDs dos notebooks. Edite a tabela `MAT` em `_build/build_questoes.py` para mapear os rótulos da plataforma para as matérias do edital.
+
+**Passo 4. Cofre.** Se houver apostilas em markdown, organize uma pasta por matéria com aulas nomeadas `Aula NN - Assunto - {Resumo|Simplificada|Apostila completa}.md` e uma nota-hub `00 — Hub <Matéria>.md`. Ajuste os caminhos no topo de `_build/build_vault.py`. Sem cofre, o professor funciona só com notebooks e questões.
+
+**Passo 5. Banca.** Na `SKILL.md`, troque o trecho "Como ensinar": os pesos e a descrição do estilo da banca. A FGV usa caso concreto e literalidade aplicada; outras bancas usam certo/errado ou cobram doutrina. Se a banca for outra, o catálogo de pegadinhas provavelmente muda de proporção, não de lista.
+
+**Passo 6. Rodar.**
+
+```bash
+python _build/rebuild.py            # extrai os notebooks
+python _build/gerar_guias.py        # dispara os guias completos no Studio
+python _build/gerar_guias_temas.py  # dispara um guia por tema
+python _build/baixar_guias.py 9     # baixa o que ficou pronto (repetir)
+python _build/baixar_guias_temas.py 9
+python _build/build_questoes.py     # banco de questões
+python _build/build_vault.py        # índice do cofre
+python _build/build_mapa.py         # mapa geral
+```
+
+**Passo 7. Testar.** Peça "revisão de <matéria de maior peso>". Se a ordem dos conceitos bater com os assuntos mais cobrados no `questoes/INDICE.md`, o professor aprendeu o edital.
+
+## 10. Instalação e reconstrução
 
 ```bash
 pip install "notebooklm-py[browser]"
@@ -146,69 +338,38 @@ mkdir -p ~/.claude/skills/professor && cp ferramenta/SKILL.md ~/.claude/skills/p
 cp ferramenta/agent-professor.md ~/.claude/agents/professor.md
 ```
 
-### 5.2 Reconstrução
+Os caminhos dentro da skill apontam para `C:\Users\USER\Professor`. Quem clonar em outro lugar precisa ajustar.
 
-```bash
-python _build/rebuild.py                 # notebooks: só refaz o que falta
-python _build/rebuild.py --force <ID>    # refaz um notebook inteiro
-python _build/build_questoes.py          # cadernos novos no cofre
-python _build/build_vault.py             # notas novas no cofre
-python _build/build_mapa.py              # mapa geral
-```
-
-### 5.3 Uso no dia a dia
-
-No Claude Code, `/professor` seguido do pedido. Exemplos de pedidos que a skill trata de forma diferente:
-
-| Pedido | O que o tutor entrega |
-|---|---|
-| "me explica X" | Definição curta, regra, exceção, uma questão real resolvida, pegadinhas codificadas |
-| "revisão de X" | Conceitos-chave em ordem de incidência |
-| "questões de X" | Duas reais do banco e três inéditas no mesmo molde, com gabarito comentado |
-| "pegadinhas de X" | Pares "parece / é", cada um com código |
-| "plano" | Cruzamento de peso da prova, erros registrados e volume de questões por assunto |
-| "cards de X" | Itens certo/errado atômicos no formato de importação do Anki |
-
-### 5.4 Estrutura do repositório
+Estrutura do repositório:
 
 ```
 MAPA-GERAL.md          ponto de entrada: matérias, pesos, notebooks, contagens
 notebooks/             um arquivo por notebook (índice, conceitos, pegadinhas, fontes)
-questoes/INDICE.md     contagem de questões por matéria e assunto
+guias/                 guia completo por notebook e, nos de matéria, um guia por tema
+questoes/INDICE.md     contagem de questões por matéria e assunto (a incidência)
 vault/INDICE-VAULT.md  aulas, cadernos e notas do cofre, por matéria
 materiais/             guias de estudo, quizzes, flashcards, mapas mentais gerados
 ferramenta/            SKILL.md e agent-professor.md para o Claude Code
 _build/                scripts e prompts
 ```
 
-Os arquivos com as questões na íntegra (`questoes/*.md`, `questoes/banco.json`) e as notas pessoais copiadas do cofre (`vault/notas/`) ficam fora do repositório. O índice de contagens está incluído.
+Os arquivos com as questões na íntegra e as notas pessoais do cofre ficam fora do repositório. Só os índices sobem.
 
-## 6. Reaproveitamento em outro edital
+## 11. Limitações
 
-A estrutura não depende do concurso. O que é específico da PC-PR está em poucos lugares:
-
-1. **Pesos e matérias.** A lista `G` em `_build/build_mapa.py` e `_build/make_readme.py` define as matérias, o peso e quais notebooks pertencem a cada uma. Troque pelos blocos do novo edital.
-2. **Notebooks.** `_build/nb_index.json` é gerado a partir de `notebooklm list`. Qualquer conjunto de notebooks serve; o `rebuild.py` descobre notebooks novos sozinho.
-3. **Cofre.** `build_vault.py` espera uma pasta por matéria com aulas nomeadas `Aula NN - Assunto - {Resumo|Simplificada|Apostila completa}.md` e uma nota-hub `00 — Hub <Matéria>.md`. Ajuste os caminhos no topo do script.
-4. **Cadernos.** `build_questoes.py` lê qualquer exportação em markdown com o link da questão na fonte. A tabela `MAT` no script mapeia os rótulos de matéria da plataforma para as matérias do edital; é ela que muda de concurso para concurso.
-5. **Skill.** O trecho "Como ensinar" da `SKILL.md` traz os pesos e o estilo da banca. Para outra banca, troque a descrição do estilo (a FGV usa caso concreto e literalidade aplicada; outras bancas usam certo/errado ou cobram doutrina).
-
-Os prompts de extração e o parser de questões são genéricos. O catálogo de pegadinhas com códigos vale para qualquer banca que trabalhe com lei seca.
-
-## 7. Limitações
-
-- As sínteses dos notebooks são geradas por modelo de linguagem a partir das fontes. Podem omitir detalhes; por isso a skill consulta o notebook ao vivo quando o arquivo não basta.
-- O comando `notebooklm ask --new` apaga o histórico de chat do notebook. Foi usado uma vez por engano durante a montagem; nenhum script deste repositório usa a opção.
-- Pedidos muito longos ao NotebookLM falham com `RPCResponseTooLargeError`, um erro de streaming da ferramenta que não depende do tamanho do notebook. Os scripts tentam de novo com um prompt compacto.
-- Cerca de 109 questões vieram sem alternativas legíveis por causa de exportações achatadas; estão no banco marcadas, sem alternativas.
+- As sínteses e os guias são gerados por modelo de linguagem a partir das fontes. Podem omitir detalhes; por isso a skill consulta o notebook ao vivo quando os arquivos não bastam.
+- Cada relatório do Studio tem teto de tamanho. Por isso existe um guia por tema, não só um por notebook.
+- O comando `notebooklm ask --new` apaga o histórico de chat do notebook. Nenhum script deste repositório usa a opção.
+- Pedidos muito longos ao chat falham com `RPCResponseTooLargeError`, um erro de streaming da ferramenta que não depende do tamanho do notebook. Os scripts tentam de novo com um prompt compacto.
+- 109 questões vieram sem alternativas legíveis por causa de exportações achatadas; estão no banco marcadas.
 - O banco reflete o recorte coletado pelo aluno, não o universo de questões da banca.
 
-## 8. Ferramentas usadas
+## 12. Ferramentas
 
-- Google NotebookLM, acessado pela linha de comando `notebooklm-py` v0.8.1.
+- Google NotebookLM, pela linha de comando `notebooklm-py` v0.8.1.
 - Obsidian, como cofre de notas em markdown.
 - Claude Code, onde a skill roda.
-- Anki, destino dos flashcards gerados pelo método descrito nas notas de método.
-- Python 3, sem dependências além da biblioteca padrão para os scripts de montagem.
+- Anki, destino dos flashcards.
+- Python 3, biblioteca padrão apenas.
 
 Extração e montagem feitas em 05/09/2026.

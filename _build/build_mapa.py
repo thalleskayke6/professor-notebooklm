@@ -51,7 +51,7 @@ def slugq(s):
     return re.sub(r'[^a-z0-9]+', '-', s).strip('-')
 L = ["# MAPA GERAL — Professor", "",
      "Base de conhecimento do professor, montada em 05/09/2026 a partir de três origens:", "",
-     "1. **23 notebooks do NotebookLM** (819 fontes): um arquivo por notebook em `notebooks/`, com índice hierárquico, conceitos-chave, pegadinhas e fontes.",
+     "1. **23 notebooks do NotebookLM** (819 fontes): um arquivo por notebook em `notebooks/`, com índice hierárquico, conceitos-chave, pegadinhas e fontes, e um guia completo por notebook em `guias/`, gerado como relatório no Studio.",
      f"2. **Banco de {sum(qcount.values())} questões reais** deduplicadas, com gabarito, por matéria e assunto em `questoes/` (índice em `questoes/INDICE.md`).",
      "3. **Vault do Obsidian**: apostilas de 14 matérias por aula, notas de método, plano e registro de erros. Índice em `vault/INDICE-VAULT.md`, notas curadas copiadas em `vault/notas/`.", "",
      "Materiais prontos (guias, quizzes, flashcards, notas, mapas mentais) estão em `materiais/`.", "",
@@ -72,7 +72,8 @@ for name, peso, ids in G:
         L.append("- Sem notebook no NotebookLM. Cobertura vem das apostilas do vault e do banco de questões.")
     for i in ids:
         r = rows[i]
-        L.append(f"- **[{title(i)}](notebooks/{r['slug']}.md)** — {r['n']} fontes, {n_mats(i)} materiais. ID `{i}`")
+        gp=os.path.join(OUT,'guias',r['slug']+'.md'); g=f" · [guia completo](guias/{r['slug']}.md)" if os.path.exists(gp) and os.path.getsize(gp)>2000 else ''
+        L.append(f"- **[{title(i)}](notebooks/{r['slug']}.md)**{g} — {r['n']} fontes, {n_mats(i)} materiais. ID `{i}`")
         s = summ(i)
         if s: L.append(f"  - {s}")
     L.append("")

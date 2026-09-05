@@ -71,11 +71,51 @@ for name, peso, ids, m in G:
 n_assuntos = len({(q['materia'], q['assunto']) for q in bank})
 n_fontes = sum(r['n'] for r in rows.values())
 mats = sorted(os.listdir('materiais'))
+gu = [os.path.getsize(f) for f in glob.glob('guias/*.md')]
+guias_kb = str(round(sum(gu) / len(gu) / 1024)) if gu else '?'
+# estatísticas de estilo FGV
+import statistics
+fgv = [q for q in bank if q['banca'].upper().startswith('FGV')]
+E = [q['enunciado'] for q in fgv]
+alts = [a for q in fgv for _, a in q['alternativas']]
+def pct(n, d): return f'{100 * n / d:.0f}%' if d else '0%'
+CASO = r'Nesse cenário|Nesse caso|Nessa situação|Diante d|\b(João|Maria|Caio|Tício|Mévio|Pedro|Ana|Paulo|José|Carlos|Joana|Matheus|Lucas)\b'
+LEI = r'Lei n[ºo°]|art\.|artigo|Decreto|Súmula|CPC|CF/?88|Constituição'
+rows_s = [("Cinco alternativas (A a E)", pct(sum(1 for q in fgv if len(q['alternativas']) == 5), len(fgv))),
+          ("Pede a alternativa correta", pct(sum(1 for e in E if re.search(r'(afirmativa|opção|alternativa) correta|é correto afirmar|está correto', e, re.I)), len(fgv))),
+          ("Pede a incorreta ou 'exceto'", pct(sum(1 for e in E if re.search(r'incorret|exceto|não é correto|à exceção|errad[ao]', e, re.I)), len(fgv))),
+          ("Certo/errado ou V/F", pct(sum(1 for e in E if re.search(r'\(V\)|verdadeir[ao]s? (ou|e) fals', e, re.I)), len(fgv))),
+          ("Afirmativas I, II, III", pct(sum(1 for e in E if re.search(r'\bI\.|afirmativas a seguir|itens a seguir', e, re.I)), len(fgv))),
+          ("Enunciado com caso concreto (nomes, 'nesse cenário')", pct(sum(1 for e in E if re.search(CASO, e, re.I)), len(fgv))),
+          ("Enunciado cita lei, artigo, súmula ou Constituição", pct(sum(1 for e in E if re.search(LEI, e, re.I)), len(fgv))),
+          ("Enunciado com mais de 600 caracteres", pct(sum(1 for e in E if len(e) > 600), len(fgv))),
+          ("Tamanho mediano do enunciado", f"{statistics.median(len(e) for e in E):.0f} caracteres" if E else '-'),
+          ("Tamanho médio de cada alternativa", f"{statistics.mean(len(a) for a in alts):.0f} caracteres" if alts else '-')]
+from collections import Counter
+gc = Counter(q['gabarito'] for q in fgv if q['gabarito'])
+rows_s.append(("Distribuição do gabarito", ', '.join(f"{k} {pct(v, sum(gc.values()))}" for k, v in sorted(gc.items()))))
+stats_fgv = NL.join(["| Medida | Valor |", "|---|---|"] + [f"| {a} | {b} |" for a, b in rows_s])
+rows_m = ["| Matéria | Questões FGV | Com caso concreto | Cita lei ou artigo | Enunciado mediano |", "|---|---:|---:|---:|---:|"]
+for name, peso, ids, m in G:
+    qs = [q for q in fgv if q['materia'] == m or (m == 'Direito Penal' and q['materia'] == 'Legislação Penal Extravagante')]
+    if len(qs) < 15: continue
+    rows_m.append(f"| {name} | {len(qs)} | {pct(sum(1 for q in qs if re.search(CASO, q['enunciado'], re.I)), len(qs))} | {pct(sum(1 for q in qs if re.search(LEI, q['enunciado'], re.I)), len(qs))} | {statistics.median(len(q['enunciado']) for q in qs):.0f} car. |")
+stats_materia = NL.join(rows_m)
+alt_restritivo = pct(sum(1 for a in alts if re.search(r'\b(somente|apenas|exclusivamente|unicamente)\b', a, re.I)), len(alts))
+alt_modal = pct(sum(1 for a in alts if re.search(r'\b(deve|deverá|deverão|obrigatoriamente|pode|poderá|poderão)\b', a, re.I)), len(alts))
+n_lidas = 0
+try:
+    for ln in open('questoes/INDICE.md', encoding='utf-8'):
+        mm = re.match(r'\| (.+?) \| (\d+) \| (\d+) \|$', ln.strip())
+        if mm and not mm.group(1).startswith('Matéria'): n_lidas += int(mm.group(2))
+except Exception: pass
 TPL = open(os.path.join(HERE, 'readme_template.md'), encoding='utf-8').read()
+TPL = (TPL.replace('{stats_fgv}', stats_fgv).replace('{stats_materia}', stats_materia).replace('{alt_restritivo}', alt_restritivo)
+       .replace('{alt_modal}', alt_modal).replace('{n_fgv}', str(len(fgv))).replace('{n_lidas}', str(n_lidas) if n_lidas else 'cerca de 7.000'))
 R = (TPL.replace('{n_notebooks}', str(len(rows))).replace('{n_fontes}', str(n_fontes)).replace('{n_aulas}', str(n_aulas_total))
      .replace('{n_materias_vault}', str(mats_vault)).replace('{n_questoes}', str(len(bank))).replace('{n_assuntos}', str(n_assuntos))
      .replace('{n_gabarito}', str(sum(1 for q in bank if q['gabarito']))).replace('{n_sem_alt}', str(sum(1 for q in bank if len(q['alternativas']) < 2)))
      .replace('{tabela_cobertura}', NL.join(tbl)).replace('{assuntos_por_materia}', NL.join(assuntos)).replace('{aulas_por_materia}', NL.join(aul))
-     .replace('{n_mats}', str(len(mats))))
+     .replace('{n_mats}', str(len(mats))).replace('{guias_kb}', guias_kb))
 open('README.md', 'w', encoding='utf-8').write(R)
 print('README', len(R), 'aulas', n_aulas_total, 'questoes', len(bank), 'assuntos', n_assuntos)
