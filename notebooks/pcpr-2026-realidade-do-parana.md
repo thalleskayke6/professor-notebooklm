@@ -326,6 +326,20 @@ A **Guerra do Contestado** (1912-1916) foi um conflito socioeconômico e messiâ
 - `lacuna nas fontes: história e vigência da legislação florestal ambiental recente que regulamenta a proteção dos remanescentes da Mata de Araucárias.`
 
 
+### Guias por tema (10)
+
+- [periodo pre colonial e povos originarios do parana](../guias/pcpr-2026-realidade-do-parana/01-periodo-pre-colonial-e-povos-originarios-do-parana.md)
+- [o peabiru e a colonizacao espanhola do guaira](../guias/pcpr-2026-realidade-do-parana/02-o-peabiru-e-a-colonizacao-espanhola-do-guaira.md)
+- [colonizacao portuguesa e mineracao litoranea](../guias/pcpr-2026-realidade-do-parana/03-colonizacao-portuguesa-e-mineracao-litoranea.md)
+- [o tropeirismo e a ocupacao dos campos gerais](../guias/pcpr-2026-realidade-do-parana/04-o-tropeirismo-e-a-ocupacao-dos-campos-gerais.md)
+- [a emancipacao politica do parana 1853](../guias/pcpr-2026-realidade-do-parana/05-a-emancipacao-politica-do-parana-1853.md)
+- [o ciclo da erva mate e a modernizacao dos transpor](../guias/pcpr-2026-realidade-do-parana/06-o-ciclo-da-erva-mate-e-a-modernizacao-dos-transpor.md)
+- [ciclos da madeira do cafe e a colonizacao do secul](../guias/pcpr-2026-realidade-do-parana/07-ciclos-da-madeira-do-cafe-e-a-colonizacao-do-secul.md)
+- [imigracao europeia e formacao etnica](../guias/pcpr-2026-realidade-do-parana/08-imigracao-europeia-e-formacao-etnica.md)
+- [geografia fisica e aspectos naturais do parana](../guias/pcpr-2026-realidade-do-parana/09-geografia-fisica-e-aspectos-naturais-do-parana.md)
+- [geografia humana economia e patrimonio do parana](../guias/pcpr-2026-realidade-do-parana/10-geografia-humana-economia-e-patrimonio-do-parana.md)
+
+
 ## Materiais baixados deste notebook
 
 - [42b917ff_quiz_paran-quiz_13b145.md](../materiais/42b917ff_quiz_paran-quiz_13b145.md)

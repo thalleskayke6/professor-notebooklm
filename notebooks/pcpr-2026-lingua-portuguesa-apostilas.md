@@ -536,6 +536,27 @@ Se você for preparar um edital exaustivo, note que o material apresenta as segu
 🎯 **Nudge de acompanhamento:** Quer que eu elabore um **simulado prático com 5 questões inéditas** simulando o rigor da banca FGV para treinar a diferenciação entre *Adjunto Adnominal* e *Complemento Nominal* usando os exatos critérios de agente/paciente que mapeamos aqui?
 
 
+### Guias por tema (17)
+
+- [aula 00 nivelamento da lingua](../guias/pcpr-2026-lingua-portuguesa-apostilas/01-aula-00-nivelamento-da-lingua.md)
+- [aula 01 ortografia e acentuacao grafica](../guias/pcpr-2026-lingua-portuguesa-apostilas/02-aula-01-ortografia-e-acentuacao-grafica.md)
+- [aula 02 classes de palavras i](../guias/pcpr-2026-lingua-portuguesa-apostilas/03-aula-02-classes-de-palavras-i.md)
+- [aula 03 classes de palavras ii](../guias/pcpr-2026-lingua-portuguesa-apostilas/04-aula-03-classes-de-palavras-ii.md)
+- [aula 04 classes de palavras iii](../guias/pcpr-2026-lingua-portuguesa-apostilas/05-aula-04-classes-de-palavras-iii.md)
+- [aula 05 estrutura e formacao de palavras](../guias/pcpr-2026-lingua-portuguesa-apostilas/06-aula-05-estrutura-e-formacao-de-palavras.md)
+- [aula 06 organizacao sintatica das frases](../guias/pcpr-2026-lingua-portuguesa-apostilas/07-aula-06-organizacao-sintatica-das-frases.md)
+- [aula 07 tipologia da frase e pontuacao](../guias/pcpr-2026-lingua-portuguesa-apostilas/08-aula-07-tipologia-da-frase-e-pontuacao.md)
+- [aula 08 concordancia verbal e nominal](../guias/pcpr-2026-lingua-portuguesa-apostilas/09-aula-08-concordancia-verbal-e-nominal.md)
+- [aula 09 regencia verbal e nominal e crase](../guias/pcpr-2026-lingua-portuguesa-apostilas/10-aula-09-regencia-verbal-e-nominal-e-crase.md)
+- [aula 10 coesao e coerencia](../guias/pcpr-2026-lingua-portuguesa-apostilas/11-aula-10-coesao-e-coerencia.md)
+- [aula 11 semantica sinonimos antonimos e paronimos](../guias/pcpr-2026-lingua-portuguesa-apostilas/12-aula-11-semantica-sinonimos-antonimos-e-paronimos.md)
+- [aula 12 interpretacao e compreensao de texto](../guias/pcpr-2026-lingua-portuguesa-apostilas/13-aula-12-interpretacao-e-compreensao-de-texto.md)
+- [aula 13 generos textuais e dominios discursivos](../guias/pcpr-2026-lingua-portuguesa-apostilas/14-aula-13-generos-textuais-e-dominios-discursivos.md)
+- [aula 14 norma culta e registros de linguagem](../guias/pcpr-2026-lingua-portuguesa-apostilas/15-aula-14-norma-culta-e-registros-de-linguagem.md)
+- [aula 15 atos de comunicacao e dicionarios](../guias/pcpr-2026-lingua-portuguesa-apostilas/16-aula-15-atos-de-comunicacao-e-dicionarios.md)
+- [aula 16 aula extra](../guias/pcpr-2026-lingua-portuguesa-apostilas/17-aula-16-aula-extra.md)
+
+
 ## Fontes
 
 - Aula 00 - Nivelamento `(pdf)`

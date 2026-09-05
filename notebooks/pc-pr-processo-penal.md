@@ -266,6 +266,20 @@ Abaixo, consolido os conceitos operacionais essenciais de cada tema de forma ext
 *   **Teoria Geral do Crime e Dosimetria de Pena:** O notebook foca nas infrações das leis especiais, mas omite as regras gerais de aplicação de pena (art. 59 a 68 do CP), concurso de crimes (material, formal, continuado) e institutos de exclusão de ilicitude ou culpabilidade.
 
 
+### Guias por tema (10)
+
+- [introducao e principios do processo penal](../guias/pc-pr-processo-penal/01-introducao-e-principios-do-processo-penal.md)
+- [juiz das garantias](../guias/pc-pr-processo-penal/02-juiz-das-garantias.md)
+- [inquerito policial](../guias/pc-pr-processo-penal/03-inquerito-policial.md)
+- [acao penal e acordo de nao persecucao penal anpp](../guias/pc-pr-processo-penal/04-acao-penal-e-acordo-de-nao-persecucao-penal-anpp.md)
+- [jurisdicao e competencia](../guias/pc-pr-processo-penal/05-jurisdicao-e-competencia.md)
+- [sujeitos processuais e auxiliares da justica](../guias/pc-pr-processo-penal/06-sujeitos-processuais-e-auxiliares-da-justica.md)
+- [teoria geral da prova e cadeia de custodia](../guias/pc-pr-processo-penal/07-teoria-geral-da-prova-e-cadeia-de-custodia.md)
+- [provas em especie](../guias/pc-pr-processo-penal/08-provas-em-especie.md)
+- [prisao e liberdade provisoria](../guias/pc-pr-processo-penal/09-prisao-e-liberdade-provisoria.md)
+- [legislacao penal e processual penal extravagante](../guias/pc-pr-processo-penal/10-legislacao-penal-e-processual-penal-extravagante.md)
+
+
 ## Fontes
 
 - Aula 00 - Introdução e princípios do Processo Penal - Resumo.pdf `(pdf)`

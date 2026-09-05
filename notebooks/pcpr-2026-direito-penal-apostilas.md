@@ -241,6 +241,17 @@ Este resumo de atenção pedagógica fecha o círculo de conhecimento do seu not
 💡 **Próxima etapa pedagógica:** Agora que mapeamos os gargalos e as pegadinhas da banca, o que acha de **produzirmos um Simulado de Fixação** focado estritamente nessas concausas e distinções de dolo eventual vs. culpa consciente para treinar a sua aplicação didática?
 
 
+### Guias por tema (7)
+
+- [principios do direito penal](../guias/pcpr-2026-direito-penal-apostilas/01-principios-do-direito-penal.md)
+- [aplicacao da lei penal no tempo e espaco](../guias/pcpr-2026-direito-penal-apostilas/02-aplicacao-da-lei-penal-no-tempo-e-espaco.md)
+- [conflito de normas e interpretacao](../guias/pcpr-2026-direito-penal-apostilas/03-conflito-de-normas-e-interpretacao.md)
+- [teoria geral da infracao penal e fato tipico](../guias/pcpr-2026-direito-penal-apostilas/04-teoria-geral-da-infracao-penal-e-fato-tipico.md)
+- [elemento subjetivo do tipo](../guias/pcpr-2026-direito-penal-apostilas/05-elemento-subjetivo-do-tipo.md)
+- [ter criminis e graus de desenvolvimento](../guias/pcpr-2026-direito-penal-apostilas/06-ter-criminis-e-graus-de-desenvolvimento.md)
+- [teoria da ilicitude](../guias/pcpr-2026-direito-penal-apostilas/07-teoria-da-ilicitude.md)
+
+
 ## Fontes
 
 - Apostila.pdf `(pdf)`

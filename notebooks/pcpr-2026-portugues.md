@@ -514,6 +514,28 @@ Abaixo, apresento um levantamento detalhado das pegadinhas, confusões frequente
 Que tal praticarmos a **análise de paralelismo**? Posso criar um pequeno exercício focado em identificar quebras sintáticas e semânticas ocultas em orações típicas das provas da FGV para consolidar essa habilidade de eliminação técnica!
 
 
+### Guias por tema (18)
+
+- [guia mestre e estrategia de prova o jeito fgv](../guias/pcpr-2026-portugues/01-guia-mestre-e-estrategia-de-prova-o-jeito-fgv.md)
+- [morfologia contextual e formacao de palavras](../guias/pcpr-2026-portugues/02-morfologia-contextual-e-formacao-de-palavras.md)
+- [sintaxe do periodo simples e composto](../guias/pcpr-2026-portugues/03-sintaxe-do-periodo-simples-e-composto.md)
+- [sintaxe das oracoes reduzidas](../guias/pcpr-2026-portugues/04-sintaxe-das-oracoes-reduzidas.md)
+- [regencia verbal nominal e emprego da crase](../guias/pcpr-2026-portugues/05-regencia-verbal-nominal-e-emprego-da-crase.md)
+- [concordancia verbal e nominal](../guias/pcpr-2026-portugues/06-concordancia-verbal-e-nominal.md)
+- [colocacao pronominal](../guias/pcpr-2026-portugues/07-colocacao-pronominal.md)
+- [paralelismo sintatico e semantico](../guias/pcpr-2026-portugues/08-paralelismo-sintatico-e-semantico.md)
+- [pontuacao como sintaxe aplicada](../guias/pcpr-2026-portugues/09-pontuacao-como-sintaxe-aplicada.md)
+- [coerencia e coesao textual anafora catafora e cone](../guias/pcpr-2026-portugues/10-coerencia-e-coesao-textual-anafora-catafora-e-cone.md)
+- [semantica relacoes lexicais e modalizacao discursi](../guias/pcpr-2026-portugues/11-semantica-relacoes-lexicais-e-modalizacao-discursi.md)
+- [reescrita de frases e tecnicas de substituicao de ](../guias/pcpr-2026-portugues/12-reescrita-de-frases-e-tecnicas-de-substituicao-de-.md)
+- [clareza correcao e propriedades de estilo do perio](../guias/pcpr-2026-portugues/13-clareza-correcao-e-propriedades-de-estilo-do-perio.md)
+- [tipologia genero textual e intertextualidade](../guias/pcpr-2026-portugues/14-tipologia-genero-textual-e-intertextualidade.md)
+- [tipos de discurso direto indireto e indireto livre](../guias/pcpr-2026-portugues/15-tipos-de-discurso-direto-indireto-e-indireto-livre.md)
+- [linguagem variacao registro e redacao oficial](../guias/pcpr-2026-portugues/16-linguagem-variacao-registro-e-redacao-oficial.md)
+- [ortografia acentuacao e convencoes graficas](../guias/pcpr-2026-portugues/17-ortografia-acentuacao-e-convencoes-graficas.md)
+- [interpretacao de texto argumentacao e questoes mes](../guias/pcpr-2026-portugues/18-interpretacao-de-texto-argumentacao-e-questoes-mes.md)
+
+
 ## Materiais baixados deste notebook
 
 - [e5690053_mindmap_portugu-s-mapa.json](../materiais/e5690053_mindmap_portugu-s-mapa.json)

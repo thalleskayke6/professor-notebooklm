@@ -302,6 +302,14 @@ Como nós trabalhamos na metodologia de alta fixação ativa, o que você quer f
 👮 **Mira calibrada e munição pronta para o combate, meu irmão!** Esse diagnóstico das armadilhas da FGV é o que separa o aprovado do resto da fila. Quer que eu te desafie com uma **Questão Espelho** de alta complexidade baseada em alguma dessas pegadinhas para testar seu reflexo agora mesmo? Escolha o seu alvo no rádio! 📻
 
 
+### Guias por tema (4)
+
+- [logica proposicional argumentacao e teoria dos con](../guias/estatistica-fgv-pcpr-2026-recorte-de-prova/01-logica-proposicional-argumentacao-e-teoria-dos-con.md)
+- [matematica basica razao proporcao e porcentagem](../guias/estatistica-fgv-pcpr-2026-recorte-de-prova/02-matematica-basica-razao-proporcao-e-porcentagem.md)
+- [algebra linear matrizes determinantes e sistemas](../guias/estatistica-fgv-pcpr-2026-recorte-de-prova/03-algebra-linear-matrizes-determinantes-e-sistemas.md)
+- [geometria plana espacial e analitica](../guias/estatistica-fgv-pcpr-2026-recorte-de-prova/04-geometria-plana-espacial-e-analitica.md)
+
+
 ## Materiais baixados deste notebook
 
 - [185c9e3e_flash_estat-stica-flashcards.md](../materiais/185c9e3e_flash_estat-stica-flashcards.md)

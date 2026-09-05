@@ -42,9 +42,7 @@ for r in rows:
     if os.path.isdir(gd):
         tf=sorted(f for f in os.listdir(gd) if f.endswith('.md'))
         if tf:
-            parts.append(f"
-### Guias por tema ({len(tf)})
-")
+            parts.append(f"\n### Guias por tema ({len(tf)})\n")
             for f in tf: parts.append(f"- [{f[3:-3].replace('-',' ')}](../guias/{slug}/{f})")
             parts.append('')
     # materials

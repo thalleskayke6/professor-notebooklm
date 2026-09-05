@@ -331,6 +331,21 @@ Este notebook apresenta as normas constitucionais, estatutárias e institucionai
 🎯 **Nudge:** Deseja que eu formule uma bateria com **5 questões inéditas no Estilo FGV** focadas exatamente nas pegadinhas de **Prazos de Posse, Exercício e Remoção** descritos acima?
 
 
+### Guias por tema (11)
+
+- [regulacao constitucional e administrativa geral ce](../guias/pc-pr-legislacao-estadual-e-institucional/01-regulacao-constitucional-e-administrativa-geral-ce.md)
+- [estatuto dos servidores publicos civis do parana l](../guias/pc-pr-legislacao-estadual-e-institucional/02-estatuto-dos-servidores-publicos-civis-do-parana-l.md)
+- [sindicancia e processo administrativo disciplinar ](../guias/pc-pr-legislacao-estadual-e-institucional/03-sindicancia-e-processo-administrativo-disciplinar-.md)
+- [etica e sigilo no servico publico](../guias/pc-pr-legislacao-estadual-e-institucional/04-etica-e-sigilo-no-servico-publico.md)
+- [lei geral de protecao de dados pessoais lei federa](../guias/pc-pr-legislacao-estadual-e-institucional/05-lei-geral-de-protecao-de-dados-pessoais-lei-federa.md)
+- [lei de acesso a informacao lei federal no 12 527 2](../guias/pc-pr-legislacao-estadual-e-institucional/06-lei-de-acesso-a-informacao-lei-federal-no-12-527-2.md)
+- [lei de abuso de autoridade lei federal no 13 869 2](../guias/pc-pr-legislacao-estadual-e-institucional/07-lei-de-abuso-de-autoridade-lei-federal-no-13-869-2.md)
+- [identificacao criminal lei federal no 12 037 2009](../guias/pc-pr-legislacao-estadual-e-institucional/08-identificacao-criminal-lei-federal-no-12-037-2009.md)
+- [lei organica nacional das policias civis lei feder](../guias/pc-pr-legislacao-estadual-e-institucional/09-lei-organica-nacional-das-policias-civis-lei-feder.md)
+- [estruturacao das carreiras da policia civil do est](../guias/pc-pr-legislacao-estadual-e-institucional/10-estruturacao-das-carreiras-da-policia-civil-do-est.md)
+- [organizacao administrativa e operacional lei organ](../guias/pc-pr-legislacao-estadual-e-institucional/11-organizacao-administrativa-e-operacional-lei-organ.md)
+
+
 ## Materiais baixados deste notebook
 
 - [bee037d5_quiz_legisla-o-quiz_304f42.md](../materiais/bee037d5_quiz_legisla-o-quiz_304f42.md)
