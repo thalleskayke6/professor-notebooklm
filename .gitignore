@@ -5,3 +5,4 @@ questoes/*.md
 !questoes/INDICE.md
 questoes/banco.json
 vault/notas/
+_build/guias/_p_*

@@ -1,4 +1,4 @@
-# GUIA DEFINITIVO DE ESTUDOS: MÉTODO VALTER RODRIGUES PARA CONCURSOS DE ELITE
+# GUIA DEFINITIVO DE ESTUDOS: Método do autor das videoaulas PARA CONCURSOS DE ELITE
 
 Este guia operacionaliza a metodologia de alto desempenho para concursos públicos de elite, tratando a preparação como um sistema de engenharia de informação onde o objetivo final é a persistência de dados e a recuperação de alta precisão (output) no dia da prova.
 

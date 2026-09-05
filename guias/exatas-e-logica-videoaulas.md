@@ -130,7 +130,7 @@ Fique atento a padrões de calendário (J, J, A, S, O, N, D = meses de Junho a D
 ### A Transição de Nível
 Cargos de nível médio estão acabando. A tendência é a exigência de nível superior para quase tudo (como ocorreu no TSE). Use a estratégia do **Tecnólogo (2 anos)** para se manter competitivo rapidamente.
 
-### Os 3 Motivos da Exoneração (O Fator Loureiro)
+### Os 3 Motivos da Exoneração (O Fator o autor das videoaulas)
 Mesmo com estabilidade, muitos saem do serviço público por:
 1.  **Liberdade:** Horários rígidos e falta de flexibilidade.
 2.  **Autonomia:** Engessamento metodológico (especialmente na educação).

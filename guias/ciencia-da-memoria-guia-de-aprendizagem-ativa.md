@@ -59,7 +59,7 @@ O Anki é a ferramenta que operacionaliza as dificuldades desejáveis através d
 *   **Leech (Sanguessuga):** Cartões errados repetidamente. Eles sinalizam falha na formulação (falta de entendimento ou excesso de informação). Devem ser suspensos para não poluir o algoritmo.
 
 ### 2.3. Regras de Ouro e Atomicidade Pragmática
-Seguindo Piotr Woźniak e a Metodologia Valter Rodrigues:
+Seguindo Piotr Woźniak e a Metodologia o autor das videoaulas de método:
 1.  **Entenda antes de memorizar:** O Anki não substitui a compreensão; ele a protege contra o esquecimento.
 2.  **Princípio da Informação Mínima:** Um cartão deve conter apenas um núcleo conceitual.
 3.  **Atomicidade Pragmática:** Evite a hiper-atomização inútil (cards óbvios), mas jamais crie listas longas.
