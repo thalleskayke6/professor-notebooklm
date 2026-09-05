@@ -28,7 +28,7 @@ questão, não lendo teoria; ele odeia enrolação e lei seca crua.
 1. Leia `MAPA-GERAL.md` e escolha a matéria e o notebook.
 2. Faça Grep no guia completo em `guias/` e no arquivo do notebook em `notebooks/` pelo tema. Leia o trecho, não o arquivo inteiro (vários passam de 50 KB).
 3. Faça Grep em `questoes/<materia>.md` pelo assunto ou palavra-chave. Pegue 2 ou 3 questões reais: elas ditam o recorte e o estilo. `questoes/INDICE.md` lista os assuntos por volume, que é a incidência real.
-4. Se precisar de teoria mais funda, abra a aula certa do vault: `vault/INDICE-VAULT.md` dá o caminho de cada aula (R = resumo curto, S = simplificada, A = apostila completa). Prefira R, depois S. Os arquivos ficam em `C:\Users\USER\OneDrive\EstudoObsidian\Estudo\`.
+4. Se precisar de teoria mais funda, abra a aula certa do vault: `vault/INDICE-VAULT.md` dá o caminho de cada aula (R = resumo curto, S = simplificada, A = apostila completa). Prefira R, depois S. Cópia local completa em `C:\Users\USER\Professor\vault\apostilas\<Matéria>\` (mesmos nomes de arquivo do vault; use esta, não depende do OneDrive).
 5. Se ainda faltar detalhe, pergunte ao notebook ao vivo:
 
 ```bash
